@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Jega.Core's user-facing text, English (the neutral culture): mostly why something failed, shown by Jega.Revit as it
+  is. A translation is Strings.<culture>.resx beside it (e.g. Strings.da.resx) with the same names. {0}, {1} … are
+  filled in by the code: keep them, move them where the language wants them. One whole sentence per entry, never
+  glued from pieces. The site plan DXF's own text is Danish and stays in SiteplanDxf.
+-->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- SiteFetcher: the credit the open data's terms ask for (DATA.md), wherever Jega shows what it fetched -->
+  <data name="Fetch_Credit" xml:space="preserve"><value>Contains data from Klimadatastyrelsen (Danmarks Højdemodel, GeoDanmark, Danmarks Adresseregister) and Geodatastyrelsen (Matriklen) via Datafordeleren and Adressevælger.</value></data>
+
+  <!-- SiteFetcher: the steps while fetching, for the waiting windows; StepSurroundingsParts {0}: the terrain's calls -->
+  <data name="Fetch_StepLot" xml:space="preserve"><value>Lot …</value></data>
+  <data name="Fetch_StepSurroundings" xml:space="preserve"><value>Neighbours, buildings, roads and terrain …</value></data>
+  <data name="Fetch_StepSurroundingsParts" xml:space="preserve"><value>Neighbours, buildings, roads and terrain ({0} parts) …</value></data>
+  <data name="Fetch_StepSiteplan" xml:space="preserve"><value>Site plan …</value></data>
+  <data name="Fetch_StepContext" xml:space="preserve"><value>Buildings, terrain and roofs …</value></data>
+
+  <!-- SiteFetcher: the services by name, the {0} of the failures below; MapData {0}: the layer (lots, buildings …) -->
+  <data name="Fetch_AddressSearch" xml:space="preserve"><value>Address search</value></data>
+  <data name="Fetch_AddressLookup" xml:space="preserve"><value>Address lookup</value></data>
+  <data name="Fetch_MapData" xml:space="preserve"><value>Map data ({0})</value></data>
+  <!-- Danmarks Adresseregister's house numbers round the lot, the name of that call in messages -->
+  <data name="Fetch_Addresses" xml:space="preserve"><value>Addresses (street names and house numbers)</value></data>
+  <data name="Fetch_Terrain" xml:space="preserve"><value>Terrain (Danmarks Højdemodel)</value></data>
+
+  <!-- SiteFetcher: why nothing was fetched. {0}: the service (above); the rest as named by the text -->
+  <data name="Fetch_NoKey" xml:space="preserve"><value>No Datafordeler API key: enter yours in Settings (Data access).</value></data>
+  <data name="Fetch_NoLot" xml:space="preserve"><value>No lot (cadastral parcel) under the address point.</value></data>
+  <data name="Fetch_LotTooLarge" xml:space="preserve"><value>The lot is too large for a terrain grid of {0:0.0} m ({1:N0} points; at most {2:N0}).</value></data>
+  <data name="Fetch_ContextTooLarge" xml:space="preserve"><value>The lot is too large for the context (over about 2 km across).</value></data>
+  <data name="Fetch_NotMapData" xml:space="preserve"><value>{0}: the service didn't answer with map data.</value></data>
+  <data name="Fetch_FeaturesCut" xml:space="preserve"><value>{0}: the service gave {1:N0} of {2:N0} features. Make the area round the lot smaller.</value></data>
+  <data name="Fetch_PartSize" xml:space="preserve"><value>{0}: a part came back {1} × {2} cells, not {3} × {4}.</value></data>
+  <data name="Fetch_NotGeoTiff" xml:space="preserve"><value>Terrain: the service didn't answer with a GeoTIFF.</value></data>
+  <data name="Fetch_GeoTiffLayout" xml:space="preserve"><value>Terrain: unexpected GeoTIFF layout.</value></data>
+  <data name="Fetch_GeoTiffShort" xml:space="preserve"><value>Terrain: the GeoTIFF is shorter than its size says.</value></data>
+  <data name="Fetch_Hole" xml:space="preserve"><value>Terrain: a hole in the height data on the lot.</value></data>
+  <!-- Status {1}: the service's own status, or NoStatus -->
+  <data name="Fetch_Status" xml:space="preserve"><value>{0}: the service answered {1}.</value></data>
+  <data name="Fetch_NoStatus" xml:space="preserve"><value>without a status</value></data>
+  <!-- Unreadable, NoAnswer {1}: the underlying error's message -->
+  <data name="Fetch_Unreadable" xml:space="preserve"><value>{0}: the service gave an answer Jega can't read ({1}).</value></data>
+  <data name="Fetch_NoAnswer" xml:space="preserve"><value>{0}: no answer ({1}). Check the internet connection.</value></data>
+  <!-- KeyRefused, TokenRefused (Adressevælger's, not the key), Http {1}: the HTTP status code -->
+  <data name="Fetch_KeyRefused" xml:space="preserve"><value>{0}: the key was refused (HTTP {1}). If it was just made, it can take up to 15 minutes before it works. Otherwise check it in Settings (Data access).</value></data>
+  <data name="Fetch_TokenRefused" xml:space="preserve"><value>{0}: Adressevælger refused the token (HTTP {1}). Your Datafordeler key isn't the problem. If you have a token of your own, enter it in Settings (Data access, Advanced).</value></data>
+  <!-- SiteFetcher: the address field has left Adressevælger for Danmarks Adresseregister (AddressFallback); {0}: why,
+       "400, unknown token" (the HTTP status and Fetch_FallbackWhy*) or "no answer". Shown under the field once, in the
+       receipt after Load from Address and in Test -->
+  <data name="Fetch_AddressFallback" xml:space="preserve"><value>Adressevælger couldn't be used ({0}); searching via Datafordeleren now.</value></data>
+  <!-- Why, by Adressevælger's answer: 400, 401/403, 404, no answer -->
+  <data name="Fetch_FallbackWhyUnknownToken" xml:space="preserve"><value>unknown token</value></data>
+  <data name="Fetch_FallbackWhyRefused" xml:space="preserve"><value>the token was refused</value></data>
+  <data name="Fetch_FallbackWhyGone" xml:space="preserve"><value>the service is gone</value></data>
+  <data name="Fetch_FallbackWhyNoAnswer" xml:space="preserve"><value>no answer</value></data>
+  <data name="Fetch_ProxyRefused" xml:space="preserve"><value>{0}: your network (proxy) refused the connection (HTTP 407). It isn't the key. Ask your IT department for access to datafordeler.dk and adressevaelger.dk.</value></data>
+  <data name="Fetch_Http" xml:space="preserve"><value>{0}: HTTP {1}.</value></data>
+
+  <!-- SiteFetcher.Test, Settings' "Test key": each service tried, and why one wasn't -->
+  <data name="Fetch_TestMapData" xml:space="preserve"><value>Datafordeler: map data</value></data>
+  <data name="Fetch_TestTerrain" xml:space="preserve"><value>Datafordeler: terrain</value></data>
+  <data name="Fetch_TestAddresses" xml:space="preserve"><value>Adressevælger: addresses</value></data>
+  <data name="Fetch_TestNoKey" xml:space="preserve"><value>no key entered</value></data>
+
+  <!-- TerrainGrid: why a terrain CSV can't be used. {0} the line's number, NotNumbers {1} the line itself (shortened);
+       BadElevation {1} its elevation (m); OffGrid, Duplicate {0}, {1} the point (m); Holes {0} the points, {1} × {2} =
+       {3} the grid's -->
+  <data name="Grid_NotNumbers" xml:space="preserve"><value>Line {0} is not three numbers X,Y,Z with '.' as decimal point: "{1}".</value></data>
+  <data name="Grid_BadElevation" xml:space="preserve"><value>Line {0} has the elevation {1:0.000} m, which can't be right.</value></data>
+  <data name="Grid_TooFew" xml:space="preserve"><value>The file has too few points for a terrain grid.</value></data>
+  <data name="Grid_OnALine" xml:space="preserve"><value>The points lie on a line, not in a grid.</value></data>
+  <data name="Grid_NotRegular" xml:space="preserve"><value>The points are not a regular grid with the same spacing in both directions.</value></data>
+  <data name="Grid_OffGrid" xml:space="preserve"><value>The point {0:0.000}, {1:0.000} m is not on the grid.</value></data>
+  <data name="Grid_Duplicate" xml:space="preserve"><value>The point {0:0.000}, {1:0.000} m is in the file more than once.</value></data>
+  <data name="Grid_Holes" xml:space="preserve"><value>The grid has holes: {0} points, but {1} × {2} = {3} expected.</value></data>
+
+  <!-- EdgeLevels (the lot boundary's elevations) and LineLevels (Terrain Line): off the terrain grid. Partly {0} of
+       {1}: the sampled points outside, and all of them -->
+  <data name="Edge_Outside" xml:space="preserve"><value>The edge is entirely outside the terrain grid.</value></data>
+  <data name="Edge_Partly" xml:space="preserve"><value>The edge is partly outside the terrain grid ({0} of {1} points).</value></data>
+  <data name="Line_Outside" xml:space="preserve"><value>The line is entirely outside the terrain grid.</value></data>
+  <data name="Line_Partly" xml:space="preserve"><value>The line is partly outside the terrain grid ({0} of {1} points).</value></data>
+
+  <!-- Context: why the buildings stored in the model can't be read -->
+  <data name="Context_NotJson" xml:space="preserve"><value>The stored context isn't valid JSON.</value></data>
+  <data name="Context_NotContext" xml:space="preserve"><value>The stored context isn't a context (version 1).</value></data>
+  <data name="Context_NotMm" xml:space="preserve"><value>The stored context isn't in mm.</value></data>
+
+  <!-- Surroundings: why the site plan's stored surroundings can't be read; Unreadable {0}: the underlying error's message -->
+  <data name="Surroundings_OtherVersion" xml:space="preserve"><value>The stored surroundings are from another version of Jega.</value></data>
+  <data name="Surroundings_Unreadable" xml:space="preserve"><value>The stored surroundings can't be read ({0}).</value></data>
+
+  <!-- ProjectOptions.Problems: a Settings field out of range, shown under the window. Each starts with the field's
+       label as Jega.Revit's Settings_* names it, so the user finds the field: rename one, rename both -->
+  <data name="Options_Thickness" xml:space="preserve"><value>Thickness: 10 to 5000 mm.</value></data>
+  <data name="Options_InteriorStep" xml:space="preserve"><value>Point spacing inside the lot: 400 to 10000 mm (the terrain grid is 400 mm).</value></data>
+  <data name="Options_EdgeStep" xml:space="preserve"><value>Point spacing along the lot boundary: 100 to 10000 mm.</value></data>
+  <data name="Options_CrossSize" xml:space="preserve"><value>Elevation cross size: 0.5 to 10 mm on paper.</value></data>
+  <data name="Options_LabelText" xml:space="preserve"><value>Label text size: 1 to 10 mm on paper.</value></data>
+  <data name="Options_ZeroTerrainAt" xml:space="preserve"><value>Terrain point on a level: the lowest or highest point, the average, the address point or the highest along the house.</value></data>
+  <data name="Options_Margin" xml:space="preserve"><value>Margin around the lot: 0 to 100 m.</value></data>
+  <data name="Options_Setback" xml:space="preserve"><value>Setback from boundary: 0 (none) to 20 m.</value></data>
+  <data name="Options_RoofMinArea" xml:space="preserve"><value>Roof heights only on buildings over: 0 (all) to 10000 m².</value></data>
+  <data name="Options_SiteAnchor" xml:space="preserve"><value>Placed at (in Revit): the Survey Point, the Project Base Point, the Internal Origin or real-world coordinates (ETRS89 / UTM32).</value></data>
+  <data name="Options_TerrainLevelAt" xml:space="preserve"><value>Terrain point for the Terrain level: the lowest or highest point, the average, the address point or the highest along the house.</value></data>
+  <!-- {0}: the languages Config offers, by name -->
+  <data name="Options_Language" xml:space="preserve"><value>Language: {0}.</value></data>
+
+  <!-- The site plan DXF (SiteplanDxf), in the project's language (Strings.da.resx for Danish): looked up in the
+       language the drawing is written in, not the one spoken, so tests and redraws can write either. The layers'
+       names (SKELMAAL, KOTER …) and "N" stay. Numbers are formatted by the language, so keep the format strings. -->
+  <data name="Drawing_Title" xml:space="preserve"><value>Site plan: {0}</value></data>
+  <!-- {0}, {1}: E/N of the drawing's 0,0 (m) -->
+  <data name="Drawing_OriginAddress" xml:space="preserve"><value>The drawing's 0,0 = the address point (the address's official point in the address register): E {0:N3} / N {1:N3} m, ETRS89/UTM32 (EPSG:25832).</value></data>
+  <!-- The project's origin apart from the address point; {0}, {1}: the origin's E/N (whole m), {2}, {3}: the address point's -->
+  <data name="Drawing_OriginProject" xml:space="preserve"><value>The drawing's 0,0 = the project's origin (the address point, whole metres): E {0:N0} / N {1:N0} m, ETRS89/UTM32 (EPSG:25832). The address point (the address's official point in the address register): E {2:N3} / N {3:N3} m.</value></data>
+  <!-- {0}: the date the data was fetched (Surroundings.FetchedUtc); its format written out, as "d" depends on the
+       host's globalization (dd.MM.yyyy or dd-MM-yyyy for da-DK) -->
+  <data name="Drawing_Credit" xml:space="preserve"><value>Contains data from Klimadatastyrelsen (Danmarks Højdemodel, GeoDanmark, Danmarks Adresseregister) and Geodatastyrelsen (Matriklen) via Datafordeleren and Adressevælger, fetched {0:dd.MM.yyyy}. Indicative – not a survey; elevations about ±0.1 m.</value></data>
+  <data name="Drawing_Turned" xml:space="preserve"><value>The drawing lies in the project's working direction (Project North), turned {0:N1}° from true north; the arrow points north.</value></data>
+  <data name="Drawing_TerrainLot" xml:space="preserve"><value>Terrain on the lot: lowest {0:N2}, highest {1:N2} m DVR90 (span {2:N2} m).</value></data>
+  <data name="Drawing_TerrainAddress" xml:space="preserve"><value>Terrain at the address point: {0:N2} m DVR90.</value></data>
+  <data name="Drawing_TerrainAddressInBuilding" xml:space="preserve"><value>Terrain at the address point: {0:N2} m DVR90 (the point lies in a building; the elevation is worked out from the terrain around it).</value></data>
+  <data name="Drawing_Buildings" xml:space="preserve"><value>Buildings are GeoDanmark's roof outlines, not facades.</value></data>
+  <!-- The roofs on the lot, at each building's middle (TAGKOTER); {0}: m DVR90 -->
+  <data name="Drawing_RoofRidge" xml:space="preserve"><value>{0:N2}</value></data>
+  <data name="Drawing_RoofBoth" xml:space="preserve"><value>{0:N2} / {1:N2}</value></data>
+  <data name="Drawing_NoteRoof" xml:space="preserve"><value>Roof: ridge and eaves in DVR90 from the height model's surface. Indicative only.</value></data>
+  <data name="Drawing_NoteRoofRidge" xml:space="preserve"><value>Roof: ridge in DVR90 from the height model's surface. Indicative only.</value></data>
+  <!-- {0}: the parcel number, {1}: m² registered, {2}: m² drawn, {3}: the difference in % (keep its format: always
+       a sign); InnerOne/InnerMany {4}: the parcels inside it (ParcelArea; several joined with ListAnd) -->
+  <data name="Drawing_LotArea" xml:space="preserve"><value>Lot area {0}: {1:N0} m² registered in Matriklen, {2:N0} m² on the map ({3:+0.0;-0.0;+0.0} %).</value></data>
+  <data name="Drawing_LotAreaInnerOne" xml:space="preserve"><value>Lot area {0}: {1:N0} m² registered in Matriklen, {2:N0} m² on the map ({3:+0.0;-0.0;+0.0} %); {4} lies inside the lot and isn't counted.</value></data>
+  <data name="Drawing_LotAreaInnerMany" xml:space="preserve"><value>Lot area {0}: {1:N0} m² registered in Matriklen, {2:N0} m² on the map ({3:+0.0;-0.0;+0.0} %); {4} lie inside the lot and aren't counted.</value></data>
+  <!-- A parcel with its area: {0} the number, {1} m² -->
+  <data name="Drawing_ParcelArea" xml:space="preserve"><value>{0} ({1:N0} m²)</value></data>
+  <!-- The last two of a list: {0} the ones before it, joined with ", "; {1} the last -->
+  <data name="Drawing_ListAnd" xml:space="preserve"><value>{0} and {1}</value></data>
+  <!-- The legend: its heading, the groups, and a text per row; RowSetback {0}: the distance (m) -->
+  <data name="Drawing_Legend" xml:space="preserve"><value>LEGEND</value></data>
+  <data name="Drawing_GroupBoundaries" xml:space="preserve"><value>BOUNDARIES</value></data>
+  <data name="Drawing_GroupBuildings" xml:space="preserve"><value>BUILDINGS</value></data>
+  <data name="Drawing_GroupRoads" xml:space="preserve"><value>ROADS</value></data>
+  <data name="Drawing_GroupWater" xml:space="preserve"><value>WATER</value></data>
+  <data name="Drawing_GroupPoints" xml:space="preserve"><value>POINTS</value></data>
+  <data name="Drawing_RowLot" xml:space="preserve"><value>Lot boundary, the lot</value></data>
+  <data name="Drawing_RowNeighbourLots" xml:space="preserve"><value>Lot boundaries, neighbours</value></data>
+  <data name="Drawing_RowSetback" xml:space="preserve"><value>{0} m from the boundary (approximate)</value></data>
+  <data name="Drawing_RowLengths" xml:space="preserve"><value>Boundary lengths (m)</value></data>
+  <data name="Drawing_RowParcelNumber" xml:space="preserve"><value>Parcel number</value></data>
+  <data name="Drawing_RowOwnBuildings" xml:space="preserve"><value>Roof outline, on the lot</value></data>
+  <data name="Drawing_RowNeighbourBuildings" xml:space="preserve"><value>Roof outline, neighbours</value></data>
+  <data name="Drawing_RowRoadEdge" xml:space="preserve"><value>Road edge</value></data>
+  <data name="Drawing_RowPath" xml:space="preserve"><value>Path edge</value></data>
+  <data name="Drawing_RowWater" xml:space="preserve"><value>Lake, stream, ditch</value></data>
+  <data name="Drawing_RowElevation" xml:space="preserve"><value>Terrain elevation (m DVR90)</value></data>
+  <data name="Drawing_RowManhole" xml:space="preserve"><value>Manhole cover, cover level (m DVR90)</value></data>
+  <data name="Drawing_RowGully" xml:space="preserve"><value>Road gully, level (m DVR90)</value></data>
+  <!-- A note under the drawing when covers or gullies are on it -->
+  <data name="Drawing_NoteManholes" xml:space="preserve"><value>Manhole covers and gullies: GeoDanmark, seen from the air; the level is the cover's. Utilities are not shown; utility information is obtained from LER before excavation (Danish LER Act § 7).</value></data>
+  <data name="Drawing_RowHouseNumber" xml:space="preserve"><value>House number</value></data>
+  <data name="Drawing_RowStreetName" xml:space="preserve"><value>Street name</value></data>
+  <!-- A note under the drawing when street names or house numbers are on it -->
+  <data name="Drawing_NoteAddresses" xml:space="preserve"><value>Street names and house numbers: Danmarks Adresseregister. A house number stands in the building its address belongs to; without one, at its address point.</value></data>
+  <!-- The legend's vegetation group and rows, and the note under the drawing when trees or hedges are on it -->
+  <data name="Drawing_GroupVegetation" xml:space="preserve"><value>VEGETATION</value></data>
+  <data name="Drawing_RowTrees" xml:space="preserve"><value>Tree; tree group and wood as outlines</value></data>
+  <data name="Drawing_RowHedges" xml:space="preserve"><value>Hedge, fence</value></data>
+  <data name="Drawing_NoteVegetation" xml:space="preserve"><value>Trees and hedges: GeoDanmark, seen from the air; the prominent trees only, without species or size.</value></data>
+  <data name="Drawing_RowRoof" xml:space="preserve"><value>Roof heights: ridge over eaves (m DVR90, approximate)</value></data>
+  <data name="Drawing_RowRoofRidge" xml:space="preserve"><value>Roof heights: ridge (m DVR90, approximate)</value></data>
+  <data name="Drawing_RowOriginAddress" xml:space="preserve"><value>The drawing's 0,0 (the address point)</value></data>
+  <!-- The two crosses when the project's origin is apart from the address point -->
+  <data name="Drawing_RowOriginProject" xml:space="preserve"><value>Drawing's 0,0 (address point, whole metres)</value></data>
+  <data name="Drawing_RowAddressPoint" xml:space="preserve"><value>The address point</value></data>
+  <!-- {0}: the scale's number -->
+  <data name="Drawing_Scale" xml:space="preserve"><value>SCALE 1:{0} (A3)</value></data>
+
+  <!-- MachineOptions: this PC's settings file can't be read. {0}: its path, {1}: the underlying error's message -->
+  <data name="Machine_Unreadable" xml:space="preserve"><value>This PC's settings ({0}) can't be read: {1}</value></data>
+</root>

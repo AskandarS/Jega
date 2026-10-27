@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Jega, the Revit side: ribbon, commands, storage in the model. Revit 2025 runs .NET 8 on x64. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <AssemblyName>Jega</AssemblyName>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RevitDir Condition="'$(RevitDir)' == ''">C:\Program Files\Autodesk\Revit 2025</RevitDir>
+    <RevitAddins>$(AppData)\Autodesk\Revit\Addins\2025</RevitAddins>
+    <!-- RevitAPI.dll's HintPath makes MSBuild see Revit's own System.Drawing and Microsoft.VisualBasic beside
+         .NET's: harmless, Revit supplies them at run time. Kept as messages so warnings can stay errors. -->
+    <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);MSB3277</MSBuildWarningsAsMessages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Revit loads its own copies: referenced, never copied to the output. -->
+    <Reference Include="RevitAPI">
+      <HintPath>$(RevitDir)\RevitAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(RevitDir)\RevitAPIUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <ProjectReference Include="..\Jega.Core\Jega.Core.csproj" />
+  </ItemGroup>
+
+  <!-- The user-facing text (Resources/Strings.resx, English; Strings.<culture>.resx for a translation), as the typed
+       class Jega.Revit.Resources.Strings, generated at build. Its namespace is the resource's own name
+       (Jega.Revit.Resources.Strings), so the class finds it; another namespace finds nothing at run time. -->
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <StronglyTypedFileName>$(IntermediateOutputPath)Strings.Designer.cs</StronglyTypedFileName>
+      <StronglyTypedLanguage>CSharp</StronglyTypedLanguage>
+      <StronglyTypedNamespace>Jega.Revit.Resources</StronglyTypedNamespace>
+      <StronglyTypedClassName>Strings</StronglyTypedClassName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- Which build this is and where it came from, for About (BuildInfo.cs). -->
+  <ItemGroup>
+    <AssemblyMetadata Condition="'$(Configuration)' == 'Debug'" Include="SourceDir" Value="$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..\..'))" />
+    <AssemblyMetadata Include="BuildTime" Value="$([System.DateTime]::Now.ToString('yyyy-MM-dd HH:mm'))" />
+  </ItemGroup>
+
+  <!--
+    dotnet build -p:DeployToRevit=true puts this build into Revit as the installer does: an Autodesk bundle in the
+    user's ApplicationPlugins (Jega.bundle), which Revit 2025 and 2026 find themselves, one copy of the DLLs for both,
+    each version's .addin pointing at them by a relative path (no user's folder in it). No PDBs. The add-in folder's
+    Jega.addin of earlier deploys goes, or Revit would load Jega twice. Revit locks the DLL: with Revit open the copy
+    fails and the build says so.
+  -->
+  <Target Name="DeployAddin" AfterTargets="Build" Condition="'$(DeployToRevit)' == 'true'">
+    <PropertyGroup>
+      <!-- tools\Pack.ps1 passes -p:BundleDir=<staging folder> to lay the bundle out for the installer instead. -->
+      <BundleDir Condition="'$(BundleDir)' == ''">$(AppData)\Autodesk\ApplicationPlugins\Jega.bundle</BundleDir>
+      <AddinXml><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Jega</Name>
+    <Assembly>..\$(TargetFileName)</Assembly>
+    <AddInId>3f6d2a1e-8c47-4b95-9a0e-5d1c7e2b4f63</AddInId>
+    <FullClassName>Jega.Revit.App</FullClassName>
+    <VendorId>JEGA</VendorId>
+    <VendorDescription>Shamer Askandar</VendorDescription>
+  </AddIn>
+</RevitAddIns>]]></AddinXml>
+      <PackageXml><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0" AutodeskProduct="Revit" ProductType="Application" Name="Jega"
+    AppVersion="$(Version)" Author="Shamer Askandar" Description="Jega: from a Danish address to the lot, the site plan and the terrain in Revit."
+    ProductCode="{35ACA95F-7246-4CA7-B218-09D6962BEBA2}" UpgradeCodes="{6EBB6996-93CF-4F14-8722-4D09896201BD}">
+  <CompanyDetails Name="Shamer Askandar" />
+  <Components Description="Revit 2025">
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2025" SeriesMax="R2025" />
+    <ComponentEntry AppName="Jega" Version="$(Version)" ModuleName="./Contents/2025/Jega.addin" />
+  </Components>
+  <Components Description="Revit 2026">
+    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2026" SeriesMax="R2026" />
+    <ComponentEntry AppName="Jega" Version="$(Version)" ModuleName="./Contents/2026/Jega.addin" />
+  </Components>
+</ApplicationPackage>]]></PackageXml>
+    </PropertyGroup>
+    <ItemGroup>
+      <DeployFiles Include="$(TargetDir)**\*" Exclude="$(TargetDir)**\*.pdb" />
+      <!-- The licence, the credits and the data terms go with the program, at the bundle's root (Revit reads only
+           PackageContents.xml there). -->
+      <LegalFiles Include="$(MSBuildThisFileDirectory)..\..\LICENSE;$(MSBuildThisFileDirectory)..\..\NOTICE;$(MSBuildThisFileDirectory)..\..\DATA.md" />
+    </ItemGroup>
+    <MakeDir Directories="$(BundleDir)\Contents\2025;$(BundleDir)\Contents\2026" />
+    <Copy SourceFiles="@(DeployFiles)" DestinationFiles="@(DeployFiles->'$(BundleDir)\Contents\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" Retries="0" ContinueOnError="true" />
+    <Error Condition="'$(MSBuildLastTaskResult)' == 'false'"
+           Text="Jega not deployed: Revit has the add-in folder's DLL open. Close Revit and build again." />
+    <Copy SourceFiles="@(LegalFiles)" DestinationFolder="$(BundleDir)" SkipUnchangedFiles="true" />
+    <WriteLinesToFile File="$(BundleDir)\PackageContents.xml" Lines="$(PackageXml)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <WriteLinesToFile File="$(BundleDir)\Contents\2025\Jega.addin" Lines="$(AddinXml)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <WriteLinesToFile File="$(BundleDir)\Contents\2026\Jega.addin" Lines="$(AddinXml)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <Delete Files="$(RevitAddins)\Jega.addin" />
+    <RemoveDir Directories="$(RevitAddins)\Jega" />
+    <Message Importance="high" Text="Jega → $(BundleDir) (Revit 2025 and 2026)" />
+  </Target>
+
+</Project>

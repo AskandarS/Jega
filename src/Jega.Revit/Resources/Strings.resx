@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Jega's user-facing text, English (the neutral culture). A translation is Strings.<culture>.resx beside it
+  (e.g. Strings.da.resx) with the same names. {0}, {1} … are filled in by the code: keep them, move them where the
+  language wants them. One whole sentence per entry, never glued from pieces.
+-->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- The ribbon: panels, buttons ("\n" breaks a large button's name in two) and tooltips -->
+  <data name="Ribbon_Site" xml:space="preserve"><value>Site</value></data>
+  <data name="Ribbon_Model" xml:space="preserve"><value>Model</value></data>
+  <data name="Ribbon_TerrainLevels" xml:space="preserve"><value>Terrain Elevations</value></data>
+  <data name="Ribbon_Jega" xml:space="preserve"><value>Jega</value></data>
+  <data name="Ribbon_LoadFromAddress" xml:space="preserve"><value>Load from
+Address</value></data>
+  <data name="Ribbon_LoadFromAddressTip" xml:space="preserve"><value>Type an address: the site plan (lot, neighbours, buildings, road edges) and the terrain are fetched from Datafordeleren with your own key, imported and loaded, and kept in the model. The project gets real coordinates (ETRS89/UTM32). One Undo. The arrow below: Load Terrain CSV File.</value></data>
+  <data name="Ribbon_LoadTerrain" xml:space="preserve"><value>Load Terrain CSV File</value></data>
+  <data name="Ribbon_LoadTerrainTip" xml:space="preserve"><value>Load a terrain CSV in Jega's own format, as Export writes it. It is checked, kept in the model and framed on the plan.</value></data>
+  <data name="Ribbon_Refresh" xml:space="preserve"><value>Refresh</value></data>
+  <data name="Ribbon_RefreshTip" xml:space="preserve"><value>Puts the site plan back on its coordinates and updates the terrain frame, the terrain line labels, the neighbouring buildings (if shown) and the Toposolid (if made). Runs by itself after Work Direction. One Undo.</value></data>
+  <data name="Ribbon_GenerateTerrain" xml:space="preserve"><value>Generate
+Terrain</value></data>
+  <data name="Ribbon_GenerateTerrainTip" xml:space="preserve"><value>Generate the Toposolid on the lot: bounded by the lot boundary, shaped by the terrain along it and inside. Replaces the one made before.</value></data>
+  <data name="Ribbon_Context" xml:space="preserve"><value>Context
+Buildings</value></data>
+  <data name="Ribbon_ContextTip" xml:space="preserve"><value>Show or hide the neighbouring buildings as masses (Generic Models), their heights from Danmarks Højdemodel. Load from Address brings them; if they are missing, they are fetched with your key. Shift+click fetches again. The buildings on the lot too: Settings > Site plan &amp; terrain > Neighbouring buildings.</value></data>
+  <data name="Ribbon_LotBoundary" xml:space="preserve"><value>Draw Lot
+Boundary</value></data>
+  <data name="Ribbon_LotBoundaryTip" xml:space="preserve"><value>Draw the lot boundary (a filled region of the type "Jega Lot Boundary") exactly on the lot and show the elevations along it. Its corners match the site plan's spot elevations.</value></data>
+  <data name="Ribbon_TerrainLine" xml:space="preserve"><value>Terrain
+Line</value></data>
+  <data name="Ribbon_TerrainLineTip" xml:space="preserve"><value>Read the terrain along any line you draw: its elevations, and with "Jega Line" the falls, slopes and HIGH / LOW, updated live as you edit the line.</value></data>
+  <data name="Ribbon_TerrainLineLong" xml:space="preserve"><value>In a plan view, draw detail lines along a path, a terrace, a ramp or a drain. Terrain Line starts in "Jega Line (elevations only)": every corner and end gets its terrain elevation and a cross. Switch a line to "Jega Line" in Properties for each piece's fall and slope and the highest and lowest points. Move, stretch or delete a line and the elevations follow at once. Use it to check falls before you design, or to set out elevations for a terrace or a path. Settings > Elevations > Offset adds a height to every elevation (e.g. a paving's thickness).</value></data>
+  <data name="Ribbon_Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Ribbon_SettingsTip" xml:space="preserve"><value>Jega's settings. Georeference: real coordinates (ETRS89/UTM32) or manual. Elevations: what Revit's 0 is, the terrain lines. Site plan &amp; terrain: the site plan, the Toposolid and its Terrain level, the neighbouring buildings. Layers: which layers the site plan is drawn with. Data access: your Datafordeler key.</value></data>
+  <data name="Ribbon_WorkDirection" xml:space="preserve"><value>Work Direction</value></data>
+  <data name="Ribbon_WorkDirectionTip" xml:space="preserve"><value>Revit's Rotate Project North: sets Project North as you like. Buildings, site plan and terrain turn together; the coordinates and true north stay. Jega Refreshes after, so the site plan lies straight again.</value></data>
+  <data name="Ribbon_ViewNorth" xml:space="preserve"><value>True / Project North</value></data>
+  <data name="Ribbon_ViewNorthTip" xml:space="preserve"><value>Switches the active plan view's Orientation between True North and Project North, as in Properties. Only in plan views; a view template that sets the orientation keeps it.</value></data>
+  <data name="Ribbon_Layers" xml:space="preserve"><value>Layers</value></data>
+  <data name="Ribbon_LayersTip" xml:space="preserve"><value>Which of the site plan's layers are drawn: Settings, on its Layers tab. At OK the site plan is drawn again with them (nothing is fetched).</value></data>
+  <data name="Ribbon_Export" xml:space="preserve"><value>Export</value></data>
+  <data name="Ribbon_ExportTip" xml:space="preserve"><value>Write the site plan DXF and the terrain CSV from the model to a folder you choose, as they are now: e.g. for a surveyor or the municipality.</value></data>
+  <data name="Ribbon_About" xml:space="preserve"><value>About</value></data>
+  <data name="Ribbon_AboutTip" xml:space="preserve"><value>Which Jega this is, its licence (GPL-3.0) and where its data comes from.</value></data>
+
+  <!-- Receipts, shared (Receipts.cs): what several commands say. A receipt: the result in one line, a few lines, the
+       steps numbered, the rest under "Show details" (ReceiptText). -->
+  <data name="Receipt_Credit" xml:space="preserve"><value>{0} Indicative, about ±0.1 m.</value></data>
+  <!-- As lines, not steps (as Load from Address): {0} the ground along the house -->
+  <data name="Receipt_FloorLine" xml:space="preserve"><value>Is your floor at Revit's 0? Settings > Elevations > Relative.</value></data>
+  <data name="Receipt_FloorLineHouse" xml:space="preserve"><value>Is your floor at Revit's 0? Settings > Elevations > Relative (the ground along the house: {0}).</value></data>
+  <data name="Receipt_RefreshToposolidStep" xml:space="preserve"><value>Press Refresh: the Toposolid and the Terrain level still show the old terrain.</value></data>
+  <data name="Receipt_Revit" xml:space="preserve"><value>Revit: {0}</value></data>
+  <data name="ReadOnly_Warning" xml:space="preserve"><value>The model is a read-only file. Jega can change it on screen, but the changes can't be saved. Open a copy you can save.</value></data>
+  <data name="Receipt_Terrain" xml:space="preserve"><value>Terrain: {0} points, {1} × {2}, {3} m apart; {4} to {5} m DVR90.</value></data>
+  <data name="Receipt_AtAddress" xml:space="preserve"><value>At the address point: {0} m DVR90.</value></data>
+  <data name="Receipt_Frame" xml:space="preserve"><value>Terrain frame: {0} to {1} m east, {2} to {3} m north of the origin, drawn in {4} view(s).</value></data>
+  <data name="Receipt_Placed" xml:space="preserve"><value>The origin is placed {0}, {1} m from the Internal Origin; true north is {2}° from project north.</value></data>
+
+  <!-- Receipts: Load from Address (AddressCommand) -->
+  <data name="Address_OpenPlan" xml:space="preserve"><value>Open a floor plan first: the site plan is imported there.</value></data>
+  <data name="Address_Loaded" xml:space="preserve"><value>Loaded {0}.</value></data>
+  <data name="Address_LoadedGeoreferenced" xml:space="preserve"><value>Loaded {0}. The project has real coordinates (ETRS89/UTM32) now.</value></data>
+  <!-- {0} E, {1} N of the Project Base Point (m) -->
+  <data name="Address_OnCoordinates" xml:space="preserve"><value>The site plan and the terrain are placed by their real coordinates (ETRS89/UTM32). The origin is the Project Base Point: E {0:N0}, N {1:N0}. True north follows the coordinates.</value></data>
+  <!-- The project had its coordinates before (another address): {0} E, {1} N of the origin (m), {2} m to the Project Base Point -->
+  <data name="Address_OnCoordinatesApart" xml:space="preserve"><value>The site plan and the terrain are placed by their real coordinates (ETRS89/UTM32). The origin, E {0:N0}, N {1:N0}, lies {2:N2} m from the Project Base Point. True north follows the coordinates.</value></data>
+  <data name="Address_WorkDirectionLine" xml:space="preserve"><value>Work Direction sets Project North as you like.</value></data>
+  <!-- A new address in a project turned with Work Direction; {0}: the project's turn from true north, -180 to 180° -->
+  <data name="Address_WorkDirectionKept" xml:space="preserve"><value>The project's working direction is kept from the previous address (turned {0:N1}° from true north). Use Work Direction again if the new building lies differently.</value></data>
+  <data name="Address_GenerateLine" xml:space="preserve"><value>Generate Terrain makes the Toposolid.</value></data>
+  <data name="Address_NotImported" xml:space="preserve"><value>Loaded {0}, but the site plan wasn't imported.</value></data>
+  <data name="Address_ImportByHand" xml:space="preserve"><value>Import the site plan by hand: Insert > Import CAD, {0}, Origin to Origin, mm.</value></data>
+  <data name="Address_NewAddress" xml:space="preserve"><value>New address (was {0}). Placed: {1}. Rotate it to fit, then Refresh.</value></data>
+  <data name="Address_FloorKept" xml:space="preserve"><value>±0.00 is still at {0} m DVR90, as at {1}. Is the floor at another elevation here? Settings > Elevations > Relative, enter the floor's elevation, OK.</value></data>
+  <data name="Address_ContextCleared" xml:space="preserve"><value>The neighbouring buildings belonged to the old address and were removed. Context Buildings fetches the new ones.</value></data>
+  <data name="Address_NoSurface" xml:space="preserve"><value>No roof heights or neighbouring buildings: the height model's surface couldn't be fetched.</value></data>
+  <data name="Address_NoSurfaceRoofs" xml:space="preserve"><value>No roof heights: the height model's surface couldn't be fetched.</value></data>
+  <data name="Address_NoRoads" xml:space="preserve"><value>No road edges on the site plan: GeoDanmark's roads couldn't be fetched. Load from Address again to get them.</value></data>
+  <data name="Address_NoWater" xml:space="preserve"><value>No water on the site plan: GeoDanmark's lakes and streams couldn't be fetched. Load from Address again to get it.</value></data>
+  <data name="Address_NoManholes" xml:space="preserve"><value>No manhole covers and gullies on the site plan: GeoDanmark's points couldn't be fetched. Load from Address again to get them.</value></data>
+  <data name="Address_NoAddresses" xml:space="preserve"><value>No street names and house numbers on the site plan: Danmarks Adresseregister couldn't be fetched. Load from Address again to get them.</value></data>
+  <data name="Address_NoVegetation" xml:space="preserve"><value>No trees and hedges on the site plan: GeoDanmark's trees, tree groups or hedges couldn't be fetched. Load from Address again to get them.</value></data>
+  <!-- {0}: the layers' names as Settings > Layers gives them, comma separated -->
+  <data name="Address_LayersSkipped" xml:space="preserve"><value>Left out of the site plan because drawing the layer failed: {0}. Please report it.</value></data>
+  <data name="Address_NoBuildings" xml:space="preserve"><value>No buildings on the site plan, and no roof heights or neighbouring buildings: GeoDanmark's buildings couldn't be fetched. Load from Address again to get them.</value></data>
+  <data name="Address_NoLots" xml:space="preserve"><value>Only your own lot on the site plan, without its number: Matriklen's neighbouring boundaries couldn't be fetched. Load from Address again to get them.</value></data>
+  <data name="Address_ContextReplaced" xml:space="preserve"><value>The neighbouring buildings belonged to the old address and were removed. Context Buildings shows the new ones.</value></data>
+  <data name="Address_Imported" xml:space="preserve"><value>Site plan imported in "{0}".</value></data>
+  <data name="Address_RevitImport" xml:space="preserve"><value>Revit's import: {0}</value></data>
+  <data name="Address_TempFailed" xml:space="preserve"><value>Nothing was loaded: the site plan couldn't be written to the temp folder.</value></data>
+  <data name="Address_TempFailedNext" xml:space="preserve"><value>Check that Windows' temp folder can be written to, then Load from Address again.</value></data>
+  <data name="Address_StoreFailed" xml:space="preserve"><value>Nothing was loaded: Revit couldn't store the site in the model.</value></data>
+  <data name="Address_StoreFailedNext" xml:space="preserve"><value>Try Load from Address again; if it keeps failing, please report it.</value></data>
+  <data name="Address_NewAsk" xml:space="preserve"><value>Load a different address into this project?</value></data>
+  <data name="Address_NewAskContent" xml:space="preserve"><value>Current address: {0}.
+New address: {1}.</value></data>
+  <data name="Address_NewFresh" xml:space="preserve"><value>Start the new site plan at its usual place (recommended)</value></data>
+  <data name="Address_NewFreshNote" xml:space="preserve"><value>Placed: {0} (Settings > Georeference > Manual georeference). Then rotate it to fit the house and press Refresh.</value></data>
+  <data name="Address_NewKeep" xml:space="preserve"><value>Keep the old site plan's position and rotation</value></data>
+  <data name="Address_NewKeepNote" xml:space="preserve"><value>Only if it is the same site, e.g. a corrected address.</value></data>
+  <data name="Address_NewCancel" xml:space="preserve"><value>Cancel: nothing is loaded.</value></data>
+  <!-- The new-address dialog over real coordinates. {0} old address, {1} new, {2} the distance between (Address_DistanceM/Km) -->
+  <data name="Address_NewAwayContent" xml:space="preserve"><value>Current address: {0}.
+New address: {1} ({2} from the current address).</value></data>
+  <!-- The distance: {0} m up to 2 km, km beyond -->
+  <data name="Address_DistanceM" xml:space="preserve"><value>{0:N0} m</value></data>
+  <data name="Address_DistanceKm" xml:space="preserve"><value>{0:N1} km</value></data>
+  <data name="Address_NewBeside" xml:space="preserve"><value>Keep the project's origin</value></data>
+  <data name="Address_NewBesideNote" xml:space="preserve"><value>The new address is placed by the real coordinates (ETRS89/UTM32), {0} from the current address. The current address is replaced.</value></data>
+  <data name="Address_NewOrigin" xml:space="preserve"><value>Move the project's origin to the new address</value></data>
+  <data name="Address_NewOriginNote" xml:space="preserve"><value>The project's origin (Project Base Point) gets the new address's E/N in whole metres, and the new address is placed on the origin. The current address is replaced.</value></data>
+  <data name="Address_NewOriginLinks" xml:space="preserve"><value>Links placed by shared coordinates are moved with it.</value></data>
+  <data name="Address_NewFar" xml:space="preserve"><value>If the project's origin is kept, the new address is placed {0:N1} km from the current address and the existing model.</value></data>
+  <data name="Address_NewManualNote" xml:space="preserve"><value>The new address is placed on the project's origin (Project Base Point). Its position and rotation are then adjusted by hand. The new address gets no real coordinates: the project's coordinates are still the current address's and don't fit the new address. The current address is replaced.</value></data>
+  <data name="Address_NewTooFar" xml:space="preserve"><value>The new address is over 10 km from Revit's Internal Origin. Jega places addresses only within 10 km of the Internal Origin, so the project's origin can't be kept.</value></data>
+  <!-- The first site in a project that has shared coordinates already (Settings too, turning Manual georeference off) -->
+  <data name="Address_HasCoordinates" xml:space="preserve"><value>This project has shared coordinates already</value></data>
+  <!-- {0}: how far (m) the project's coordinates place the address's origin from the Project Base Point (Placement.Moves) -->
+  <data name="Address_HasCoordinatesFit" xml:space="preserve"><value>The project's coordinates are ETRS89/UTM32. They place the address {0:N2} m from the Project Base Point.</value></data>
+  <data name="Address_HasCoordinatesOther" xml:space="preserve"><value>The project's coordinates don't fit the address. The reason is either another system (e.g. System 34 or a surveyor's) or coordinates for another place.</value></data>
+  <data name="Address_FitCoordinates" xml:space="preserve"><value>Keep the project's coordinates</value></data>
+  <!-- The first site: {0} as Address_HasCoordinatesFit. MoveNote, when a site is placed (Settings): {0} is Move_*; StayNote when it doesn't move -->
+  <data name="Address_FitCoordinatesNote" xml:space="preserve"><value>The site is placed where the project's coordinates place the address, {0:N2} m from the Project Base Point. The project's coordinates and links don't change.</value></data>
+  <data name="Address_FitCoordinatesMoveNote" xml:space="preserve"><value>The site {0} from where it is placed now to where the project's coordinates place the address. The project's coordinates and links don't change.</value></data>
+  <data name="Address_FitCoordinatesStayNote" xml:space="preserve"><value>The site stays where it is placed: the project's coordinates place the address there. The project's coordinates and links don't change.</value></data>
+  <data name="Address_FitCoordinatesManualNote" xml:space="preserve"><value>The site is placed on the Project Base Point. Its position and rotation are then adjusted by hand. Jega doesn't change the project's coordinates.</value></data>
+  <data name="Address_SetCoordinates" xml:space="preserve"><value>Give the project the address's coordinates (ETRS89/UTM32)</value></data>
+  <!-- The first site: Note. When a site is placed (Settings): MoveNote, {0} is Move_*; StayNote when it doesn't move. Links: {0} as Address_HasCoordinatesFit -->
+  <data name="Address_SetCoordinatesNote" xml:space="preserve"><value>The site is placed on the Project Base Point, which gets the address's E/N in whole metres. The project's coordinates are overwritten.</value></data>
+  <data name="Address_SetCoordinatesMoveNote" xml:space="preserve"><value>The site {0} from where it is placed now onto the Project Base Point, which gets the address's E/N in whole metres. The project's coordinates are overwritten.</value></data>
+  <data name="Address_SetCoordinatesStayNote" xml:space="preserve"><value>The site stays where it is placed, on the Project Base Point, which gets the address's E/N in whole metres. The project's coordinates are overwritten.</value></data>
+  <!-- The movement in the dialogs (Ui.Movement): {0} m, {1}° (Move_Turn: {0}°); what is 0 is left out -->
+  <data name="Move_Both" xml:space="preserve"><value>moves {0:N2} m and turns {1:N1}°</value></data>
+  <data name="Move_Only" xml:space="preserve"><value>moves {0:N2} m</value></data>
+  <data name="Move_Turn" xml:space="preserve"><value>turns {0:N1}°</value></data>
+  <data name="Address_SetCoordinatesLinks" xml:space="preserve"><value>Links placed by shared coordinates move {0:N2} m with them.</value></data>
+  <data name="Address_RevitStopped" xml:space="preserve"><value>Nothing was loaded: Revit stopped Load from Address and showed its reason in the warning just before this one.</value></data>
+  <!-- Load from Address: the address window (AddressWindow) -->
+  <data name="Address_WindowTitle" xml:space="preserve"><value>Jega – Load from Address</value></data>
+  <data name="Address_Field" xml:space="preserve"><value>Address, e.g. Skolegade 1, 7100 Vejle</value></data>
+  <data name="Address_Load" xml:space="preserve"><value>Load</value></data>
+  <data name="Address_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Address_Pick" xml:space="preserve"><value>Type an address, then pick one of the suggestions.</value></data>
+  <data name="Address_NoneFound" xml:space="preserve"><value>No addresses found. Try street and number, e.g. "Skolegade 1".</value></data>
+  <data name="Address_SearchFailed" xml:space="preserve"><value>The search went wrong ({0}: {1}).</value></data>
+  <!-- While loading: the steps, then why nothing was loaded -->
+  <data name="Address_StepAddress" xml:space="preserve"><value>Address …</value></data>
+  <data name="Address_StepLot" xml:space="preserve"><value>Lot …</value></data>
+  <data name="Address_Cancelled" xml:space="preserve"><value>Cancelled: nothing was loaded.</value></data>
+  <data name="Address_NothingLoaded" xml:space="preserve"><value>Nothing was loaded. {0}</value></data>
+  <data name="Address_Unexpected" xml:space="preserve"><value>Nothing was loaded: something unexpected went wrong ({0}: {1}).</value></data>
+  <!-- Load from Address: a lot larger than one call to the height model (GridChoice) -->
+  <data name="Address_LotTooLarge" xml:space="preserve"><value>The lot is {0:0} × {1:0} m: too large for a terrain grid (at most {2:N0} points, about 2 km across).</value></data>
+  <data name="Address_LargeLot" xml:space="preserve"><value>A large lot: {0:0} × {1:0} m</value></data>
+  <data name="Address_LargeLotContent" xml:space="preserve"><value>The terrain is fetched in parts and put together. A finer grid is more exact; a coarser one is quicker and lighter in the model (the terrain is kept in it). Generate Terrain makes the Toposolid from either.</value></data>
+  <data name="Address_Grid" xml:space="preserve"><value>{0:0.0} m grid</value></data>
+  <data name="Address_GridOwn" xml:space="preserve"><value>{0:0.0} m grid (the height model's own)</value></data>
+  <data name="Address_GridPoints" xml:space="preserve"><value>{0:N0} points, {1} parts</value></data>
+  <data name="Address_GridResampled" xml:space="preserve"><value>{0:N0} points, {1} parts; resampled by the service</value></data>
+  <!-- The import's own failures, shown under the receipt's details -->
+  <data name="Address_ImportNotAccepted" xml:space="preserve"><value>Revit didn't accept the import</value></data>
+  <data name="Address_DxfNotImported" xml:space="preserve"><value>Revit didn't import the DXF</value></data>
+
+  <!-- Receipts: Load Terrain CSV File (UpdateTerrainCommand) -->
+  <data name="LoadTerrain_OpenPlan" xml:space="preserve"><value>Open a floor plan or site plan first: the terrain frame is drawn in the active plan view.</value></data>
+  <data name="LoadTerrain_Loaded" xml:space="preserve"><value>Loaded {0}.</value></data>
+  <data name="LoadTerrain_Unusable" xml:space="preserve"><value>Nothing was loaded: the terrain file can't be used.</value></data>
+  <data name="LoadTerrain_RevitStopped" xml:space="preserve"><value>Nothing was loaded: Revit stopped Load Terrain CSV File and showed its reason in the warning just before this one.</value></data>
+  <!-- The file dialog: its title, and the filter (Windows' format: name|pattern) -->
+  <data name="LoadTerrain_PickFile" xml:space="preserve"><value>Jega: terrain CSV</value></data>
+  <data name="LoadTerrain_Filter" xml:space="preserve"><value>Terrain CSV (*.csv)|*.csv</value></data>
+
+  <!-- Receipts: Refresh (RefreshCommand) -->
+  <data name="Refresh_Done" xml:space="preserve"><value>Refreshed: the terrain follows the site plan again.</value></data>
+  <data name="Refresh_DoneShared" xml:space="preserve"><value>Refreshed: the site plan and the terrain are placed by their real coordinates.</value></data>
+  <data name="Refresh_NoImport" xml:space="preserve"><value>Refreshed. There is no site plan in the model, so the terrain stays where it was on the plan.</value></data>
+  <data name="Refresh_Exploded" xml:space="preserve"><value>Refreshed. The site plan has been exploded into loose lines, so Jega no longer follows it; the terrain stays where it was.</value></data>
+  <data name="Refresh_ReloadSameAddress" xml:space="preserve"><value>Load from Address with the same address brings the site plan back at the same place.</value></data>
+  <data name="Refresh_Redrawn" xml:space="preserve"><value>The site plan had been deleted; drawn again from what was kept.</value></data>
+  <data name="Refresh_Straightened" xml:space="preserve"><value>The site plan was drawn again for the view's north: its frame and texts straight, the lines turned with the model.</value></data>
+  <data name="Refresh_RedrawFailed" xml:space="preserve"><value>The site plan couldn't be drawn again — open a plan and run Refresh again (or use Load from Address).</value></data>
+  <!-- The dialog offering to draw a deleted site plan again: {0} is the address, so the user knows which -->
+  <data name="Refresh_RedrawAsk" xml:space="preserve"><value>The site plan isn't in the model.</value></data>
+  <data name="Refresh_RedrawAskContent" xml:space="preserve"><value>The one for {0} can be drawn again from what the model keeps — nothing is fetched.</value></data>
+  <data name="Refresh_RedrawYes" xml:space="preserve"><value>Draw it again</value></data>
+  <data name="Refresh_RedrawYesNote" xml:space="preserve"><value>Put back where it stood.</value></data>
+  <data name="Refresh_RedrawNo" xml:space="preserve"><value>Leave it</value></data>
+  <data name="Refresh_RedrawNoNote" xml:space="preserve"><value>Only refresh the terrain.</value></data>
+  <data name="Refresh_Cancelled" xml:space="preserve"><value>Refresh was cancelled.</value></data>
+  <data name="Refresh_LotEdgeStep" xml:space="preserve"><value>Draw Lot Boundary again: the lot boundary was drawn before the site plan moved.</value></data>
+  <data name="Refresh_Rest" xml:space="preserve"><value>The rest was refreshed.</value></data>
+  <data name="Refresh_First" xml:space="preserve"><value>Refreshed first: the site plan had been moved or turned since the last Refresh.</value></data>
+  <data name="Refresh_FirstShared" xml:space="preserve"><value>Refreshed first: the site plan had been moved or turned, and is back on its coordinates.</value></data>
+  <data name="Refresh_From" xml:space="preserve"><value>From {0}.</value></data>
+  <data name="Refresh_Context" xml:space="preserve"><value>Neighbouring buildings: {0} made again.</value></data>
+  <data name="Refresh_ContextSkipped" xml:space="preserve"><value>Neighbouring buildings: {0} made again; {1} outline(s) Revit couldn't extrude were skipped.</value></data>
+  <data name="Refresh_ContextUnreadable" xml:space="preserve"><value>Neighbouring buildings left as they were: those stored in the model can't be read. Shift+click Context Buildings to fetch them again.</value></data>
+  <data name="Refresh_RevitStopped" xml:space="preserve"><value>Nothing was refreshed: Revit stopped Refresh and showed its reason in the warning just before this one.</value></data>
+
+  <!-- Receipts: Generate Terrain (LotTerrainCommand) -->
+  <!-- The headline, by Settings' "Terrain level at": {0} the level's name, {1} its height -->
+  <data name="Generate_MadeLowest" xml:space="preserve"><value>Terrain generated: the level "{0}" is at {1} m DVR90, the lowest point of the terrain.</value></data>
+  <data name="Generate_MadeHighest" xml:space="preserve"><value>Terrain generated: the level "{0}" is at {1} m DVR90, the highest point of the terrain.</value></data>
+  <data name="Generate_MadeAverage" xml:space="preserve"><value>Terrain generated: the level "{0}" is at {1} m DVR90, the average of the terrain on the lot.</value></data>
+  <data name="Generate_MadeAddress" xml:space="preserve"><value>Terrain generated: the level "{0}" is at {1} m DVR90, the terrain at the address point.</value></data>
+  <data name="Generate_MadeHouse" xml:space="preserve"><value>Terrain generated: the level "{0}" is at {1} m DVR90, the highest terrain along the house.</value></data>
+  <data name="Generate_MadeAgainLost" xml:space="preserve"><value>Toposolid made again: {0} spot elevation(s), dimension(s), tag(s), subdivision(s) or family instance(s) on the old one were removed.</value></data>
+  <data name="Generate_AddAgain" xml:space="preserve"><value>Add them again where you need them.</value></data>
+  <data name="Generate_ShapeLost" xml:space="preserve"><value>Your changes to its shape are gone.</value></data>
+  <!-- Asked before a Toposolid with changes on it is made again: {0} what would be lost (AskShapeEdited, AskLost);
+       KeptOldNext {0} the Generate Terrain button's name -->
+  <data name="Generate_AskRemake" xml:space="preserve"><value>The Toposolid has to be made again</value></data>
+  <data name="Generate_AskRemakeContent" xml:space="preserve"><value>What it is made from has changed. {0} Made again, that is lost.</value></data>
+  <data name="Generate_EditedKept" xml:space="preserve"><value>The Toposolid has been changed by hand and is kept as it is. {0} makes it again from the terrain.</value></data>
+  <data name="Generate_AskEdited" xml:space="preserve"><value>The Toposolid has been changed by hand</value></data>
+  <data name="Generate_AskEditedContent" xml:space="preserve"><value>{0} Made again from the terrain, that is lost.</value></data>
+  <data name="Generate_AskShapeEdited" xml:space="preserve"><value>Its shape has been changed by hand (points added or moved).</value></data>
+  <data name="Generate_AskLost" xml:space="preserve"><value>There are {0} spot elevation(s), dimension(s), tag(s), subdivision(s) or family instance(s) on it.</value></data>
+  <data name="Generate_Remake" xml:space="preserve"><value>Make it again</value></data>
+  <data name="Generate_RemakeNote" xml:space="preserve"><value>From the terrain as it is now; what is listed above is lost.</value></data>
+  <data name="Generate_KeepOld" xml:space="preserve"><value>Keep the old one</value></data>
+  <data name="Generate_KeepOldNote" xml:space="preserve"><value>Nothing on it changes; the terrain isn't brought up to date now.</value></data>
+  <data name="Generate_KeptOld" xml:space="preserve"><value>The Toposolid and the Terrain level were kept as they are.</value></data>
+  <data name="Generate_KeptOldNext" xml:space="preserve"><value>It no longer matches the terrain: {0} makes it again when you want.</value></data>
+  <data name="Generate_LevelFellBackHouse" xml:space="preserve"><value>Settings puts the level at the highest terrain along the house, but there is no house on the lot: it is at the lowest point instead.</value></data>
+  <data name="Generate_LevelFellBackAddress" xml:space="preserve"><value>Settings puts the level at the address point, but the address point is off the terrain: it is at the lowest point instead.</value></data>
+  <data name="Generate_NotChecked" xml:space="preserve"><value>No point along the lot boundary could be measured on the Toposolid: check its heights by hand.</value></data>
+  <data name="Generate_TerrainRange" xml:space="preserve"><value>Terrain {0} to {1} m DVR90.</value></data>
+  <data name="Generate_Points" xml:space="preserve"><value>{0} points along the lot boundary, {1} inside ({2} m apart).</value></data>
+  <data name="Generate_HolesLeftOut" xml:space="preserve"><value>{0} parcel(s) inside the lot left out (not part of it).</value></data>
+  <data name="Generate_Type" xml:space="preserve"><value>Type "{0}".</value></data>
+  <data name="Generate_Checked" xml:space="preserve"><value>Check along the lot boundary: {0} of {1} points measured, largest deviation {2:0} mm.</value></data>
+  <data name="Generate_Shifted" xml:space="preserve"><value>Revit read the heights {0} m off; built again corrected.</value></data>
+  <data name="Generate_WhyAgain" xml:space="preserve"><value>Made again because the lot, the terrain, the placement or the thickness changed.</value></data>
+  <data name="Generate_RevitWarnings" xml:space="preserve"><value>Revit's warnings (ignored): {0} Overlaps are other Toposolids or floors on the lot.</value></data>
+  <data name="Generate_Kept" xml:space="preserve"><value>Toposolid kept: nothing it's made from has changed.</value></data>
+  <data name="Generate_KeptLevelMoved" xml:space="preserve"><value>Toposolid kept; the Terrain level moved to its new place (Settings).</value></data>
+  <data name="Generate_MovedUp" xml:space="preserve"><value>Toposolid moved up {0} m, not made again.</value></data>
+  <data name="Generate_MovedDown" xml:space="preserve"><value>Toposolid moved down {0} m, not made again.</value></data>
+  <data name="Generate_Stay" xml:space="preserve"><value>The spot elevations, dimensions and tags on it stay.</value></data>
+  <data name="Generate_ZeroWas" xml:space="preserve"><value>Revit's 0 was {0} m DVR90, now {1}.</value></data>
+  <data name="Generate_WholeLot" xml:space="preserve"><value>Toposolid over the whole lot: Revit couldn't leave out the {0} parcel(s) inside it that aren't part of the lot.</value></data>
+  <data name="Generate_CutByHand" xml:space="preserve"><value>Cut it out by hand if needed (Edit Sketch).</value></data>
+  <data name="Generate_NoLot" xml:space="preserve"><value>No Toposolid was made: Jega found no lot.</value></data>
+  <data name="Generate_NoLotStep" xml:space="preserve"><value>Use Load from Address, or import a site plan DXF with the lot on the layer {0}.</value></data>
+  <data name="Generate_AgainStep" xml:space="preserve"><value>Generate Terrain again.</value></data>
+  <data name="Generate_NoType" xml:space="preserve"><value>No Toposolid was made: the model has no Toposolid type.</value></data>
+  <data name="Generate_NoTypeStep" xml:space="preserve"><value>Get one with Manage > Transfer Project Standards from a project or template that has a Toposolid type.</value></data>
+  <data name="Generate_OffTerrain" xml:space="preserve"><value>No Toposolid was made: part of the lot lies outside the loaded terrain.</value></data>
+  <data name="Generate_OffTerrainWhy" xml:space="preserve"><value>The loaded terrain doesn't cover the whole lot. Load one that does: Load from Address, or a terrain file of your own that covers it.</value></data>
+  <data name="Generate_Failed" xml:space="preserve"><value>Revit couldn't make the Toposolid, so nothing was changed.</value></data>
+  <data name="Generate_FailedWhy" xml:space="preserve"><value>This usually happens when the lot boundary crosses itself, or another Toposolid overlaps it. Check the site plan's lot, then Generate Terrain again.</value></data>
+  <data name="Generate_RevitStopped" xml:space="preserve"><value>Nothing was changed: Revit stopped Generate Terrain and showed its reason in the warning just before this one.</value></data>
+
+  <!-- Receipts: Draw Lot Boundary (LotEdgeCommand); the elevations window is its receipt -->
+  <data name="LotEdge_OpenPlan" xml:space="preserve"><value>Open a floor plan or site plan first: the lot boundary is drawn in the active plan view.</value></data>
+  <data name="LotEdge_NoLot" xml:space="preserve"><value>No lot boundary was drawn: Jega found no lot.</value></data>
+  <data name="LotEdge_NoLotStep" xml:space="preserve"><value>Use Load from Address, or import a site plan DXF with the lot on the layer {0}.</value></data>
+  <data name="LotEdge_AgainStep" xml:space="preserve"><value>Draw Lot Boundary again.</value></data>
+  <data name="LotEdge_WithoutHole" xml:space="preserve"><value>Lot boundary drawn, but without the hole: Revit couldn't leave out the parcel inside the lot that isn't part of it (it touches the lot's own boundary).</value></data>
+  <data name="LotEdge_CutByHand" xml:space="preserve"><value>Cut it out by hand if needed (Edit Boundary).</value></data>
+  <data name="LotEdge_Failed" xml:space="preserve"><value>Revit couldn't draw the lot boundary, so nothing was changed.</value></data>
+  <data name="LotEdge_FailedWhy" xml:space="preserve"><value>This usually happens when the lot boundary touches or crosses itself. Check the site plan's lot, then Draw Lot Boundary again.</value></data>
+  <data name="LotEdge_RevitStopped" xml:space="preserve"><value>Nothing was changed: Revit stopped Draw Lot Boundary and showed its reason in the warning just before this one.</value></data>
+  <data name="LotEdge_NothingToMeasure" xml:space="preserve"><value>The lot boundary has nothing to measure.</value></data>
+  <data name="LotEdge_WindowTitle" xml:space="preserve"><value>Jega – Lot Boundary Elevations</value></data>
+  <data name="LotEdge_WindowNote" xml:space="preserve"><value>Elevation = terrain + offset, m DVR90. Guide values from Danmarks Højdemodel ({0}); verify by survey.</value></data>
+  <!-- The elevations window (ResultWindow): per lot boundary its highest and lowest point, span and length -->
+  <data name="LotEdge_Offset" xml:space="preserve"><value>Offset (mm)</value></data>
+  <data name="LotEdge_OffsetWhole" xml:space="preserve"><value>Enter a whole number of mm, e.g. 150 or -900.</value></data>
+  <data name="LotEdge_Close" xml:space="preserve"><value>Close</value></data>
+  <data name="LotEdge_Boundary" xml:space="preserve"><value>Lot boundary</value></data>
+  <data name="LotEdge_BoundaryN" xml:space="preserve"><value>Lot boundary {0}</value></data>
+  <data name="LotEdge_InView" xml:space="preserve"><value>{0} (in {1})</value></data>
+  <data name="LotEdge_Highest" xml:space="preserve"><value>Highest</value></data>
+  <data name="LotEdge_Lowest" xml:space="preserve"><value>Lowest</value></data>
+  <data name="LotEdge_AtCorner" xml:space="preserve"><value>at a corner</value></data>
+  <data name="LotEdge_BetweenCorners" xml:space="preserve"><value>between two corners</value></data>
+  <data name="LotEdge_Span" xml:space="preserve"><value>Span</value></data>
+  <data name="LotEdge_SpanValue" xml:space="preserve"><value>{0:0} mm</value></data>
+  <data name="LotEdge_Length" xml:space="preserve"><value>Length</value></data>
+  <data name="LotEdge_LengthValue" xml:space="preserve"><value>{0} m, {1} points</value></data>
+  <data name="LotEdge_OffsetNotKept" xml:space="preserve"><value>The offset wasn't kept: Revit stopped it and showed its reason in the warning just before this one.</value></data>
+
+  <!-- Terrain Line (TerrainLineCommand): not in a plan view, Revit refusing, and the first run's how-to.
+       FirstRun {0}: the elevations-only style, {1}: the Jega Line style; FirstRunCross {0}: the cross family -->
+  <data name="TerrainLine_NotPlan" xml:space="preserve"><value>Terrain Line works in a plan view, and "{0}" isn't one. Open a floor or site plan and run Terrain Line again.</value></data>
+  <data name="TerrainLine_NotStarted" xml:space="preserve"><value>Terrain Line didn't start: Revit didn't accept the change (see its message).</value></data>
+  <data name="TerrainLine_FirstRun" xml:space="preserve"><value>Draw detail lines: the Detail Line tool starts now, already in the line style "{0}".
+
+Each line gets the terrain elevation at every corner and end, and nothing else. Lines that meet end to end count as one line.
+
+For the fall and slope of every piece and HIGH / LOW as well, use "{1}" instead (or switch a line in Properties).
+
+Move, change or delete the lines and the elevations follow. Settings &gt; Elevations &gt; "Offset" is added to every elevation.</value></data>
+  <data name="TerrainLine_FirstRunCross" xml:space="preserve"><value>Each elevation gets a cross at its point (the annotation family "{0}").</value></data>
+  <!-- The labels (TerrainLines): why they weren't updated, and the words on the plan before the highest and lowest elevation -->
+  <data name="TerrainLine_Unreadable" xml:space="preserve"><value>Terrain line elevations not updated: the terrain stored in the model can't be read. Load it again (Load from Address or Load Terrain CSV File).</value></data>
+  <data name="TerrainLine_High" xml:space="preserve"><value>HIGH</value></data>
+  <data name="TerrainLine_Low" xml:space="preserve"><value>LOW</value></data>
+  <!-- The updater (TerrainLineUpdater): an edit it couldn't follow ({0}: the error's type, {1}: its message), and its
+       name and description as Revit shows them -->
+  <data name="TerrainLine_UpdateFailed" xml:space="preserve"><value>The terrain line elevations couldn't be updated after an edit ({0}: {1}). Details in %APPDATA%\Jega\jega.log.</value></data>
+  <data name="TerrainLine_UpdaterName" xml:space="preserve"><value>Jega terrain lines</value></data>
+  <!-- A shared model: a view's labels left as they are. {0}: the view's name; Borrowed {1}: who is editing them -->
+  <data name="TerrainLine_Borrowed" xml:space="preserve"><value>The terrain line labels in "{0}" weren't updated: {1} is editing them. Once {1} has synchronized: Reload Latest, then click Terrain Line in that plan.</value></data>
+  <data name="TerrainLine_NotCurrent" xml:space="preserve"><value>The terrain line labels in "{0}" weren't updated: they changed in the central model since your last Reload Latest. Reload Latest, then click Terrain Line in that plan.</value></data>
+  <data name="TerrainLine_UpdaterInfo" xml:space="preserve"><value>Recomputes the elevations and falls along detail lines of the style "Jega Line".</value></data>
+
+  <!-- Receipts: Context Buildings (ContextCommand) -->
+  <data name="Context_LoadFirst" xml:space="preserve"><value>Use Load from Address first: the buildings are fetched around its lot.</value></data>
+  <data name="Context_Made" xml:space="preserve"><value>Made {0} neighbouring buildings as masses (Generic Models).</value></data>
+  <data name="Context_Skipped" xml:space="preserve"><value>{0} outline(s) Revit couldn't extrude were skipped.</value></data>
+  <data name="Context_Toggle" xml:space="preserve"><value>Click Context Buildings again to hide them; Shift+click to fetch them again.</value></data>
+  <data name="Context_Heights" xml:space="preserve"><value>Generic Models. Heights from Danmarks Højdemodel: indicative (a tree over a roof reads high).</value></data>
+  <data name="Context_AnswerUnreadable" xml:space="preserve"><value>No neighbouring buildings were made: Datafordeleren's answer couldn't be read.</value></data>
+  <data name="Context_AnswerUnreadableStep" xml:space="preserve"><value>Try again later; if it keeps failing, please report it.</value></data>
+  <data name="Context_StoredUnreadable" xml:space="preserve"><value>No neighbouring buildings were made: those stored in the model can't be read.</value></data>
+  <data name="Context_StoredUnreadableStep" xml:space="preserve"><value>Shift+click Context Buildings to fetch them again.</value></data>
+  <data name="Context_RevitStopped" xml:space="preserve"><value>No neighbouring buildings were made: Revit stopped Context Buildings and showed its reason in the warning just before this one.</value></data>
+  <!-- The waiting window while fetching (FetchWindow); Unexpected {0}: the error's type, {1}: its message -->
+  <data name="Context_WindowTitle" xml:space="preserve"><value>Jega – Context Buildings</value></data>
+  <data name="Context_Fetching" xml:space="preserve"><value>Fetching the buildings around the lot and their heights …</value></data>
+  <data name="Context_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Context_NothingLoaded" xml:space="preserve"><value>Nothing was loaded.</value></data>
+  <data name="Context_Unexpected" xml:space="preserve"><value>Something unexpected went wrong ({0}: {1}).</value></data>
+  <data name="Context_Close" xml:space="preserve"><value>Close</value></data>
+
+  <!-- Receipts: Export (ExportCommand) -->
+  <data name="Export_Done" xml:space="preserve"><value>Exported to {0}.</value></data>
+  <data name="Export_MarginCut" xml:space="preserve"><value>The site plan shows {0:0} m around the lot: as far as Load from Address fetched.</value></data>
+  <data name="Export_OnlyTerrain" xml:space="preserve"><value>Only the terrain: the model has no site plan to export (a terrain of your own). Load from Address gives one.</value></data>
+  <data name="Export_Stopped" xml:space="preserve"><value>The export stopped before it was done.</value></data>
+  <data name="Export_Written" xml:space="preserve"><value>Written before it: {0}.</value></data>
+  <data name="Export_StoppedNext" xml:space="preserve"><value>Check that the folder can be written to, then Export again.</value></data>
+  <!-- The folder dialog's title -->
+  <data name="Export_PickFolder" xml:space="preserve"><value>Jega: export the site plan and the terrain to</value></data>
+  <!-- The files are in the chosen folder already. {0}: their names -->
+  <data name="Export_AskOverwrite" xml:space="preserve"><value>Overwrite the files?</value></data>
+  <data name="Export_AskOverwriteContent" xml:space="preserve"><value>Already in the folder: {0}.</value></data>
+  <data name="Export_Overwrite" xml:space="preserve"><value>Overwrite</value></data>
+  <data name="Export_OverwriteNote" xml:space="preserve"><value>The old files are replaced.</value></data>
+  <data name="Export_KeepFiles" xml:space="preserve"><value>Don't</value></data>
+  <data name="Export_KeepFilesNote" xml:space="preserve"><value>Nothing is written. Pick another folder at the next Export.</value></data>
+
+  <!-- Settings: the window and its buttons -->
+  <data name="Settings_Title" xml:space="preserve"><value>Jega – Settings</value></data>
+  <data name="Settings_TabLocation" xml:space="preserve"><value>Georeference</value></data>
+  <data name="Settings_TabLevels" xml:space="preserve"><value>Elevations (±0.00)</value></data>
+  <data name="Settings_TabPlan" xml:space="preserve"><value>Site plan &amp; terrain</value></data>
+  <data name="Settings_TabLayers" xml:space="preserve"><value>Layers</value></data>
+  <data name="Settings_TabData" xml:space="preserve"><value>Data access</value></data>
+  <data name="Settings_Ok" xml:space="preserve"><value>OK</value></data>
+  <data name="Settings_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <!-- The language list top right (ProjectLanguage); its names are Config's Languages -->
+  <data name="Settings_LanguageTip" xml:space="preserve"><value>Language: Jega's windows, receipts and ribbon, and what it writes on the drawing, numbers too. Saved in the project, so everyone working on it sees the same. Applied at OK.</value></data>
+  <!-- By OK and Cancel, shown only while another language than the window's is chosen -->
+  <data name="Settings_LanguageAtOk" xml:space="preserve"><value>The language changes when you press OK.</value></data>
+  <data name="Settings_Advanced" xml:space="preserve"><value>Advanced</value></data>
+
+  <!-- Settings: warnings on top, and what OK reports -->
+  <data name="Settings_WarnOptionsUnreadable" xml:space="preserve"><value>The project's saved settings couldn't be read. The window shows the defaults; OK saves them in their place.</value></data>
+  <data name="Settings_WarnMachineUnreadable" xml:space="preserve"><value>{0} The window shows the defaults; OK saves them in its place.</value></data>
+  <data name="Settings_WarnKeyUnreadable" xml:space="preserve"><value>Your Datafordeler key is stored, but this Windows user can't read it (saved by another user, or on another PC). Enter it again under Data access.</value></data>
+  <data name="Settings_MachineSaveFailed" xml:space="preserve"><value>The settings on this PC couldn't be saved ({0}): {1}</value></data>
+  <data name="Settings_NowAbsolute" xml:space="preserve"><value>Absolute elevations: Revit's 0 is 0.00 m DVR90.</value></data>
+  <data name="Settings_NowRelative" xml:space="preserve"><value>The floor (±0.00, Revit's 0) is at {0} m DVR90.</value></data>
+  <data name="Settings_NowOnLevel" xml:space="preserve"><value>{0} on &quot;{1}&quot;: Revit's 0 is at {2} m DVR90.</value></data>
+  <data name="Settings_NotSaved" xml:space="preserve"><value>The settings weren't saved: Revit stopped them and showed its reason in the warning just before this one.</value></data>
+  <data name="Settings_NotApplied" xml:space="preserve"><value>Saved, but not applied: {0}</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Settings saved.</value></data>
+  <data name="Settings_SavedAndRefreshed" xml:space="preserve"><value>Settings saved, and the site refreshed.</value></data>
+  <data name="Settings_CancelLosesAll" xml:space="preserve"><value>Cancel: none of your Settings changes are saved.</value></data>
+
+  <!-- Settings > Georeference -->
+  <data name="Location_About" xml:space="preserve"><value>How the site is placed: by real coordinates (ETRS89/UTM32) (the default) or by hand. Saved in the project.</value></data>
+  <!-- "Manual georeference", off by default; the note under it follows it (AutoNote off, ManualNote on) -->
+  <data name="Location_Manual" xml:space="preserve"><value>Manual georeference</value></data>
+  <data name="Location_AutoNote" xml:space="preserve"><value>Jega georeferences the project: the project's origin (Project Base Point) gets the address's E/N in whole metres (ETRS89/UTM32), and true north follows the real coordinates. With relative elevations, the elevation for ±0.00 can be set on the Project Base Point too (Settings > Elevations).</value></data>
+  <data name="Location_ManualNote" xml:space="preserve"><value>The address's position and rotation are adjusted by hand. Jega doesn't change the project's coordinates (e.g. a surveyor's or System 34).</value></data>
+  <data name="Location_AnchorInRevit" xml:space="preserve"><value>Placed at (in Revit)</value></data>
+  <data name="Location_AnchorInRevitNote" xml:space="preserve"><value>Where in Revit the point on the site goes.</value></data>
+  <data name="Location_AnchorSurvey" xml:space="preserve"><value>Survey Point</value></data>
+  <data name="Location_AnchorBase" xml:space="preserve"><value>Project Base Point</value></data>
+  <data name="Location_AnchorOrigin" xml:space="preserve"><value>Internal Origin</value></data>
+  <data name="Location_WillMove" xml:space="preserve"><value>When you press OK, the site plan moves: {0}.</value></data>
+  <data name="Location_WillGeoreference" xml:space="preserve"><value>The project has no real-world coordinates yet. When you press OK, Jega gives it them: the origin on the Project Base Point gets E {0:N0}, N {1:N0} (ETRS89/UTM32), and true north follows the coordinates. Links placed by shared coordinates follow.</value></data>
+  <data name="Coordinates_Ask" xml:space="preserve"><value>Put the project's previous coordinates back?</value></data>
+  <!-- {0} m and {1}°: how far the project's coordinates move back and turn (at Revit's 0); links follow the same -->
+  <data name="Coordinates_AskContent" xml:space="preserve"><value>Jega overwrote the project's coordinates with the address's (ETRS89/UTM32). The previous ones lie {0:N2} m from them, turned {1:N1}°.</value></data>
+  <data name="Coordinates_AskContentMoved" xml:space="preserve"><value>Jega overwrote the project's coordinates with the address's (ETRS89/UTM32). The previous ones lie {0:N2} m from them.</value></data>
+  <data name="Coordinates_AskContentTurned" xml:space="preserve"><value>Jega overwrote the project's coordinates with the address's (ETRS89/UTM32). The previous ones lie in the same place, but turned {0:N1}°.</value></data>
+  <data name="Coordinates_Back" xml:space="preserve"><value>Put the previous coordinates back (recommended)</value></data>
+  <data name="Coordinates_BackNote" xml:space="preserve"><value>The project's coordinates and true north become as before Jega.</value></data>
+  <data name="Coordinates_BackLinks" xml:space="preserve"><value>Each link placed by shared coordinates {0} with them.</value></data>
+  <data name="Coordinates_Leave" xml:space="preserve"><value>Keep the address's coordinates</value></data>
+  <data name="Coordinates_LeaveNote" xml:space="preserve"><value>The coordinates stay ETRS89/UTM32, and links stay where they are. The site is placed by hand, so the address point no longer sits at its real E/N.</value></data>
+  <data name="Location_CoordinatesPutBack" xml:space="preserve"><value>The project's shared coordinates and true north from before real-world coordinates are back.</value></data>
+  <data name="Location_TrueNorth" xml:space="preserve"><value>True north</value></data>
+  <data name="Location_NorthProject" xml:space="preserve"><value>{0:0.00}° (the project's)</value></data>
+  <data name="Location_NorthShared" xml:space="preserve"><value>{0:0.00}° (from the coordinates)</value></data>
+  <data name="Location_HowToFit" xml:space="preserve"><value>To fit it to the building: rotate and move the imported site plan, then press Refresh; the terrain follows. Work Direction sets Project North as you like.</value></data>
+
+  <!-- Settings > Elevations (keys Levels_*: the tab's old name) -->
+  <data name="Levels_About" xml:space="preserve"><value>Which height is Revit's 0. Saved in the project.</value></data>
+  <data name="Levels_Absolute" xml:space="preserve"><value>Absolute elevations: Revit's 0 is 0.00 m DVR90</value></data>
+  <data name="Levels_Relative" xml:space="preserve"><value>Relative elevations: the floor (±0.00) is at Revit's 0</value></data>
+  <data name="Levels_RelativeSurvey" xml:space="preserve"><value>the Project Base Point gets the floor's elevation</value></data>
+  <data name="Levels_RelativeSurveyTip" xml:space="preserve"><value>The floor becomes ±0.00 in Revit, and the Project Base Point gets the floor's elevation. Elevations measured from the Project Base Point show the height above the floor, those from the Survey Point DVR90. Models georeferenced in DVR90 fit in height too.
+E.g. floor 10.13 and terrain 9.50 → the terrain sits at −0.63.</value></data>
+  <!-- A new elevation for ±0.00 in a project with links. {0} m, {1} up/down -->
+  <data name="Levels_LinksAsk" xml:space="preserve"><value>The new elevation for ±0.00 moves links in the project</value></data>
+  <data name="Levels_LinksAskContent" xml:space="preserve"><value>Links placed by shared coordinates are moved {0} m {1} when the Project Base Point gets the new elevation for ±0.00.</value></data>
+  <data name="Levels_LinksDown" xml:space="preserve"><value>down</value></data>
+  <data name="Levels_LinksUp" xml:space="preserve"><value>up</value></data>
+  <data name="Levels_LinksSurvey" xml:space="preserve"><value>Set the elevation for ±0.00 on the Project Base Point (recommended)</value></data>
+  <data name="Levels_LinksSurveyNote" xml:space="preserve"><value>Elevations measured from the Survey Point show DVR90. Links that aren't in DVR90 must be moved by hand.</value></data>
+  <data name="Levels_LinksJega" xml:space="preserve"><value>Keep the elevation for ±0.00 in Jega only</value></data>
+  <data name="Levels_LinksJegaNote" xml:space="preserve"><value>Links and the shared coordinates aren't moved. Only Jega's own elevations show DVR90.</value></data>
+  <!-- Instead of the two above when the floor's elevation is kept in Jega (links, or coordinates Jega didn't give) -->
+  <data name="Levels_RelativeKept" xml:space="preserve"><value>kept in Jega only</value></data>
+  <!-- As above, but the Survey Point still holds a floor from before. {0}: its elevation, m -->
+  <data name="Levels_RelativeKeptSurvey" xml:space="preserve"><value>kept in Jega only; the Project Base Point still says {0} m</value></data>
+  <data name="Levels_RelativeKeptTip" xml:space="preserve"><value>The floor becomes ±0.00 in Revit. The floor's elevation is kept in Jega: the shared coordinates get only E/N and the direction, never a height, so links and the Survey Point stay put. Jega's own elevations show DVR90; Revit's measured from the Survey Point show the height above the floor.
+E.g. floor 10.13 and terrain 9.50 → the terrain sits at −0.63.</value></data>
+  <data name="Levels_Floor" xml:space="preserve"><value>Floor elevation (±0.00)</value></data>
+  <data name="Levels_FloorUnit" xml:space="preserve"><value>m DVR90, e.g. 10.13</value></data>
+  <data name="Levels_FloorTip" xml:space="preserve"><value>Floor drawn at another height than Revit's 0 (e.g. +1.20)? Enter the floor's elevation minus that height: 10.00 - 1.20 = 8.80.</value></data>
+  <data name="Levels_UseHouse" xml:space="preserve"><value>Use the ground elevation along the house ({0})</value></data>
+  <data name="Levels_MovesTerrain" xml:space="preserve"><value>Changing it moves the terrain; the house stays where it is.</value></data>
+  <data name="Levels_FloorNumber" xml:space="preserve"><value>Floor elevation (±0.00): the floor's elevation in m DVR90, e.g. 10.13.</value></data>
+  <data name="Levels_FloorNotZero" xml:space="preserve"><value>Floor elevation (±0.00): the floor's elevation in m DVR90 (e.g. 10.13), not 0. For a floor at 0 m DVR90, choose Absolute elevations.</value></data>
+  <!-- The terrain points: Terrain point on a level here, Terrain level at on Site plan. -->
+  <data name="Levels_AtLowest" xml:space="preserve"><value>Lowest point on the lot</value></data>
+  <data name="Levels_AtHighest" xml:space="preserve"><value>Highest point on the lot</value></data>
+  <data name="Levels_AtAverage" xml:space="preserve"><value>Average of the lot</value></data>
+  <data name="Levels_AtAddress" xml:space="preserve"><value>Address point</value></data>
+  <data name="Levels_AtHouse" xml:space="preserve"><value>Highest along the house</value></data>
+  <data name="Levels_TerrainLines" xml:space="preserve"><value>Terrain lines</value></data>
+  <data name="Levels_Offset" xml:space="preserve"><value>Offset</value></data>
+  <data name="Levels_OffsetLater" xml:space="preserve"><value>mm (once the terrain is loaded)</value></data>
+  <data name="Levels_OffsetNote" xml:space="preserve"><value>mm, added to the elevations of Terrain Line and Draw Lot Boundary</value></data>
+  <data name="Levels_Cross" xml:space="preserve"><value>Elevation cross size</value></data>
+  <data name="Levels_CrossUnit" xml:space="preserve"><value>mm on paper</value></data>
+  <data name="Levels_CrossTip" xml:space="preserve"><value>The X at each elevation. With a parametric "{0}" this is also its Size in Edit Type.</value></data>
+  <data name="Levels_LabelText" xml:space="preserve"><value>Label text size</value></data>
+  <data name="Levels_LabelTextUnit" xml:space="preserve"><value>mm on paper</value></data>
+  <data name="Levels_LabelTextTip" xml:space="preserve"><value>The height of the terrain line labels' text. It is also the Text Size of their text type in Edit Type, and their distance from the line follows it.</value></data>
+  <data name="Levels_OnLevel" xml:space="preserve"><value>A terrain point on one of your levels (the terrain moves up or down so the point is on the level)</value></data>
+  <data name="Levels_OnLevelPoint" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Levels_OnLevelLevel" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Levels_OnLevelOn" xml:space="preserve"><value>on</value></data>
+  <data name="Levels_OnLevelResult" xml:space="preserve"><value>→ Revit's 0 is at {0} m DVR90.</value></data>
+  <data name="Levels_OnLevelNote" xml:space="preserve"><value>Worked out at OK and kept as a number: Revit's 0 doesn't follow a new terrain by itself. E.g. the lowest terrain on your ground floor's level.</value></data>
+  <data name="Levels_OnLevelNoTerrain" xml:space="preserve"><value>Load the terrain first (Load from Address or Load Terrain CSV File): there is no terrain on the lot to put on a level.</value></data>
+  <data name="Levels_OnLevelNoLevels" xml:space="preserve"><value>The project has no level of its own to put the terrain on.</value></data>
+  <data name="Levels_OnLevelDrift" xml:space="preserve"><value>Set to {0} m DVR90; the terrain or the level has moved since, and it would give {1} now. Kept until you press Use.</value></data>
+  <data name="Levels_OnLevelGone" xml:space="preserve"><value>The level or the terrain it was set from is gone: the height it gave is kept as the floor's elevation.</value></data>
+  <data name="Levels_OnLevelPointGone" xml:space="preserve"><value>It was set from {0}, which isn't there now: Revit's 0 is kept at {1} m DVR90 until you choose another point.</value></data>
+  <data name="Levels_OnLevelUse" xml:space="preserve"><value>Use {0}</value></data>
+  <data name="Levels_OnLevelChoose" xml:space="preserve"><value>Terrain point on a level: choose a point of the terrain and a level.</value></data>
+
+  <!-- Settings > Site plan & terrain -->
+  <data name="Plan_About" xml:space="preserve"><value>Saved in the project. A change to the margin, the setback or the paper lying straight draws the site plan in the model again at OK (nothing is fetched).</value></data>
+  <data name="Plan_SitePlan" xml:space="preserve"><value>Site plan</value></data>
+  <data name="Plan_Import" xml:space="preserve"><value>Import the site plan into the active plan view</value></data>
+  <data name="Plan_ViewOnly" xml:space="preserve"><value>Only in that view (off: in every view, upper floors and 3D too; from the next Load from Address)</value></data>
+  <data name="Plan_PaperStraight" xml:space="preserve"><value>The paper lies straight in the view (only the map turns)</value></data>
+  <data name="Plan_PaperStraightNote" xml:space="preserve"><value>Off: the whole site plan turns as one, drawn north up and turned when imported. Export always writes north up.</value></data>
+  <data name="Plan_ImportNote" xml:space="preserve"><value>Off: nothing is imported. Export (in the ribbon) writes the DXF.</value></data>
+  <data name="Plan_Margin" xml:space="preserve"><value>Margin around the lot</value></data>
+  <!-- A margin larger than fetched needs a new fetch (the redraw uses what was fetched) -->
+  <data name="Plan_MarginUnit" xml:space="preserve"><value>m (a margin beyond the fetched one needs the address loaded again)</value></data>
+  <data name="Plan_Setback" xml:space="preserve"><value>Setback from boundary</value></data>
+  <data name="Plan_SetbackUnit" xml:space="preserve"><value>m, the dashed line; 0 = none</value></data>
+  <data name="Plan_Toposolid" xml:space="preserve"><value>Terrain (Toposolid)</value></data>
+  <data name="Plan_Thickness" xml:space="preserve"><value>Thickness</value></data>
+  <data name="Plan_ThicknessUnit" xml:space="preserve"><value>mm, under the terrain</value></data>
+  <data name="Plan_TerrainLevelAt" xml:space="preserve"><value>Terrain point for the Terrain level</value></data>
+  <data name="Plan_TerrainLevelNote" xml:space="preserve"><value>Jega's "Terrain" level (the Toposolid's) is put at this point. The terrain doesn't move; Elevations does that.</value></data>
+  <data name="Plan_SpacingInside" xml:space="preserve"><value>Point spacing inside the lot</value></data>
+  <data name="Plan_SpacingInsideUnit" xml:space="preserve"><value>mm, on the 400 mm terrain grid</value></data>
+  <data name="Plan_SpacingEdge" xml:space="preserve"><value>Point spacing along the lot boundary</value></data>
+  <data name="Plan_SpacingEdgeUnit" xml:space="preserve"><value>mm at most, and at every corner</value></data>
+
+  <data name="Plan_Context" xml:space="preserve"><value>Neighbouring buildings</value></data>
+  <data name="Plan_ContextLot" xml:space="preserve"><value>Include the buildings on the lot</value></data>
+  <data name="Plan_ContextLotNote" xml:space="preserve"><value>Off: only the buildings around the lot (the existing house is modelled by hand). On: e.g. for a lot with many buildings.</value></data>
+
+  <!-- Settings > Layers (Layer_<name>: a layer of the site plan, by its name in Config) -->
+  <data name="Layers_About" xml:space="preserve"><value>Which layers the site plan is drawn with. Saved in the project. Changed, a site plan in the model is drawn again at OK (nothing is fetched); else they are used at the next Load from Address. Export always draws with them.</value></data>
+  <data name="Layers_FixedNote" xml:space="preserve"><value>Always drawn: the lot, the frame and the texts, which also carry the legend's words and the notes.</value></data>
+  <data name="Layers_ViewNote" xml:space="preserve"><value>To hide a layer in one view only, use Revit's Visibility/Graphics (Imported Categories).</value></data>
+  <data name="Layers_RoofMinArea" xml:space="preserve"><value>Only buildings over</value></data>
+  <data name="Layers_RoofMinAreaUnit" xml:space="preserve"><value>m²; 0 = all</value></data>
+  <data name="Layers_RoofMinAreaNote" xml:space="preserve"><value>Sheds, carports and bin stores get none.</value></data>
+  <data name="Layers_RoofBoth" xml:space="preserve"><value>Ridge over eaves, where they fit</value></data>
+  <data name="Layers_RoofRidge" xml:space="preserve"><value>Ridge only</value></data>
+  <data name="Layers_RoofSkip" xml:space="preserve"><value>Leave out a roof height with no room (else it goes on the building's middle, over other texts)</value></data>
+  <data name="Layers_Later" xml:space="preserve"><value>There is no site plan import in the model to draw again, so the chosen layers are used at the next Load from Address and by Export.</value></data>
+  <data name="Layer_SKEL" xml:space="preserve"><value>Neighbouring lots' boundaries</value></data>
+  <data name="Layer_BYGNINGER" xml:space="preserve"><value>Buildings on the lot</value></data>
+  <data name="Layer_BYGNINGER_NABO" xml:space="preserve"><value>Neighbouring buildings</value></data>
+  <data name="Layer_VEJKANT" xml:space="preserve"><value>Road edges</value></data>
+  <data name="Layer_STI" xml:space="preserve"><value>Path edges</value></data>
+  <data name="Layer_ADRESSEPUNKT" xml:space="preserve"><value>The cross at the address point</value></data>
+  <data name="Layer_NULPUNKT" xml:space="preserve"><value>The cross at the project's origin (the address point, whole metres)</value></data>
+  <data name="Layer_SKELMAAL" xml:space="preserve"><value>Boundary lengths</value></data>
+  <data name="Layer_AFSTAND_SKEL" xml:space="preserve"><value>Setback line (dashed)</value></data>
+  <data name="Layer_KOTER" xml:space="preserve"><value>Spot elevations</value></data>
+  <data name="Layer_TAGKOTER" xml:space="preserve"><value>Roof elevations</value></data>
+  <data name="Layer_VAND" xml:space="preserve"><value>Lakes, streams, ditches</value></data>
+  <data name="Layer_BROENDE" xml:space="preserve"><value>Manhole covers with cover level (GeoDanmark; the kind isn't known)</value></data>
+  <data name="Layer_RISTE" xml:space="preserve"><value>Road gullies with level (GeoDanmark)</value></data>
+  <data name="Layer_HUSNUMRE" xml:space="preserve"><value>House numbers in the buildings (Danmarks Adresseregister)</value></data>
+  <data name="Layer_VEJNAVNE" xml:space="preserve"><value>Street names (Danmarks Adresseregister)</value></data>
+  <data name="Layer_TRAEER" xml:space="preserve"><value>Trees, tree groups and woods (GeoDanmark; seen from the air, no species)</value></data>
+  <data name="Layer_HEGN" xml:space="preserve"><value>Hedges and fences (GeoDanmark)</value></data>
+  <data name="Layer_GRUND" xml:space="preserve"><value>The lot</value></data>
+  <data name="Layer_RAMME" xml:space="preserve"><value>Frame, north arrow and scale bar</value></data>
+  <data name="Layer_TEKST" xml:space="preserve"><value>Texts: parcel numbers, notes, the legend's words</value></data>
+
+  <!-- Settings > Data access -->
+  <data name="Data_About" xml:space="preserve"><value>Saved on this PC only, never in the project file.</value></data>
+  <data name="Data_Key" xml:space="preserve"><value>Datafordeler API key</value></data>
+  <data name="Data_Test" xml:space="preserve"><value>Test</value></data>
+  <data name="Data_KeyHelp" xml:space="preserve"><value>Don't have one? It's free: datafordeler.dk > Log på Datafordeleren (log in) > Datafordeler Administration > IT-systemer > Opret (create) > API-Keys > Opret.</value></data>
+  <data name="Data_KeyLink" xml:space="preserve"><value>Get a key at datafordeler.dk</value></data>
+  <data name="Data_Testing" xml:space="preserve"><value>Testing…</value></data>
+  <data name="Data_TestOk" xml:space="preserve"><value>✓ {0}: OK</value></data>
+  <!-- The address search found the address through the fallback; {1}: why, "400, unknown token" (Fetch_FallbackWhy*) -->
+  <data name="Data_TestOkVia" xml:space="preserve"><value>✓ {0}: OK via Datafordeleren ({1})</value></data>
+  <data name="Data_TestFailed" xml:space="preserve"><value>✗ {0}: {1}</value></data>
+  <data name="Data_TestError" xml:space="preserve"><value>The test went wrong ({0}: {1}).</value></data>
+  <data name="Data_Token" xml:space="preserve"><value>Adressevælger token</value></data>
+  <data name="Data_TokenNote" xml:space="preserve"><value>Leave empty for the default ({0}), which works for everyone for now.</value></data>
+
+  <!-- Context: the masses -->
+  <data name="Context_Comment" xml:space="preserve"><value>Jega context: {0} m high, from Danmarks Højdemodel (indicative)</value></data>
+  <data name="Context_CommentOnLot" xml:space="preserve"><value>Jega context, on the lot: {0} m high, from Danmarks Højdemodel (indicative)</value></data>
+  <data name="Context_LotIncluded" xml:space="preserve"><value>{0} of them on the lot itself (Comments: "Jega context, on the lot"); delete the ones you replace.</value></data>
+  <data name="Context_LotLeftOut" xml:space="preserve"><value>The {0} building(s) on the lot itself are left out. To include them: Settings > Site plan &amp; terrain > Neighbouring buildings.</value></data>
+
+  <!-- The site plan drawn again (SiteplanRedraw). The language changed: {0} is its name as Settings lists it -->
+  <data name="Redraw_AskLanguage" xml:space="preserve"><value>Draw the site plan again in {0}?</value></data>
+  <data name="Redraw_AskLanguageContent" xml:space="preserve"><value>Its notes, legend and numbers are still in the language before. Redrawing downloads nothing: it is drawn from what the model keeps.</value></data>
+  <data name="Redraw_Yes" xml:space="preserve"><value>Redraw the site plan (recommended)</value></data>
+  <data name="Redraw_YesNoteLanguage" xml:space="preserve"><value>Its texts and numbers are written in {0}. One Undo with the settings.</value></data>
+  <data name="Redraw_No" xml:space="preserve"><value>Keep the site plan as it is</value></data>
+  <data name="Redraw_NoNoteLanguage" xml:space="preserve"><value>Everything still lines up; only its texts stay in the language before, until the next Load from Address.</value></data>
+  <data name="Redraw_DoneLanguage" xml:space="preserve"><value>The site plan was drawn again in {0}.</value></data>
+  <data name="Redraw_DoneLayers" xml:space="preserve"><value>The site plan was drawn again with the chosen settings.</value></data>
+  <data name="Redraw_NoView" xml:space="preserve"><value>The site plan wasn't drawn again: the model has no floor plan to import it in.</value></data>
+  <data name="Redraw_Failed" xml:space="preserve"><value>The site plan couldn't be drawn again ({0}). Undo, or run Load from Address again.</value></data>
+  <data name="Redraw_Nothing" xml:space="preserve"><value>The site plan wasn't drawn again: no site plan from Load from Address in the model.</value></data>
+
+  <!-- What lands where, by Settings > Georeference (Placement.Describe). Always the point and the anchor, so the anchor
+       is said outright; used after a colon or in brackets, never mid-sentence. -->
+  <data name="Place_AddressOnSurvey" xml:space="preserve"><value>the address point on the Survey Point</value></data>
+  <data name="Place_AddressOnBase" xml:space="preserve"><value>the address point on the Project Base Point</value></data>
+  <data name="Place_AddressOnOrigin" xml:space="preserve"><value>the address point on the internal origin</value></data>
+  <data name="Place_Real" xml:space="preserve"><value>the address point at its real coordinates</value></data>
+
+  <!-- Placement: where the site is. {place}: a Place_* -->
+  <!-- Refresh: the site plan import's place kept (Remember) -->
+  <data name="Placement_SeveralMarked" xml:space="preserve"><value>{0} site plan imports (a copy?): delete all but one, then Refresh. Until then the terrain stays where it was.</value></data>
+  <data name="Placement_SeveralWithLot" xml:space="preserve"><value>{0} imports with a lot (layer {1}): keep the site plan only, then Refresh. Until then the terrain stays where it was.</value></data>
+  <data name="Placement_Mirrored" xml:space="preserve"><value>The site plan import is mirrored: the terrain can't follow it. Mirror it back, then Refresh. Until then the terrain stays where it was.</value></data>
+  <data name="Placement_Follows" xml:space="preserve"><value>The terrain follows the site plan: moved {0:0.00} m, turned {1:0.0}°.</value></data>
+  <!-- Real coordinates given to the project (Georeference) -->
+  <data name="Placement_OtherSystem" xml:space="preserve"><value>The project's shared coordinates are another system (System 34, or a surveyor's). Jega doesn't change them. Turn Manual georeference on, and adjust the site's position and rotation by hand.</value></data>
+  <!-- A new address's origin. {0} E, {1} N (m) -->
+  <data name="Placement_OriginMoved" xml:space="preserve"><value>The project's origin (Project Base Point) has moved to the new address.</value></data>
+  <data name="Placement_ManualOn" xml:space="preserve"><value>Manual georeference is on (Settings > Georeference): the project's coordinates are left as they are.</value></data>
+  <data name="Placement_FitsCoordinates" xml:space="preserve"><value>Placed by the project's own coordinates; they weren't changed.</value></data>
+  <data name="Placement_BackOnCoordinates" xml:space="preserve"><value>The site plan is back on its coordinates.</value></data>
+  <data name="Placement_OriginNotOurs" xml:space="preserve"><value>The project's coordinates are another system (the old origin isn't in them), so they weren't moved.</value></data>
+  <data name="Placement_Georeferenced" xml:space="preserve"><value>The project has real coordinates now (ETRS89/UTM32): the address point is E {0:N2}, N {1:N2}. Nothing moved.</value></data>
+  <data name="Placement_GeoreferenceFailed" xml:space="preserve"><value>The project couldn't be given real coordinates (ETRS89/UTM32) (Revit didn't place them as expected): left as they are. Please report this.</value></data>
+  <!-- Settings > Georeference, only when the site plan was moved off its place (Status) -->
+  <data name="Placement_MovedByHand" xml:space="preserve"><value>Moved by hand, {0:0.0} m and {1:0.0}° from {2}.</value></data>
+  <data name="Placement_MovedByHandShared" xml:space="preserve"><value>Moved by hand: {0:0.0} m and {1:0.0}° off its coordinates. Refresh puts it back.</value></data>
+  <!-- Settings OK: an anchor changed (MoveSiteTo) -->
+  <data name="Placement_NoImportToMove" xml:space="preserve"><value>The site's place is changed: {0}. There is no site plan import to move.</value></data>
+  <data name="Placement_Moved" xml:space="preserve"><value>The site plan moved: {0}.</value></data>
+  <data name="Placement_Stays" xml:space="preserve"><value>The site plan was already in its place: {0}.</value></data>
+
+  <!-- The terrain kept in the model (StoredTerrain): what every command says when there is none -->
+  <data name="StoredTerrain_Missing" xml:space="preserve"><value>No terrain in this model yet. Use Load from Address, or Load Terrain CSV File for a terrain of your own.</value></data>
+  <data name="StoredTerrain_Unreadable" xml:space="preserve"><value>The terrain stored in the model can't be read. Load it again (Load from Address or Load Terrain CSV File).</value></data>
+
+  <!-- The elevation cross (CrossSymbol): why there are none, or why it has a fixed size -->
+  <data name="Cross_NoTemplate" xml:space="preserve"><value>No elevation crosses: Revit's "Metric Generic Annotation.rft" template wasn't found.</value></data>
+  <data name="Cross_NotMade" xml:space="preserve"><value>No elevation crosses: the family couldn't be made ({0}).</value></data>
+  <data name="Cross_Fixed" xml:space="preserve"><value>The elevation cross has a fixed size ({0:0.##} mm; change it in Settings > Elevations > Elevation cross size): Revit refused {1} ({2}).</value></data>
+  <data name="Cross_NotLoaded" xml:space="preserve"><value>The elevation cross couldn't be loaded ({0}); the crosses keep what they had.</value></data>
+  <!-- The step Revit refused, in Cross_Fixed's "Revit refused {1}" -->
+  <data name="Cross_StepType" xml:space="preserve"><value>a type for the family</value></data>
+  <data name="Cross_StepParameter" xml:space="preserve"><value>the Size parameter</value></data>
+  <data name="Cross_StepPlanes" xml:space="preserve"><value>the reference planes</value></data>
+  <data name="Cross_StepEqual" xml:space="preserve"><value>the equal dimensions</value></data>
+  <data name="Cross_StepSize" xml:space="preserve"><value>the Size dimensions</value></data>
+  <data name="Cross_StepLines" xml:space="preserve"><value>the lines</value></data>
+  <data name="Cross_StepLock" xml:space="preserve"><value>locking the X's ends to the reference planes</value></data>
+  <data name="Cross_StepTry" xml:space="preserve"><value>trying another Size</value></data>
+  <data name="Cross_DoesNotFollow" xml:space="preserve"><value>the X didn't follow Size</value></data>
+
+  <!-- What Revit's 0 is (Dvr90.Describe), in the receipts' details. {0}: m DVR90; Relative {1}: where it came from
+       (FromSurvey or Entered); OnLevel {1}: a Dvr90_Point*, {2}: the level's name -->
+  <data name="Dvr90_Absolute" xml:space="preserve"><value>Absolute elevations: Revit's 0 is 0.00 m DVR90, the terrain at its real heights.</value></data>
+  <data name="Dvr90_Relative" xml:space="preserve"><value>Relative elevations: the floor (±0.00) is at Revit's 0, {0} m DVR90 ({1}).</value></data>
+  <data name="Dvr90_FromSurvey" xml:space="preserve"><value>the Project Base Point's elevation</value></data>
+  <data name="Dvr90_Entered" xml:space="preserve"><value>entered for this project</value></data>
+  <data name="Dvr90_OnLevel" xml:space="preserve"><value>Terrain point on a level: Revit's 0 = {0} m DVR90, set in Settings from {1} on "{2}" (it doesn't follow a new terrain by itself; Settings says when it no longer fits).</value></data>
+  <!-- The terrain point, inside a sentence (Dvr90.TerrainPoint; also Settings) -->
+  <data name="Dvr90_PointLowest" xml:space="preserve"><value>the lowest terrain</value></data>
+  <data name="Dvr90_PointHighest" xml:space="preserve"><value>the highest terrain</value></data>
+  <data name="Dvr90_PointAverage" xml:space="preserve"><value>the lot's average terrain</value></data>
+  <data name="Dvr90_PointAddress" xml:space="preserve"><value>the terrain at the address point</value></data>
+  <data name="Dvr90_PointHouse" xml:space="preserve"><value>the highest terrain along the house</value></data>
+
+  <!-- The key, when a command fetches (Keys) -->
+  <data name="Keys_FileUnreadable" xml:space="preserve"><value>{0}
+
+Fix or delete the file, then enter your Datafordeler key in Settings (Data access).</value></data>
+  <data name="Keys_KeyUnreadable" xml:space="preserve"><value>Your Datafordeler key is stored, but this Windows user can't read it (it was saved by another user, or on another PC). Enter it again in Settings (Data access).</value></data>
+  <data name="Keys_Needed" xml:space="preserve"><value>Jega needs your Datafordeler key</value></data>
+  <data name="Keys_OpenSettings" xml:space="preserve"><value>Open Settings</value></data>
+  <data name="Keys_OpenSettingsNote" xml:space="preserve"><value>Enter the key under Data access and press OK. Then Jega carries on.</value></data>
+  <data name="Keys_GetKey" xml:space="preserve"><value>Get a key at datafordeler.dk</value></data>
+  <data name="Keys_GetKeyNote" xml:space="preserve"><value>It's free. Opens datafordeler.dk in your browser, and Settings here to paste the key into. Then Jega carries on.</value></data>
+  <data name="Keys_NoKey" xml:space="preserve"><value>Enter your Datafordeler API key in Settings (Data access) first. It's free: datafordeler.dk > Log på Datafordeleren (log in) > Datafordeler Administration > IT-systemer > Opret (create) > API-Keys > Opret.</value></data>
+
+  <!-- A command stopped by a failure it didn't foresee (JegaCommand, Ui.Failed). Title {0}: the error's message. The path
+       as written, not the user's own folder: a screenshot of it shows no Windows user name -->
+  <data name="Failed_Title" xml:space="preserve"><value>Jega stopped unexpectedly: {0}</value></data>
+  <data name="Failed_Content" xml:space="preserve"><value>The details are written to %APPDATA%\Jega\jega.log. Feel free to report it on GitHub with the file attached, but look through it first for clients' addresses and paths.</value></data>
+  <data name="Failed_OpenFolder" xml:space="preserve"><value>Open the folder</value></data>
+  <!-- Who made Jega, as About names them: one name for every language (no Danish copy), filled in before release. -->
+  <data name="Author" xml:space="preserve"><value>Shamer Askandar</value></data>
+  <!-- About (AboutCommand): Content {0} is the data's credit (SiteFetcher.Credit), {1} the author (Author). Its footer,
+       the build (BuildInfo): {0} the version, {1} when it was built, {2} the project's folder (Debug builds only) -->
+  <data name="About_Title" xml:space="preserve"><value>Jega: from address to Revit</value></data>
+  <data name="About_Content" xml:space="preserve"><value>Free software by {1} under the GNU General Public License, version 3 (GPL-3.0): you may use, share and change it under its terms. It comes with no warranty: the elevations and boundaries are indicative (about ±0.1 m), not a survey.
+
+{0}</value></data>
+  <data name="About_Built" xml:space="preserve"><value>Jega {0}, built {1}.</value></data>
+  <data name="About_BuiltFrom" xml:space="preserve"><value>Jega {0}, built {1} from {2}.</value></data>
+
+  <!-- Messages: True / Project North (ViewNorthCommand) and Work Direction -->
+  <data name="North_ViewLocked" xml:space="preserve"><value>This view's orientation is set by its view template, so it was left as it is.</value></data>
+  <!-- Work Direction in a True North view: Revit's Rotate Project North runs only in Project North -->
+  <data name="WorkDirection_TrueNorth" xml:space="preserve"><value>Work Direction only works in a view set to Project North. Switch with True / Project North and try again.</value></data>
+
+  <!-- Revit's Undo list: the name of each change Jega makes (Transaction). Load from Address and Refresh are one entry
+       each (a TransactionGroup, assimilated): Site, ImportSitePlan and LoadTerrain are steps inside it, rarely seen -->
+  <data name="Undo_LoadFromAddress" xml:space="preserve"><value>Jega: Load from Address</value></data>
+  <data name="Undo_Site" xml:space="preserve"><value>Jega: Site</value></data>
+  <data name="Undo_ImportSitePlan" xml:space="preserve"><value>Jega: Import site plan</value></data>
+  <data name="Undo_LoadTerrain" xml:space="preserve"><value>Jega: Load terrain</value></data>
+  <data name="Undo_ContextOff" xml:space="preserve"><value>Jega: Context Buildings off</value></data>
+  <data name="Undo_ContextOn" xml:space="preserve"><value>Jega: Context Buildings on</value></data>
+  <data name="Undo_LotBoundary" xml:space="preserve"><value>Jega: Draw Lot Boundary</value></data>
+  <data name="Undo_Offset" xml:space="preserve"><value>Jega: Offset</value></data>
+  <data name="Undo_GenerateTerrain" xml:space="preserve"><value>Jega: Generate Terrain</value></data>
+  <data name="Undo_MoveTerrain" xml:space="preserve"><value>Jega: Move Terrain</value></data>
+  <data name="Undo_Refresh" xml:space="preserve"><value>Jega: Refresh</value></data>
+  <data name="Undo_Settings" xml:space="preserve"><value>Jega: Settings</value></data>
+  <data name="Undo_ViewNorth" xml:space="preserve"><value>Jega: True / Project North</value></data>
+  <data name="Undo_TerrainLine" xml:space="preserve"><value>Jega: Terrain Line</value></data>
+  <data name="Undo_LoadTerrainFile" xml:space="preserve"><value>Jega: Load Terrain CSV File</value></data>
+
+  <!-- Field checks: {0} is the field's label -->
+  <data name="Check_WholeNumber" xml:space="preserve"><value>{0}: a whole number.</value></data>
+  <data name="Check_Number" xml:space="preserve"><value>{0}: a number, e.g. 2.5.</value></data>
+</root>

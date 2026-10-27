@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Jega's texts in Danish (da). The same names, in the same order, as Strings.resx; an entry missing here is said in
+  English. {0}, {1} … and their formats as in Strings.resx. The words follow docs\GLOSSARY.da.md.
+-->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- Båndet: paneler, knapper ("\n" deler en stor knaps navn i to) og tooltips -->
+  <data name="Ribbon_Site" xml:space="preserve"><value>Grund</value></data>
+  <data name="Ribbon_Model" xml:space="preserve"><value>Model</value></data>
+  <data name="Ribbon_TerrainLevels" xml:space="preserve"><value>Terrænkoter</value></data>
+  <data name="Ribbon_Jega" xml:space="preserve"><value>Jega</value></data>
+  <data name="Ribbon_LoadFromAddress" xml:space="preserve"><value>Hent fra
+adresse</value></data>
+  <data name="Ribbon_LoadFromAddressTip" xml:space="preserve"><value>Skriv en adresse: situationsplanen (grund, naboer, bygninger, vejkanter) og terrænet hentes fra Datafordeleren med din egen nøgle, importeres, indlæses og gemmes i modellen. Projektet får virkelige koordinater (ETRS89/UTM32). Fortrydes i ét trin. Pilen nedenunder: Indlæs terræn fra CSV.</value></data>
+  <data name="Ribbon_LoadTerrain" xml:space="preserve"><value>Indlæs terræn fra CSV</value></data>
+  <data name="Ribbon_LoadTerrainTip" xml:space="preserve"><value>Indlæs en terræn-CSV i Jegas eget format, sådan som Eksportér skriver den. Den kontrolleres, gemmes i modellen og vises med en ramme på planen.</value></data>
+  <data name="Ribbon_Refresh" xml:space="preserve"><value>Opdater</value></data>
+  <data name="Ribbon_RefreshTip" xml:space="preserve"><value>Lægger situationsplanen tilbage på sine koordinater og opdaterer terrænrammen, terrænlinjernes påskrifter, nabobygningerne (hvis de vises) og Toposolid'en (hvis den er oprettet). Kører selv efter Arbejdsretning. Fortrydes i ét trin.</value></data>
+  <data name="Ribbon_GenerateTerrain" xml:space="preserve"><value>Opret
+terræn</value></data>
+  <data name="Ribbon_GenerateTerrainTip" xml:space="preserve"><value>Opret Toposolid på grunden: afgrænset af skellet og formet efter terrænet langs det og indenfor. Erstatter den, der blev oprettet før.</value></data>
+  <data name="Ribbon_Context" xml:space="preserve"><value>Nabo-
+bygninger</value></data>
+  <data name="Ribbon_ContextTip" xml:space="preserve"><value>Vis eller skjul nabobygningerne som volumen (Generic Models) med højder fra Danmarks Højdemodel. Hent fra adresse har dem med; mangler de, hentes de med din nøgle. Shift+klik henter dem igen. Også bygningerne på grunden: Indstillinger > Situationsplan og terræn > Nabobygninger.</value></data>
+  <data name="Ribbon_LotBoundary" xml:space="preserve"><value>Tegn
+grund</value></data>
+  <data name="Ribbon_LotBoundaryTip" xml:space="preserve"><value>Tegn grunden som en Filled Region af typen "Jega Lot Boundary", præcis langs skellet, og vis koterne langs det. Hjørnerne passer med situationsplanens koter.</value></data>
+  <data name="Ribbon_TerrainLine" xml:space="preserve"><value>Terræn-
+linje</value></data>
+  <data name="Ribbon_TerrainLineTip" xml:space="preserve"><value>Aflæs terrænet langs en linje, du tegner: koterne og, med "Jega Line", fald, hældninger og HØJ / LAV, opdateret løbende, mens du retter linjen.</value></data>
+  <data name="Ribbon_TerrainLineLong" xml:space="preserve"><value>Tegn detaljelinjer i en planvisning langs en sti, en terrasse, en rampe eller en rende. Terrænlinje starter i "Jega Line (elevations only)": hvert hjørne og hver ende får sin terrænkote og et kryds. Skift en linje til "Jega Line" i Properties for at få fald og hældning på hvert stykke og det højeste og laveste punkt. Flyt, stræk eller slet en linje, og koterne følger straks med. Brug den til at kontrollere fald, før du projekterer, eller til at sætte koter af til en terrasse eller en sti. Indstillinger > Koter > Offset lægger en højde til alle koter (f.eks. en belægnings tykkelse).</value></data>
+  <data name="Ribbon_Settings" xml:space="preserve"><value>Indstillinger</value></data>
+  <data name="Ribbon_SettingsTip" xml:space="preserve"><value>Jegas indstillinger. Georeference: virkelige koordinater (ETRS89/UTM32) eller manuel. Koter: hvad Revits 0 er, terrænlinjerne. Situationsplan og terræn: situationsplanen, Toposolid og niveauet Terrain, nabobygningerne. Lag: hvilke lag situationsplanen tegnes med. Dataadgang: din Datafordeler-nøgle.</value></data>
+  <data name="Ribbon_WorkDirection" xml:space="preserve"><value>Arbejdsretning</value></data>
+  <data name="Ribbon_WorkDirectionTip" xml:space="preserve"><value>Revits Rotate Project North: tilpasser Project North efter ønske. Bygninger, situationsplan og terræn drejer samlet; koordinaterne og geografisk nord bliver. Jega kører Opdater bagefter, så situationsplanen står lige igen.</value></data>
+  <data name="Ribbon_ViewNorth" xml:space="preserve"><value>True / Project North</value></data>
+  <data name="Ribbon_ViewNorthTip" xml:space="preserve"><value>Skifter den aktive planvisnings Orientation mellem True North og Project North, som i Properties. Kun i planvisninger; en view template, der styrer orienteringen, beholder den.</value></data>
+  <data name="Ribbon_Layers" xml:space="preserve"><value>Lag</value></data>
+  <data name="Ribbon_LayersTip" xml:space="preserve"><value>Hvilke af situationsplanens lag der tegnes: Indstillinger, på fanen Lag. Ved OK tegnes situationsplanen igen med dem (intet hentes).</value></data>
+  <data name="Ribbon_Export" xml:space="preserve"><value>Eksportér</value></data>
+  <data name="Ribbon_ExportTip" xml:space="preserve"><value>Skriv situationsplanens DXF og terrænets CSV fra modellen til en mappe, du vælger, som de er nu: f.eks. til en landinspektør eller kommunen.</value></data>
+  <data name="Ribbon_About" xml:space="preserve"><value>Om Jega</value></data>
+  <data name="Ribbon_AboutTip" xml:space="preserve"><value>Hvilken Jega det er, licensen (GPL-3.0), og hvor data kommer fra.</value></data>
+
+  <!-- Meddelelser, fælles (Receipts.cs): det, flere kommandoer siger. En meddelelse: resultatet på én linje, nogle
+       linjer, trinene nummereret, resten under "Show details" (ReceiptText). -->
+  <data name="Receipt_Credit" xml:space="preserve"><value>{0} Vejledende, ca. ±0,1 m.</value></data>
+  <!-- Som linjer, ikke trin (som Hent fra adresse): {0} terrænet langs bygningen -->
+  <data name="Receipt_FloorLine" xml:space="preserve"><value>Ligger dit gulv i Revits 0? Indstillinger > Koter > Relative koter.</value></data>
+  <data name="Receipt_FloorLineHouse" xml:space="preserve"><value>Ligger dit gulv i Revits 0? Indstillinger > Koter > Relative koter (terrænet langs bygningen: {0}).</value></data>
+  <data name="Receipt_RefreshToposolidStep" xml:space="preserve"><value>Tryk på Opdater: Toposolid og niveauet Terrain viser stadig det gamle terræn.</value></data>
+  <data name="Receipt_Revit" xml:space="preserve"><value>Revit: {0}</value></data>
+  <data name="ReadOnly_Warning" xml:space="preserve"><value>Modellen er en skrivebeskyttet fil. Jega kan ændre den på skærmen, men ændringerne kan ikke gemmes. Åbn en kopi, du kan gemme.</value></data>
+  <data name="Receipt_Terrain" xml:space="preserve"><value>Terræn: {0} punkter, {1} × {2}, med {3} m imellem; {4} til {5} m DVR90.</value></data>
+  <data name="Receipt_AtAddress" xml:space="preserve"><value>I adressepunktet: {0} m DVR90.</value></data>
+  <data name="Receipt_Frame" xml:space="preserve"><value>Terrænramme: {0} til {1} m øst og {2} til {3} m nord for nulpunktet, tegnet i {4} visning(er).</value></data>
+  <data name="Receipt_Placed" xml:space="preserve"><value>Nulpunktet er placeret {0}, {1} m fra Internal Origin; geografisk nord er {2}° fra projektnord.</value></data>
+
+  <!-- Meddelelser: Hent fra adresse (AddressCommand) -->
+  <data name="Address_OpenPlan" xml:space="preserve"><value>Åbn først en plantegning: situationsplanen importeres der.</value></data>
+  <data name="Address_Loaded" xml:space="preserve"><value>{0} er hentet.</value></data>
+  <data name="Address_LoadedGeoreferenced" xml:space="preserve"><value>{0} er hentet. Projektet har nu virkelige koordinater (ETRS89/UTM32).</value></data>
+  <!-- {0} E, {1} N for Project Base Point (m) -->
+  <data name="Address_OnCoordinates" xml:space="preserve"><value>Situationsplan og terræn er placeret efter deres virkelige koordinater (ETRS89/UTM32). Nulpunktet er Project Base Point: E {0:N0}, N {1:N0}. Geografisk nord følger koordinaterne.</value></data>
+  <!-- Projektet havde sine koordinater før (en anden adresse): {0} E, {1} N for nulpunktet (m), {2} m til Project Base Point -->
+  <data name="Address_OnCoordinatesApart" xml:space="preserve"><value>Situationsplan og terræn er placeret efter deres virkelige koordinater (ETRS89/UTM32). Nulpunktet, E {0:N0}, N {1:N0}, ligger {2:N2} m fra Project Base Point. Geografisk nord følger koordinaterne.</value></data>
+  <data name="Address_WorkDirectionLine" xml:space="preserve"><value>Arbejdsretning tilpasser Project North efter ønske.</value></data>
+  <!-- En ny adresse i et projekt drejet med Arbejdsretning; {0}: projektets drejning fra geografisk nord, -180 til 180° -->
+  <data name="Address_WorkDirectionKept" xml:space="preserve"><value>Projektets arbejdsretning er beholdt fra den forrige adresse (drejet {0:N1}° fra geografisk nord). Brug Arbejdsretning igen, hvis den nye bygning ligger anderledes.</value></data>
+  <data name="Address_GenerateLine" xml:space="preserve"><value>Opret terræn laver Toposolid'en.</value></data>
+  <data name="Address_NotImported" xml:space="preserve"><value>{0} er hentet, men situationsplanen blev ikke importeret.</value></data>
+  <data name="Address_ImportByHand" xml:space="preserve"><value>Importér situationsplanen manuelt: Insert > Import CAD, {0}, Origin to Origin, mm.</value></data>
+  <data name="Address_NewAddress" xml:space="preserve"><value>Ny adresse (tidligere {0}). Placeret: {1}. Drej den på plads, og tryk på Opdater.</value></data>
+  <data name="Address_FloorKept" xml:space="preserve"><value>±0,00 ligger stadig i {0} m DVR90, som ved {1}. Har gulvet en anden kote her? Indstillinger > Koter > Relative koter, indtast gulvets kote, OK.</value></data>
+  <data name="Address_ContextCleared" xml:space="preserve"><value>Nabobygningerne hørte til den gamle adresse og er fjernet. Nabobygninger henter de nye.</value></data>
+  <data name="Address_NoSurface" xml:space="preserve"><value>Ingen tagkoter eller nabobygninger: højdemodellens overflade kunne ikke hentes.</value></data>
+  <data name="Address_NoSurfaceRoofs" xml:space="preserve"><value>Ingen tagkoter: højdemodellens overflade kunne ikke hentes.</value></data>
+  <data name="Address_NoRoads" xml:space="preserve"><value>Ingen vejkanter på situationsplanen: GeoDanmarks veje kunne ikke hentes. Hent fra adresse igen for at få dem med.</value></data>
+  <data name="Address_NoWater" xml:space="preserve"><value>Intet vand på situationsplanen: GeoDanmarks søer og vandløb kunne ikke hentes. Hent fra adresse igen for at få det med.</value></data>
+  <data name="Address_NoManholes" xml:space="preserve"><value>Ingen brønddæksler og riste på situationsplanen: GeoDanmarks punkter kunne ikke hentes. Hent fra adresse igen for at få dem med.</value></data>
+  <data name="Address_NoAddresses" xml:space="preserve"><value>Ingen vejnavne og husnumre på situationsplanen: Danmarks Adresseregister kunne ikke hentes. Hent fra adresse igen for at få dem med.</value></data>
+  <data name="Address_NoVegetation" xml:space="preserve"><value>Ingen træer og hegn på situationsplanen: GeoDanmarks træer, trægrupper eller hegn kunne ikke hentes. Hent fra adresse igen for at få dem med.</value></data>
+  <data name="Address_LayersSkipped" xml:space="preserve"><value>Udeladt af situationsplanen, fordi tegningen af laget fejlede: {0}. Meld det gerne.</value></data>
+  <data name="Address_NoBuildings" xml:space="preserve"><value>Ingen bygninger på situationsplanen og ingen tagkoter eller nabobygninger: GeoDanmarks bygninger kunne ikke hentes. Hent fra adresse igen for at få dem med.</value></data>
+  <data name="Address_NoLots" xml:space="preserve"><value>Kun din egen grund på situationsplanen, uden matrikelnummer: Matriklens naboskel kunne ikke hentes. Hent fra adresse igen for at få dem med.</value></data>
+  <data name="Address_ContextReplaced" xml:space="preserve"><value>Nabobygningerne hørte til den gamle adresse og er fjernet. Nabobygninger viser de nye.</value></data>
+  <data name="Address_Imported" xml:space="preserve"><value>Situationsplanen er importeret i "{0}".</value></data>
+  <data name="Address_RevitImport" xml:space="preserve"><value>Revits import: {0}</value></data>
+  <data name="Address_TempFailed" xml:space="preserve"><value>Intet blev hentet: situationsplanen kunne ikke skrives i temp-mappen.</value></data>
+  <data name="Address_TempFailedNext" xml:space="preserve"><value>Kontrollér, at der kan skrives i Windows' temp-mappe, og kør Hent fra adresse igen.</value></data>
+  <data name="Address_StoreFailed" xml:space="preserve"><value>Intet blev hentet: Revit kunne ikke gemme grunden i modellen.</value></data>
+  <data name="Address_StoreFailedNext" xml:space="preserve"><value>Prøv Hent fra adresse igen; bliver det ved med at fejle, så meld det gerne.</value></data>
+  <data name="Address_NewAsk" xml:space="preserve"><value>Hente en anden adresse ind i dette projekt?</value></data>
+  <data name="Address_NewAskContent" xml:space="preserve"><value>Nuværende adresse: {0}.
+Ny adresse: {1}.</value></data>
+  <data name="Address_NewFresh" xml:space="preserve"><value>Start den nye situationsplan på dens sædvanlige plads (anbefalet)</value></data>
+  <data name="Address_NewFreshNote" xml:space="preserve"><value>Placeres: {0} (Indstillinger > Georeference > Manuel georeference). Drej den derefter, så den passer med bygningen, og tryk på Opdater.</value></data>
+  <data name="Address_NewKeep" xml:space="preserve"><value>Behold den gamle situationsplans placering og rotation</value></data>
+  <data name="Address_NewKeepNote" xml:space="preserve"><value>Kun hvis det er samme grund, f.eks. en rettet adresse.</value></data>
+  <data name="Address_NewCancel" xml:space="preserve"><value>Annuller: intet hentes.</value></data>
+  <!-- Dialogen ved ny adresse med virkelige koordinater. {0} gammel adresse, {1} ny, {2} afstanden imellem (Address_DistanceM/Km) -->
+  <data name="Address_NewAwayContent" xml:space="preserve"><value>Nuværende adresse: {0}.
+Ny adresse: {1} ({2} fra den nuværende adresse).</value></data>
+  <!-- Afstanden: {0} m op til 2 km, km derover -->
+  <data name="Address_DistanceM" xml:space="preserve"><value>{0:N0} m</value></data>
+  <data name="Address_DistanceKm" xml:space="preserve"><value>{0:N1} km</value></data>
+  <data name="Address_NewBeside" xml:space="preserve"><value>Behold projektets nulpunkt</value></data>
+  <data name="Address_NewBesideNote" xml:space="preserve"><value>Den nye adresse placeres efter de virkelige koordinater (ETRS89/UTM32), {0} fra den nuværende adresse. Den nuværende adresse erstattes.</value></data>
+  <data name="Address_NewOrigin" xml:space="preserve"><value>Flyt projektets nulpunkt til den nye adresse</value></data>
+  <data name="Address_NewOriginNote" xml:space="preserve"><value>Projektets nulpunkt (Project Base Point) får den nye adresses E/N i hele meter, og den nye adresse placeres på nulpunktet. Den nuværende adresse erstattes.</value></data>
+  <data name="Address_NewOriginLinks" xml:space="preserve"><value>Links, der er placeret efter delte koordinater, flyttes med.</value></data>
+  <data name="Address_NewFar" xml:space="preserve"><value>Beholdes projektets nulpunkt, placeres den nye adresse {0:N1} km fra den nuværende adresse og den eksisterende model.</value></data>
+  <data name="Address_NewManualNote" xml:space="preserve"><value>Den nye adresse placeres på projektets nulpunkt (Project Base Point). Placering og rotation tilpasses derefter manuelt. Den nye adresse får ikke virkelige koordinater: projektets koordinater er stadig den nuværende adresses og passer ikke med den nye adresse. Den nuværende adresse erstattes.</value></data>
+  <data name="Address_NewTooFar" xml:space="preserve"><value>Den nye adresse er over 10 km fra Revits Internal Origin. Jega placerer kun adresser inden for 10 km af Internal Origin, og projektets nulpunkt kan derfor ikke beholdes.</value></data>
+  <!-- Første grund i et projekt, der allerede har delte koordinater (også Indstillinger, når Manuel georeference slås fra) -->
+  <data name="Address_HasCoordinates" xml:space="preserve"><value>Projektet har allerede delte koordinater</value></data>
+  <!-- {0}: hvor langt (m) projektets koordinater placerer adressens nulpunkt fra Project Base Point (Placement.Moves) -->
+  <data name="Address_HasCoordinatesFit" xml:space="preserve"><value>Projektets koordinater er ETRS89/UTM32. De placerer adressen {0:N2} m fra Project Base Point.</value></data>
+  <data name="Address_HasCoordinatesOther" xml:space="preserve"><value>Projektets koordinater passer ikke med adressen. Årsagen er enten et andet system (fx System 34 eller en landinspektørs) eller koordinater for et andet sted.</value></data>
+  <data name="Address_FitCoordinates" xml:space="preserve"><value>Behold projektets koordinater</value></data>
+  <!-- Første grund: {0} som Address_HasCoordinatesFit. MoveNote, når grunden er placeret (Indstillinger): {0} er Move_*; StayNote, når den ikke flytter sig -->
+  <data name="Address_FitCoordinatesNote" xml:space="preserve"><value>Grunden placeres, hvor projektets koordinater placerer adressen, {0:N2} m fra Project Base Point. Projektets koordinater og links ændres ikke.</value></data>
+  <data name="Address_FitCoordinatesMoveNote" xml:space="preserve"><value>Grunden {0} fra, hvor den er placeret nu, hen, hvor projektets koordinater placerer adressen. Projektets koordinater og links ændres ikke.</value></data>
+  <data name="Address_FitCoordinatesStayNote" xml:space="preserve"><value>Grunden bliver, hvor den er placeret: projektets koordinater placerer adressen dér. Projektets koordinater og links ændres ikke.</value></data>
+  <data name="Address_FitCoordinatesManualNote" xml:space="preserve"><value>Grunden placeres på Project Base Point. Placering og rotation tilpasses derefter manuelt. Jega ændrer ikke projektets koordinater.</value></data>
+  <data name="Address_SetCoordinates" xml:space="preserve"><value>Giv projektet adressens koordinater (ETRS89/UTM32)</value></data>
+  <!-- Første grund: Note. Når grunden er placeret (Indstillinger): MoveNote, {0} er Move_*; StayNote, når den ikke flytter sig. Links: {0} som Address_HasCoordinatesFit -->
+  <data name="Address_SetCoordinatesNote" xml:space="preserve"><value>Grunden placeres på Project Base Point, som får adressens E/N i hele meter. Projektets koordinater overskrives.</value></data>
+  <data name="Address_SetCoordinatesMoveNote" xml:space="preserve"><value>Grunden {0} fra, hvor den er placeret nu, hen på Project Base Point, som får adressens E/N i hele meter. Projektets koordinater overskrives.</value></data>
+  <data name="Address_SetCoordinatesStayNote" xml:space="preserve"><value>Grunden bliver, hvor den er placeret, på Project Base Point, som får adressens E/N i hele meter. Projektets koordinater overskrives.</value></data>
+  <!-- Bevægelsen i dialogerne (Ui.Movement): {0} m, {1}° (Move_Turn: {0}°); det, der er 0, udelades -->
+  <data name="Move_Both" xml:space="preserve"><value>flyttes {0:N2} m og drejes {1:N1}°</value></data>
+  <data name="Move_Only" xml:space="preserve"><value>flyttes {0:N2} m</value></data>
+  <data name="Move_Turn" xml:space="preserve"><value>drejes {0:N1}°</value></data>
+  <data name="Address_SetCoordinatesLinks" xml:space="preserve"><value>Links placeret efter delte koordinater flyttes {0:N2} m med.</value></data>
+  <data name="Address_RevitStopped" xml:space="preserve"><value>Intet blev hentet: Revit stoppede Hent fra adresse og viste årsagen i advarslen lige før denne.</value></data>
+  <!-- Hent fra adresse: adressevinduet (AddressWindow) -->
+  <data name="Address_WindowTitle" xml:space="preserve"><value>Jega – Hent fra adresse</value></data>
+  <data name="Address_Field" xml:space="preserve"><value>Adresse, f.eks. Skolegade 1, 7100 Vejle</value></data>
+  <data name="Address_Load" xml:space="preserve"><value>Hent</value></data>
+  <data name="Address_Cancel" xml:space="preserve"><value>Annuller</value></data>
+  <data name="Address_Pick" xml:space="preserve"><value>Skriv en adresse, og vælg et af forslagene.</value></data>
+  <data name="Address_NoneFound" xml:space="preserve"><value>Ingen adresser fundet. Prøv vej og husnummer, f.eks. "Skolegade 1".</value></data>
+  <data name="Address_SearchFailed" xml:space="preserve"><value>Søgningen gik galt ({0}: {1}).</value></data>
+  <!-- Mens der hentes: trinene, og derefter hvorfor intet blev hentet -->
+  <data name="Address_StepAddress" xml:space="preserve"><value>Adresse …</value></data>
+  <data name="Address_StepLot" xml:space="preserve"><value>Grund …</value></data>
+  <data name="Address_Cancelled" xml:space="preserve"><value>Annulleret: intet blev hentet.</value></data>
+  <data name="Address_NothingLoaded" xml:space="preserve"><value>Intet blev hentet. {0}</value></data>
+  <data name="Address_Unexpected" xml:space="preserve"><value>Intet blev hentet: noget uventet gik galt ({0}: {1}).</value></data>
+  <!-- Hent fra adresse: en grund, der er større end ét kald til højdemodellen (GridChoice) -->
+  <data name="Address_LotTooLarge" xml:space="preserve"><value>Grunden er {0:0} × {1:0} m: for stor til et terrænnet (højst {2:N0} punkter, ca. 2 km på tværs).</value></data>
+  <data name="Address_LargeLot" xml:space="preserve"><value>En stor grund: {0:0} × {1:0} m</value></data>
+  <data name="Address_LargeLotContent" xml:space="preserve"><value>Terrænet hentes i dele og sættes sammen. Et finere net er mere præcist; et grovere er hurtigere og lettere i modellen (terrænet gemmes i den). Opret terræn laver Toposolid ud fra begge.</value></data>
+  <data name="Address_Grid" xml:space="preserve"><value>Net på {0:0.0} m</value></data>
+  <data name="Address_GridOwn" xml:space="preserve"><value>Net på {0:0.0} m (højdemodellens eget)</value></data>
+  <data name="Address_GridPoints" xml:space="preserve"><value>{0:N0} punkter, {1} dele</value></data>
+  <data name="Address_GridResampled" xml:space="preserve"><value>{0:N0} punkter, {1} dele; omsamplet af tjenesten</value></data>
+  <!-- Importens egne fejl, vist under meddelelsens detaljer -->
+  <data name="Address_ImportNotAccepted" xml:space="preserve"><value>Revit accepterede ikke importen</value></data>
+  <data name="Address_DxfNotImported" xml:space="preserve"><value>Revit importerede ikke DXF'en</value></data>
+
+  <!-- Meddelelser: Indlæs terræn fra CSV (UpdateTerrainCommand) -->
+  <data name="LoadTerrain_OpenPlan" xml:space="preserve"><value>Åbn først en plantegning eller en situationsplan: terrænrammen tegnes i den aktive planvisning.</value></data>
+  <data name="LoadTerrain_Loaded" xml:space="preserve"><value>{0} er indlæst.</value></data>
+  <data name="LoadTerrain_Unusable" xml:space="preserve"><value>Intet blev indlæst: terrænfilen kan ikke bruges.</value></data>
+  <data name="LoadTerrain_RevitStopped" xml:space="preserve"><value>Intet blev indlæst: Revit stoppede Indlæs terræn fra CSV og viste årsagen i advarslen lige før denne.</value></data>
+  <!-- Fildialogen: titlen og filteret (Windows' format: navn|mønster) -->
+  <data name="LoadTerrain_PickFile" xml:space="preserve"><value>Jega: terræn-CSV</value></data>
+  <data name="LoadTerrain_Filter" xml:space="preserve"><value>Terræn-CSV (*.csv)|*.csv</value></data>
+
+  <!-- Meddelelser: Opdater (RefreshCommand) -->
+  <data name="Refresh_Done" xml:space="preserve"><value>Opdateret: terrænet følger situationsplanen igen.</value></data>
+  <data name="Refresh_DoneShared" xml:space="preserve"><value>Opdateret: situationsplan og terræn er placeret efter deres virkelige koordinater.</value></data>
+  <data name="Refresh_NoImport" xml:space="preserve"><value>Opdateret. Der er ingen situationsplan i modellen, så terrænet bliver, hvor det var på planen.</value></data>
+  <data name="Refresh_Exploded" xml:space="preserve"><value>Opdateret. Situationsplanen er opløst til enkeltlinjer, så Jega følger den ikke længere; terrænet bliver, hvor det var.</value></data>
+  <data name="Refresh_ReloadSameAddress" xml:space="preserve"><value>Hent fra adresse med samme adresse lægger situationsplanen tilbage samme sted.</value></data>
+  <data name="Refresh_Redrawn" xml:space="preserve"><value>Situationsplanen var slettet; tegnet igen fra det gemte.</value></data>
+  <data name="Refresh_Straightened" xml:space="preserve"><value>Situationsplanen er tegnet igen efter visningens nord: ramme og tekster lige, stregerne drejet med modellen.</value></data>
+  <data name="Refresh_RedrawFailed" xml:space="preserve"><value>Situationsplanen kunne ikke tegnes igen — åbn en plan, og kør Opdater igen (eller brug Hent fra adresse).</value></data>
+  <!-- Dialogen, der tilbyder at tegne en slettet situationsplan igen: {0} er adressen, så man ved hvilken -->
+  <data name="Refresh_RedrawAsk" xml:space="preserve"><value>Situationsplanen er ikke i modellen.</value></data>
+  <data name="Refresh_RedrawAskContent" xml:space="preserve"><value>Den for {0} kan tegnes igen fra det, modellen har gemt — der hentes intet.</value></data>
+  <data name="Refresh_RedrawYes" xml:space="preserve"><value>Tegn den igen</value></data>
+  <data name="Refresh_RedrawYesNote" xml:space="preserve"><value>Lagt tilbage, hvor den stod.</value></data>
+  <data name="Refresh_RedrawNo" xml:space="preserve"><value>Lad være</value></data>
+  <data name="Refresh_RedrawNoNote" xml:space="preserve"><value>Opdater kun terrænet.</value></data>
+  <data name="Refresh_Cancelled" xml:space="preserve"><value>Opdater blev annulleret.</value></data>
+  <data name="Refresh_LotEdgeStep" xml:space="preserve"><value>Kør Tegn grund igen: grunden blev tegnet, før situationsplanen flyttede sig.</value></data>
+  <data name="Refresh_Rest" xml:space="preserve"><value>Resten blev opdateret.</value></data>
+  <data name="Refresh_First" xml:space="preserve"><value>Opdateret først: situationsplanen var flyttet eller drejet siden sidste Opdater.</value></data>
+  <data name="Refresh_FirstShared" xml:space="preserve"><value>Opdateret først: situationsplanen var flyttet eller drejet, og den er lagt tilbage på sine koordinater.</value></data>
+  <data name="Refresh_From" xml:space="preserve"><value>Fra {0}.</value></data>
+  <data name="Refresh_Context" xml:space="preserve"><value>Nabobygninger: {0} oprettet igen.</value></data>
+  <data name="Refresh_ContextSkipped" xml:space="preserve"><value>Nabobygninger: {0} oprettet igen; {1} omrids, som Revit ikke kunne ekstrudere, blev sprunget over.</value></data>
+  <data name="Refresh_ContextUnreadable" xml:space="preserve"><value>Nabobygningerne er uændrede: dem, der er gemt i modellen, kan ikke læses. Shift+klik på Nabobygninger for at hente dem igen.</value></data>
+  <data name="Refresh_RevitStopped" xml:space="preserve"><value>Intet blev opdateret: Revit stoppede Opdater og viste årsagen i advarslen lige før denne.</value></data>
+
+  <!-- Meddelelser: Opret terræn (LotTerrainCommand) -->
+  <!-- Overskriften, efter Indstillingernes "Niveauet Terrain ved": {0} niveauets navn, {1} dets højde -->
+  <data name="Generate_MadeLowest" xml:space="preserve"><value>Terræn oprettet: niveauet "{0}" ligger i {1} m DVR90, terrænets laveste punkt.</value></data>
+  <data name="Generate_MadeHighest" xml:space="preserve"><value>Terræn oprettet: niveauet "{0}" ligger i {1} m DVR90, terrænets højeste punkt.</value></data>
+  <data name="Generate_MadeAverage" xml:space="preserve"><value>Terræn oprettet: niveauet "{0}" ligger i {1} m DVR90, gennemsnittet af terrænet på grunden.</value></data>
+  <data name="Generate_MadeAddress" xml:space="preserve"><value>Terræn oprettet: niveauet "{0}" ligger i {1} m DVR90, terrænet i adressepunktet.</value></data>
+  <data name="Generate_MadeHouse" xml:space="preserve"><value>Terræn oprettet: niveauet "{0}" ligger i {1} m DVR90, det højeste terræn langs bygningen.</value></data>
+  <data name="Generate_MadeAgainLost" xml:space="preserve"><value>Toposolid oprettet igen: {0} punktkote(r), mål, tags, underinddelinger eller familier på den gamle blev fjernet.</value></data>
+  <data name="Generate_AddAgain" xml:space="preserve"><value>Sæt dem på igen, hvor du har brug for dem.</value></data>
+  <data name="Generate_ShapeLost" xml:space="preserve"><value>Dine ændringer af formen er væk.</value></data>
+  <!-- Spørges, før en Toposolid med ændringer på laves om: {0} hvad der går tabt (AskShapeEdited, AskLost);
+       KeptOldNext {0} knappen Generér terræns navn -->
+  <data name="Generate_AskRemake" xml:space="preserve"><value>Toposolid'en skal laves om</value></data>
+  <data name="Generate_AskRemakeContent" xml:space="preserve"><value>Det, den er lavet af, er ændret. {0} Laves den om, går det tabt.</value></data>
+  <data name="Generate_EditedKept" xml:space="preserve"><value>Toposolid'en er ændret i hånden og er beholdt, som den er. {0} laver den om fra terrænet.</value></data>
+  <data name="Generate_AskEdited" xml:space="preserve"><value>Toposolid'en er ændret i hånden</value></data>
+  <data name="Generate_AskEditedContent" xml:space="preserve"><value>{0} Laves den om fra terrænet, går det tabt.</value></data>
+  <data name="Generate_AskShapeEdited" xml:space="preserve"><value>Dens form er ændret i hånden (punkter tilføjet eller flyttet).</value></data>
+  <data name="Generate_AskLost" xml:space="preserve"><value>Der er {0} punktkote(r), mål, tags, underinddelinger eller familier på den.</value></data>
+  <data name="Generate_Remake" xml:space="preserve"><value>Lav den om</value></data>
+  <data name="Generate_RemakeNote" xml:space="preserve"><value>Fra terrænet, som det er nu; det ovenfor går tabt.</value></data>
+  <data name="Generate_KeepOld" xml:space="preserve"><value>Behold den gamle</value></data>
+  <data name="Generate_KeepOldNote" xml:space="preserve"><value>Intet på den ændres; terrænet bliver ikke opdateret nu.</value></data>
+  <data name="Generate_KeptOld" xml:space="preserve"><value>Toposolid'en og niveauet Terrain er beholdt, som de er.</value></data>
+  <data name="Generate_KeptOldNext" xml:space="preserve"><value>Den passer ikke længere til terrænet: {0} laver den om, når du vil.</value></data>
+  <data name="Generate_LevelFellBackHouse" xml:space="preserve"><value>Indstillinger sætter niveauet ved det højeste terræn langs bygningen, men der er ingen bygning på grunden: niveauet ligger i stedet ved det laveste punkt.</value></data>
+  <data name="Generate_LevelFellBackAddress" xml:space="preserve"><value>Indstillinger sætter niveauet ved adressepunktet, men adressepunktet ligger uden for terrænet: niveauet ligger i stedet ved det laveste punkt.</value></data>
+  <data name="Generate_NotChecked" xml:space="preserve"><value>Intet punkt langs skellet kunne måles på Toposolid: kontrollér højderne manuelt.</value></data>
+  <data name="Generate_TerrainRange" xml:space="preserve"><value>Terræn {0} til {1} m DVR90.</value></data>
+  <data name="Generate_Points" xml:space="preserve"><value>{0} punkter langs skellet, {1} indenfor ({2} m imellem).</value></data>
+  <data name="Generate_HolesLeftOut" xml:space="preserve"><value>{0} jordstykke(r) inde i grunden er udeladt (hører ikke til den).</value></data>
+  <data name="Generate_Type" xml:space="preserve"><value>Type "{0}".</value></data>
+  <data name="Generate_Checked" xml:space="preserve"><value>Kontrol langs skellet: {0} af {1} punkter målt, største afvigelse {2:0} mm.</value></data>
+  <data name="Generate_Shifted" xml:space="preserve"><value>Revit læste højderne {0} m forkert; oprettet igen med rettelsen.</value></data>
+  <data name="Generate_WhyAgain" xml:space="preserve"><value>Oprettet igen, fordi grunden, terrænet, placeringen eller tykkelsen er ændret.</value></data>
+  <data name="Generate_RevitWarnings" xml:space="preserve"><value>Revits advarsler (ignoreret): {0} Overlap skyldes andre Toposolids eller gulve på grunden.</value></data>
+  <data name="Generate_Kept" xml:space="preserve"><value>Toposolid bevaret: intet af det, den er lavet ud fra, er ændret.</value></data>
+  <data name="Generate_KeptLevelMoved" xml:space="preserve"><value>Toposolid bevaret; niveauet Terrain er flyttet til sin nye plads (Indstillinger).</value></data>
+  <data name="Generate_MovedUp" xml:space="preserve"><value>Toposolid flyttet {0} m op, ikke oprettet igen.</value></data>
+  <data name="Generate_MovedDown" xml:space="preserve"><value>Toposolid flyttet {0} m ned, ikke oprettet igen.</value></data>
+  <data name="Generate_Stay" xml:space="preserve"><value>Punktkoterne, målene og tags på den bliver.</value></data>
+  <data name="Generate_ZeroWas" xml:space="preserve"><value>Revits 0 var {0} m DVR90, nu {1}.</value></data>
+  <data name="Generate_WholeLot" xml:space="preserve"><value>Toposolid over hele grunden: Revit kunne ikke udelade de {0} jordstykke(r) inde i den, som ikke hører til grunden.</value></data>
+  <data name="Generate_CutByHand" xml:space="preserve"><value>Skær det ud manuelt, hvis det er nødvendigt (Edit Sketch).</value></data>
+  <data name="Generate_NoLot" xml:space="preserve"><value>Ingen Toposolid oprettet: Jega fandt ingen grund.</value></data>
+  <data name="Generate_NoLotStep" xml:space="preserve"><value>Brug Hent fra adresse, eller importér en situationsplan-DXF med grunden på laget {0}.</value></data>
+  <data name="Generate_AgainStep" xml:space="preserve"><value>Kør Opret terræn igen.</value></data>
+  <data name="Generate_NoType" xml:space="preserve"><value>Ingen Toposolid oprettet: modellen har ingen Toposolid-type.</value></data>
+  <data name="Generate_NoTypeStep" xml:space="preserve"><value>Hent en med Manage > Transfer Project Standards fra et projekt eller en skabelon, der har en Toposolid-type.</value></data>
+  <data name="Generate_OffTerrain" xml:space="preserve"><value>Ingen Toposolid oprettet: en del af grunden ligger uden for det indlæste terræn.</value></data>
+  <data name="Generate_OffTerrainWhy" xml:space="preserve"><value>Det indlæste terræn dækker ikke hele grunden. Indlæs et, der gør: Hent fra adresse eller din egen terrænfil, der dækker den.</value></data>
+  <data name="Generate_Failed" xml:space="preserve"><value>Revit kunne ikke oprette Toposolid, så intet blev ændret.</value></data>
+  <data name="Generate_FailedWhy" xml:space="preserve"><value>Det sker oftest, når skellet krydser sig selv, eller en anden Toposolid overlapper den. Kontrollér grunden på situationsplanen, og kør Opret terræn igen.</value></data>
+  <data name="Generate_RevitStopped" xml:space="preserve"><value>Intet blev ændret: Revit stoppede Opret terræn og viste årsagen i advarslen lige før denne.</value></data>
+
+  <!-- Meddelelser: Tegn grund (LotEdgeCommand); kotevinduet er dens meddelelse -->
+  <data name="LotEdge_OpenPlan" xml:space="preserve"><value>Åbn først en plantegning eller en situationsplan: skellet tegnes i den aktive planvisning.</value></data>
+  <data name="LotEdge_NoLot" xml:space="preserve"><value>Intet skel tegnet: Jega fandt ingen grund.</value></data>
+  <data name="LotEdge_NoLotStep" xml:space="preserve"><value>Brug Hent fra adresse, eller importér en situationsplan-DXF med grunden på laget {0}.</value></data>
+  <data name="LotEdge_AgainStep" xml:space="preserve"><value>Kør Tegn grund igen.</value></data>
+  <data name="LotEdge_WithoutHole" xml:space="preserve"><value>Skellet er tegnet, men uden hullet: Revit kunne ikke udelade jordstykket inde i grunden, som ikke hører til den (det rører grundens eget skel).</value></data>
+  <data name="LotEdge_CutByHand" xml:space="preserve"><value>Skær det ud manuelt, hvis det er nødvendigt (Edit Boundary).</value></data>
+  <data name="LotEdge_Failed" xml:space="preserve"><value>Revit kunne ikke tegne skellet, så intet blev ændret.</value></data>
+  <data name="LotEdge_FailedWhy" xml:space="preserve"><value>Det sker oftest, når skellet rører eller krydser sig selv. Kontrollér grunden på situationsplanen, og kør Tegn grund igen.</value></data>
+  <data name="LotEdge_RevitStopped" xml:space="preserve"><value>Intet blev ændret: Revit stoppede Tegn grund og viste årsagen i advarslen lige før denne.</value></data>
+  <data name="LotEdge_NothingToMeasure" xml:space="preserve"><value>Skellet har intet at måle.</value></data>
+  <data name="LotEdge_WindowTitle" xml:space="preserve"><value>Jega – Skelkoter</value></data>
+  <data name="LotEdge_WindowNote" xml:space="preserve"><value>Kote = terræn + offset, m DVR90. Vejledende værdier fra Danmarks Højdemodel ({0}); kontrollér ved opmåling.</value></data>
+  <!-- Kotevinduet (ResultWindow): for hvert skel det højeste og laveste punkt, højdeforskel og længde -->
+  <data name="LotEdge_Offset" xml:space="preserve"><value>Offset (mm)</value></data>
+  <data name="LotEdge_OffsetWhole" xml:space="preserve"><value>Indtast et helt antal mm, f.eks. 150 eller -900.</value></data>
+  <data name="LotEdge_Close" xml:space="preserve"><value>Luk</value></data>
+  <data name="LotEdge_Boundary" xml:space="preserve"><value>Skel</value></data>
+  <data name="LotEdge_BoundaryN" xml:space="preserve"><value>Skel {0}</value></data>
+  <data name="LotEdge_InView" xml:space="preserve"><value>{0} (i {1})</value></data>
+  <data name="LotEdge_Highest" xml:space="preserve"><value>Højeste</value></data>
+  <data name="LotEdge_Lowest" xml:space="preserve"><value>Laveste</value></data>
+  <data name="LotEdge_AtCorner" xml:space="preserve"><value>i et hjørne</value></data>
+  <data name="LotEdge_BetweenCorners" xml:space="preserve"><value>mellem to hjørner</value></data>
+  <data name="LotEdge_Span" xml:space="preserve"><value>Højdeforskel</value></data>
+  <data name="LotEdge_SpanValue" xml:space="preserve"><value>{0:0} mm</value></data>
+  <data name="LotEdge_Length" xml:space="preserve"><value>Længde</value></data>
+  <data name="LotEdge_LengthValue" xml:space="preserve"><value>{0} m, {1} punkter</value></data>
+  <data name="LotEdge_OffsetNotKept" xml:space="preserve"><value>Offset blev ikke gemt: Revit stoppede det og viste årsagen i advarslen lige før denne.</value></data>
+
+  <!-- Terrænlinje (TerrainLineCommand): ikke i en planvisning, Revit der afviser, og vejledningen første gang.
+       FirstRun {0}: linjestilen kun med koter, {1}: linjestilen Jega Line; FirstRunCross {0}: krydsets familie -->
+  <data name="TerrainLine_NotPlan" xml:space="preserve"><value>Terrænlinje virker i en planvisning, og "{0}" er ikke en. Åbn en plantegning eller en situationsplan, og kør Terrænlinje igen.</value></data>
+  <data name="TerrainLine_NotStarted" xml:space="preserve"><value>Terrænlinje startede ikke: Revit accepterede ikke ændringen (se Revits besked).</value></data>
+  <data name="TerrainLine_FirstRun" xml:space="preserve"><value>Tegn detaljelinjer: værktøjet Detail Line starter nu, allerede i linjestilen "{0}".
+
+Hver linje får terrænkoten i hvert hjørne og hver ende og intet andet. Linjer, der mødes ende mod ende, tæller som én linje.
+
+Vil du også have fald og hældning på hvert stykke og HØJ / LAV, så brug "{1}" i stedet (eller skift linjen i Properties).
+
+Flyt, ret eller slet linjerne, og koterne følger med. Indstillinger &gt; Koter &gt; Offset lægges til alle koter.</value></data>
+  <data name="TerrainLine_FirstRunCross" xml:space="preserve"><value>Hver kote får et kryds i sit punkt (annotationsfamilien "{0}").</value></data>
+  <!-- Påskrifterne (TerrainLines): hvorfor de ikke blev opdateret, og ordene på planen foran den højeste og laveste kote -->
+  <data name="TerrainLine_Unreadable" xml:space="preserve"><value>Terrænlinjernes koter er ikke opdateret: terrænet, der er gemt i modellen, kan ikke læses. Indlæs det igen (Hent fra adresse eller Indlæs terræn fra CSV).</value></data>
+  <data name="TerrainLine_High" xml:space="preserve"><value>HØJ</value></data>
+  <data name="TerrainLine_Low" xml:space="preserve"><value>LAV</value></data>
+  <!-- Updateren (TerrainLineUpdater): en ændring, den ikke kunne følge ({0}: fejlens type, {1}: dens besked), og dens
+       navn og beskrivelse, som Revit viser dem -->
+  <data name="TerrainLine_UpdateFailed" xml:space="preserve"><value>Terrænlinjernes koter kunne ikke opdateres efter en ændring ({0}: {1}). Detaljer i %APPDATA%\Jega\jega.log.</value></data>
+  <data name="TerrainLine_UpdaterName" xml:space="preserve"><value>Jega terrænlinjer</value></data>
+  <!-- En delt model: en visnings påskrifter ladt, som de er. {0}: visningens navn; Borrowed {1}: hvem der redigerer dem -->
+  <data name="TerrainLine_Borrowed" xml:space="preserve"><value>Terrænlinjernes påskrifter i "{0}" blev ikke opdateret: {1} redigerer dem. Når {1} har synkroniseret: kør Reload Latest, og klik så på Terrænlinje i den plan.</value></data>
+  <data name="TerrainLine_NotCurrent" xml:space="preserve"><value>Terrænlinjernes påskrifter i "{0}" blev ikke opdateret: de er ændret i den centrale model siden din sidste Reload Latest. Kør Reload Latest, og klik så på Terrænlinje i den plan.</value></data>
+  <data name="TerrainLine_UpdaterInfo" xml:space="preserve"><value>Beregner koter og fald igen langs detaljelinjer med linjestilen "Jega Line".</value></data>
+
+  <!-- Meddelelser: Nabobygninger (ContextCommand) -->
+  <data name="Context_LoadFirst" xml:space="preserve"><value>Brug først Hent fra adresse: bygningerne hentes omkring dens grund.</value></data>
+  <data name="Context_Made" xml:space="preserve"><value>{0} nabobygninger oprettet som volumen (Generic Models).</value></data>
+  <data name="Context_Skipped" xml:space="preserve"><value>{0} omrids, som Revit ikke kunne ekstrudere, blev sprunget over.</value></data>
+  <data name="Context_Toggle" xml:space="preserve"><value>Klik på Nabobygninger igen for at skjule dem; Shift+klik for at hente dem igen.</value></data>
+  <data name="Context_Heights" xml:space="preserve"><value>Generic Models. Højder fra Danmarks Højdemodel: vejledende (et træ over et tag måles for højt).</value></data>
+  <data name="Context_AnswerUnreadable" xml:space="preserve"><value>Ingen nabobygninger oprettet: Datafordelerens svar kunne ikke læses.</value></data>
+  <data name="Context_AnswerUnreadableStep" xml:space="preserve"><value>Prøv igen senere; bliver det ved med at fejle, så meld det gerne.</value></data>
+  <data name="Context_StoredUnreadable" xml:space="preserve"><value>Ingen nabobygninger oprettet: dem, der er gemt i modellen, kan ikke læses.</value></data>
+  <data name="Context_StoredUnreadableStep" xml:space="preserve"><value>Shift+klik på Nabobygninger for at hente dem igen.</value></data>
+  <data name="Context_RevitStopped" xml:space="preserve"><value>Ingen nabobygninger oprettet: Revit stoppede Nabobygninger og viste årsagen i advarslen lige før denne.</value></data>
+  <!-- Ventevinduet, mens der hentes (FetchWindow); Unexpected {0}: fejlens type, {1}: dens besked -->
+  <data name="Context_WindowTitle" xml:space="preserve"><value>Jega – Nabobygninger</value></data>
+  <data name="Context_Fetching" xml:space="preserve"><value>Henter bygningerne omkring grunden og deres højder …</value></data>
+  <data name="Context_Cancel" xml:space="preserve"><value>Annuller</value></data>
+  <data name="Context_NothingLoaded" xml:space="preserve"><value>Intet blev hentet.</value></data>
+  <data name="Context_Unexpected" xml:space="preserve"><value>Noget uventet gik galt ({0}: {1}).</value></data>
+  <data name="Context_Close" xml:space="preserve"><value>Luk</value></data>
+
+  <!-- Meddelelser: Eksportér (ExportCommand) -->
+  <data name="Export_Done" xml:space="preserve"><value>Eksporteret til {0}.</value></data>
+  <data name="Export_MarginCut" xml:space="preserve"><value>Situationsplanen viser {0:0} m omkring grunden: så langt, som Hent fra adresse hentede.</value></data>
+  <data name="Export_OnlyTerrain" xml:space="preserve"><value>Kun terrænet: modellen har ingen situationsplan at eksportere (et eget terræn). Hent fra adresse giver en.</value></data>
+  <data name="Export_Stopped" xml:space="preserve"><value>Eksporten stoppede, før den var færdig.</value></data>
+  <data name="Export_Written" xml:space="preserve"><value>Skrevet inden da: {0}.</value></data>
+  <data name="Export_StoppedNext" xml:space="preserve"><value>Kontrollér, at der kan skrives i mappen, og kør Eksportér igen.</value></data>
+  <!-- Mappedialogens titel -->
+  <data name="Export_PickFolder" xml:space="preserve"><value>Jega: eksportér situationsplanen og terrænet til</value></data>
+  <!-- Filerne findes allerede i den valgte mappe. {0}: deres navne -->
+  <data name="Export_AskOverwrite" xml:space="preserve"><value>Overskriv filerne?</value></data>
+  <data name="Export_AskOverwriteContent" xml:space="preserve"><value>Findes allerede i mappen: {0}.</value></data>
+  <data name="Export_Overwrite" xml:space="preserve"><value>Overskriv</value></data>
+  <data name="Export_OverwriteNote" xml:space="preserve"><value>De gamle filer erstattes.</value></data>
+  <data name="Export_KeepFiles" xml:space="preserve"><value>Lad være</value></data>
+  <data name="Export_KeepFilesNote" xml:space="preserve"><value>Intet skrives. Vælg en anden mappe ved næste Eksportér.</value></data>
+
+  <!-- Indstillinger: vinduet og dets knapper -->
+  <data name="Settings_Title" xml:space="preserve"><value>Jega – Indstillinger</value></data>
+  <data name="Settings_TabLocation" xml:space="preserve"><value>Georeference</value></data>
+  <data name="Settings_TabLevels" xml:space="preserve"><value>Koter (±0,00)</value></data>
+  <data name="Settings_TabPlan" xml:space="preserve"><value>Situationsplan og terræn</value></data>
+  <data name="Settings_TabLayers" xml:space="preserve"><value>Lag</value></data>
+  <data name="Settings_TabData" xml:space="preserve"><value>Dataadgang</value></data>
+  <data name="Settings_Ok" xml:space="preserve"><value>OK</value></data>
+  <data name="Settings_Cancel" xml:space="preserve"><value>Annuller</value></data>
+  <!-- Sproglisten øverst til højre (ProjectLanguage); navnene er Config's Languages -->
+  <data name="Settings_LanguageTip" xml:space="preserve"><value>Sprog: Jegas vinduer, meddelelser og bånd, og det, Jega skriver på tegningen, også tallene. Gemmes i projektet, så alle, der arbejder i det, ser det samme. Bruges ved OK.</value></data>
+  <!-- Ved OK og Annuller, kun vist mens et andet sprog end vinduets er valgt -->
+  <data name="Settings_LanguageAtOk" xml:space="preserve"><value>Sproget skifter, når du trykker OK.</value></data>
+  <data name="Settings_Advanced" xml:space="preserve"><value>Avanceret</value></data>
+
+  <!-- Indstillinger: advarsler øverst, og hvad OK melder -->
+  <data name="Settings_WarnOptionsUnreadable" xml:space="preserve"><value>Projektets gemte indstillinger kunne ikke læses. Vinduet viser standardværdierne; OK gemmer dem i stedet.</value></data>
+  <data name="Settings_WarnMachineUnreadable" xml:space="preserve"><value>{0} Vinduet viser standardværdierne; OK gemmer dem i stedet.</value></data>
+  <data name="Settings_WarnKeyUnreadable" xml:space="preserve"><value>Din Datafordeler-nøgle er gemt, men denne Windows-bruger kan ikke læse den (gemt af en anden bruger eller på en anden pc). Indtast den igen under Dataadgang.</value></data>
+  <data name="Settings_MachineSaveFailed" xml:space="preserve"><value>Indstillingerne på denne pc kunne ikke gemmes ({0}): {1}</value></data>
+  <data name="Settings_NowAbsolute" xml:space="preserve"><value>Absolutte koter: Revits 0 er 0,00 m DVR90.</value></data>
+  <data name="Settings_NowRelative" xml:space="preserve"><value>Gulvet (±0,00, Revits 0) ligger i {0} m DVR90.</value></data>
+  <data name="Settings_NowOnLevel" xml:space="preserve"><value>{0} på &quot;{1}&quot;: Revits 0 ligger i {2} m DVR90.</value></data>
+  <data name="Settings_NotSaved" xml:space="preserve"><value>Indstillingerne blev ikke gemt: Revit stoppede dem og viste årsagen i advarslen lige før denne.</value></data>
+  <data name="Settings_NotApplied" xml:space="preserve"><value>Gemt, men ikke taget i brug: {0}</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Indstillingerne er gemt.</value></data>
+  <data name="Settings_SavedAndRefreshed" xml:space="preserve"><value>Indstillingerne er gemt, og grunden er opdateret.</value></data>
+  <data name="Settings_CancelLosesAll" xml:space="preserve"><value>Annuller: ingen af dine ændringer i Indstillinger gemmes.</value></data>
+
+  <!-- Indstillinger > Placering -->
+  <data name="Location_About" xml:space="preserve"><value>Hvordan grunden placeres: efter virkelige koordinater (ETRS89/UTM32) (standard) eller manuelt. Gemmes i projektet.</value></data>
+  <!-- "Manuel georeference", fra som standard; noten under den skifter med den (AutoNote fra, ManualNote til) -->
+  <data name="Location_Manual" xml:space="preserve"><value>Manuel georeference</value></data>
+  <data name="Location_AutoNote" xml:space="preserve"><value>Jega georefererer projektet: projektets nulpunkt (Project Base Point) får adressens E/N i hele meter (ETRS89/UTM32), og geografisk nord følger de virkelige koordinater. Med relative koter kan koten for ±0,00 også sættes på Project Base Point (Indstillinger > Koter).</value></data>
+  <data name="Location_ManualNote" xml:space="preserve"><value>Adressens placering og rotation tilpasses manuelt. Jega ændrer ikke projektets koordinater (fx en landinspektørs eller System 34).</value></data>
+  <data name="Location_AnchorInRevit" xml:space="preserve"><value>Placeres ved (i Revit)</value></data>
+  <data name="Location_AnchorInRevitNote" xml:space="preserve"><value>Hvor i Revit punktet på grunden havner.</value></data>
+  <data name="Location_AnchorSurvey" xml:space="preserve"><value>Survey Point</value></data>
+  <data name="Location_AnchorBase" xml:space="preserve"><value>Project Base Point</value></data>
+  <data name="Location_AnchorOrigin" xml:space="preserve"><value>Internal Origin</value></data>
+  <data name="Location_WillMove" xml:space="preserve"><value>Når du trykker OK, flyttes situationsplanen: {0}.</value></data>
+  <data name="Location_WillGeoreference" xml:space="preserve"><value>Projektet har endnu ingen virkelige koordinater. Når du trykker OK, giver Jega det dem: nulpunktet på Project Base Point får E {0:N0}, N {1:N0} (ETRS89/UTM32), og geografisk nord følger koordinaterne. Links placeret efter delte koordinater følger med.</value></data>
+  <data name="Coordinates_Ask" xml:space="preserve"><value>Sætte projektets tidligere koordinater tilbage?</value></data>
+  <!-- {0} m og {1}°: hvor langt projektets koordinater flytter tilbage og drejer (i Revits 0); links følger det samme -->
+  <data name="Coordinates_AskContent" xml:space="preserve"><value>Jega overskrev projektets koordinater med adressens (ETRS89/UTM32). De tidligere ligger {0:N2} m derfra og er drejet {1:N1}°.</value></data>
+  <data name="Coordinates_AskContentMoved" xml:space="preserve"><value>Jega overskrev projektets koordinater med adressens (ETRS89/UTM32). De tidligere ligger {0:N2} m derfra.</value></data>
+  <data name="Coordinates_AskContentTurned" xml:space="preserve"><value>Jega overskrev projektets koordinater med adressens (ETRS89/UTM32). De tidligere ligger samme sted, men er drejet {0:N1}°.</value></data>
+  <data name="Coordinates_Back" xml:space="preserve"><value>Sæt de tidligere koordinater tilbage (anbefalet)</value></data>
+  <data name="Coordinates_BackNote" xml:space="preserve"><value>Projektets koordinater og geografisk nord bliver, som før Jega.</value></data>
+  <data name="Coordinates_BackLinks" xml:space="preserve"><value>Links placeret efter delte koordinater {0} med.</value></data>
+  <data name="Coordinates_Leave" xml:space="preserve"><value>Behold adressens koordinater</value></data>
+  <data name="Coordinates_LeaveNote" xml:space="preserve"><value>Koordinaterne bliver ETRS89/UTM32, og links bliver, hvor de er. Grunden placeres manuelt, så adressepunktet ikke længere ligger på sine virkelige E/N.</value></data>
+  <data name="Location_CoordinatesPutBack" xml:space="preserve"><value>Projektets tidligere delte koordinater og geografisk nord er sat tilbage.</value></data>
+  <data name="Location_TrueNorth" xml:space="preserve"><value>Geografisk nord</value></data>
+  <data name="Location_NorthProject" xml:space="preserve"><value>{0:0.00}° (projektets)</value></data>
+  <data name="Location_NorthShared" xml:space="preserve"><value>{0:0.00}° (fra koordinaterne)</value></data>
+  <data name="Location_HowToFit" xml:space="preserve"><value>Sådan får du den til at passe med bygningen: drej og flyt den importerede situationsplan, og tryk på Opdater; terrænet følger med. Arbejdsretning tilpasser Project North efter ønske.</value></data>
+
+  <!-- Indstillinger > Koter (nøglerne Levels_*: fanens gamle navn) -->
+  <data name="Levels_About" xml:space="preserve"><value>Hvilken højde Revits 0 er. Gemmes i projektet.</value></data>
+  <data name="Levels_Absolute" xml:space="preserve"><value>Absolutte koter: Revits 0 er 0,00 m DVR90</value></data>
+  <data name="Levels_Relative" xml:space="preserve"><value>Relative koter: gulvet (±0,00) ligger i Revits 0</value></data>
+  <data name="Levels_RelativeSurvey" xml:space="preserve"><value>Project Base Point får gulvkoten</value></data>
+  <data name="Levels_RelativeSurveyTip" xml:space="preserve"><value>Gulvet bliver ±0,00 i Revit, og Project Base Point får gulvkoten. Koter målt fra Project Base Point viser højden over gulvet, og koter målt fra Survey Point viser DVR90. Modeller georefereret i DVR90 passer også i højden.
+Eks.: gulv 10,13 og terræn 9,50 → terrænet ligger i −0,63.</value></data>
+  <!-- En ny kote for ±0,00 i et projekt med links. {0} m, {1} op/ned -->
+  <data name="Levels_LinksAsk" xml:space="preserve"><value>Den nye kote for ±0,00 flytter links i projektet</value></data>
+  <data name="Levels_LinksAskContent" xml:space="preserve"><value>Links, der er placeret efter delte koordinater, flyttes {0} m {1}, når Project Base Point får den nye kote for ±0,00.</value></data>
+  <data name="Levels_LinksDown" xml:space="preserve"><value>ned</value></data>
+  <data name="Levels_LinksUp" xml:space="preserve"><value>op</value></data>
+  <data name="Levels_LinksSurvey" xml:space="preserve"><value>Sæt koten for ±0,00 på Project Base Point (anbefalet)</value></data>
+  <data name="Levels_LinksSurveyNote" xml:space="preserve"><value>Koter målt fra Survey Point viser DVR90. Links, der ikke er i DVR90, skal flyttes manuelt.</value></data>
+  <data name="Levels_LinksJega" xml:space="preserve"><value>Gem kun koten for ±0,00 i Jega</value></data>
+  <data name="Levels_LinksJegaNote" xml:space="preserve"><value>Links og delte koordinater flyttes ikke. Kun Jegas egne koter viser DVR90.</value></data>
+  <!-- I stedet for de to ovenfor, når gulvkoten gemmes i Jega (links eller koordinater, Jega ikke har givet) -->
+  <data name="Levels_RelativeKept" xml:space="preserve"><value>gemmes kun i Jega</value></data>
+  <!-- Som ovenfor, men Survey Point har stadig et gulv fra før. {0}: dets kote, m -->
+  <data name="Levels_RelativeKeptSurvey" xml:space="preserve"><value>gemmes kun i Jega; Project Base Point står stadig i {0} m</value></data>
+  <data name="Levels_RelativeKeptTip" xml:space="preserve"><value>Gulvet bliver ±0,00 i Revit. Gulvkoten gemmes i Jega: de delte koordinater får kun E/N og retningen, aldrig en højde, så links og Survey Point står stille. Jegas egne koter viser DVR90; Revits koter målt fra Survey Point viser højden over gulvet.
+Eks.: gulv 10,13 og terræn 9,50 → terrænet ligger i −0,63.</value></data>
+  <data name="Levels_Floor" xml:space="preserve"><value>Gulvkote (±0,00)</value></data>
+  <data name="Levels_FloorUnit" xml:space="preserve"><value>m DVR90, f.eks. 10,13</value></data>
+  <data name="Levels_FloorTip" xml:space="preserve"><value>Er gulvet tegnet i en anden højde end Revits 0 (f.eks. +1,20)? Indtast gulvets kote minus den højde: 10,00 - 1,20 = 8,80.</value></data>
+  <data name="Levels_UseHouse" xml:space="preserve"><value>Brug terrænkoten langs bygningen ({0})</value></data>
+  <data name="Levels_MovesTerrain" xml:space="preserve"><value>Ændrer du den, flytter terrænet; bygningen bliver, hvor den er.</value></data>
+  <data name="Levels_FloorNumber" xml:space="preserve"><value>Gulvkote (±0,00): gulvets kote i m DVR90, f.eks. 10,13.</value></data>
+  <data name="Levels_FloorNotZero" xml:space="preserve"><value>Gulvkote (±0,00): gulvets kote i m DVR90 (f.eks. 10,13), ikke 0. Ligger gulvet i 0 m DVR90, så vælg Absolutte koter.</value></data>
+  <!-- Terrænpunkterne: Terrænpunkt på et niveau her, Niveauet Terrain ved under Situationsplan. -->
+  <data name="Levels_AtLowest" xml:space="preserve"><value>Laveste punkt på grunden</value></data>
+  <data name="Levels_AtHighest" xml:space="preserve"><value>Højeste punkt på grunden</value></data>
+  <data name="Levels_AtAverage" xml:space="preserve"><value>Grundens gennemsnit</value></data>
+  <data name="Levels_AtAddress" xml:space="preserve"><value>Adressepunkt</value></data>
+  <data name="Levels_AtHouse" xml:space="preserve"><value>Højeste langs bygningen</value></data>
+  <data name="Levels_TerrainLines" xml:space="preserve"><value>Terrænlinjer</value></data>
+  <data name="Levels_Offset" xml:space="preserve"><value>Offset</value></data>
+  <data name="Levels_OffsetLater" xml:space="preserve"><value>mm (når terrænet er indlæst)</value></data>
+  <data name="Levels_OffsetNote" xml:space="preserve"><value>mm, lægges til koterne fra Terrænlinje og Tegn grund</value></data>
+  <data name="Levels_Cross" xml:space="preserve"><value>Størrelse på kotekryds</value></data>
+  <data name="Levels_CrossUnit" xml:space="preserve"><value>mm på papir</value></data>
+  <data name="Levels_CrossTip" xml:space="preserve"><value>X'et ved hver kote. Med en parametrisk "{0}" er det også dens Size i Edit Type.</value></data>
+  <data name="Levels_LabelText" xml:space="preserve"><value>Tekststørrelse</value></data>
+  <data name="Levels_LabelTextUnit" xml:space="preserve"><value>mm på papir</value></data>
+  <data name="Levels_LabelTextTip" xml:space="preserve"><value>Højden på terrænlinjernes påskrifter. Den er også Text Size i deres teksttype i Edit Type, og deres afstand til linjen følger den.</value></data>
+  <data name="Levels_OnLevel" xml:space="preserve"><value>Terrænpunkt på et af dine niveauer (terrænet flyttes op eller ned, så punktet ligger på niveauet)</value></data>
+  <data name="Levels_OnLevelPoint" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Levels_OnLevelLevel" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Levels_OnLevelOn" xml:space="preserve"><value>på</value></data>
+  <data name="Levels_OnLevelResult" xml:space="preserve"><value>→ Revits 0 ligger i {0} m DVR90.</value></data>
+  <data name="Levels_OnLevelNote" xml:space="preserve"><value>Beregnes ved OK og gemmes som et tal: Revits 0 følger ikke selv med et nyt terræn. F.eks. det laveste terræn på stueetagens niveau.</value></data>
+  <data name="Levels_OnLevelNoTerrain" xml:space="preserve"><value>Indlæs først terrænet (Hent fra adresse eller Indlæs terræn fra CSV): der er intet terræn på grunden at sætte på et niveau.</value></data>
+  <data name="Levels_OnLevelNoLevels" xml:space="preserve"><value>Projektet har intet eget niveau at sætte terrænet på.</value></data>
+  <data name="Levels_OnLevelDrift" xml:space="preserve"><value>Sat til {0} m DVR90; terrænet eller niveauet har flyttet sig siden, og nu ville det give {1}. Bevares, til du trykker på Brug.</value></data>
+  <data name="Levels_OnLevelGone" xml:space="preserve"><value>Niveauet eller terrænet, det blev sat ud fra, er væk: den højde, det gav, bevares som gulvets kote.</value></data>
+  <data name="Levels_OnLevelPointGone" xml:space="preserve"><value>Det blev sat ud fra {0}, som ikke findes nu: Revits 0 bevares i {1} m DVR90, til du vælger et andet punkt.</value></data>
+  <data name="Levels_OnLevelUse" xml:space="preserve"><value>Brug {0}</value></data>
+  <data name="Levels_OnLevelChoose" xml:space="preserve"><value>Terrænpunkt på et niveau: vælg et punkt på terrænet og et niveau.</value></data>
+
+  <!-- Indstillinger > Situationsplan og terræn -->
+  <data name="Plan_About" xml:space="preserve"><value>Gemmes i projektet. Ændres margen, afstand til skel eller om papiret står lige, tegnes situationsplanen i modellen igen ved OK (intet hentes).</value></data>
+  <data name="Plan_SitePlan" xml:space="preserve"><value>Situationsplan</value></data>
+  <data name="Plan_Import" xml:space="preserve"><value>Importér situationsplanen i den aktive planvisning</value></data>
+  <data name="Plan_ViewOnly" xml:space="preserve"><value>Kun i den visning (slået fra: i alle visninger, også øvre etager og 3D; gælder fra næste Hent fra adresse)</value></data>
+  <data name="Plan_PaperStraight" xml:space="preserve"><value>Papiret står lige i visningen (kun kortet drejer)</value></data>
+  <data name="Plan_PaperStraightNote" xml:space="preserve"><value>Slået fra: hele situationsplanen drejer som én, tegnet nord-op og drejet ved importen. Eksportér skriver altid nord-op.</value></data>
+  <data name="Plan_ImportNote" xml:space="preserve"><value>Slået fra: intet importeres. Eksportér (i båndet) skriver DXF'en.</value></data>
+  <data name="Plan_Margin" xml:space="preserve"><value>Margen om grunden</value></data>
+  <!-- En større margen end den hentede kræver ny hentning (gentegningen bruger det hentede) -->
+  <data name="Plan_MarginUnit" xml:space="preserve"><value>m (en margen ud over den hentede kræver, at adressen hentes igen)</value></data>
+  <data name="Plan_Setback" xml:space="preserve"><value>Afstand til skel</value></data>
+  <data name="Plan_SetbackUnit" xml:space="preserve"><value>m, den stiplede linje; 0 = ingen</value></data>
+  <data name="Plan_Toposolid" xml:space="preserve"><value>Terræn (Toposolid)</value></data>
+  <data name="Plan_Thickness" xml:space="preserve"><value>Tykkelse</value></data>
+  <data name="Plan_ThicknessUnit" xml:space="preserve"><value>mm, under terrænet</value></data>
+  <data name="Plan_TerrainLevelAt" xml:space="preserve"><value>Terrænpunkt for niveauet Terrain</value></data>
+  <data name="Plan_TerrainLevelNote" xml:space="preserve"><value>Jegas niveau "Terrain" (Toposolid'ens) placeres ved dette punkt. Terrænet flytter ikke; det gør Koter.</value></data>
+  <data name="Plan_SpacingInside" xml:space="preserve"><value>Punktafstand inde på grunden</value></data>
+  <data name="Plan_SpacingInsideUnit" xml:space="preserve"><value>mm, på terrænnettet på 400 mm</value></data>
+  <data name="Plan_SpacingEdge" xml:space="preserve"><value>Punktafstand langs skel</value></data>
+  <data name="Plan_SpacingEdgeUnit" xml:space="preserve"><value>mm højst, og i hvert hjørne</value></data>
+
+  <data name="Plan_Context" xml:space="preserve"><value>Nabobygninger</value></data>
+  <data name="Plan_ContextLot" xml:space="preserve"><value>Medtag bygningerne på grunden</value></data>
+  <data name="Plan_ContextLotNote" xml:space="preserve"><value>Slået fra: kun bygningerne omkring grunden (den eksisterende bygning modelleres manuelt). Slået til: f.eks. til en grund med mange bygninger.</value></data>
+
+  <!-- Indstillinger > Lag (Layer_<navn>: et lag på situationsplanen, ved sit navn i Config) -->
+  <data name="Layers_About" xml:space="preserve"><value>Hvilke lag situationsplanen tegnes med. Gemmes i projektet. Ændres de, tegnes en situationsplan i modellen igen ved OK (intet hentes); ellers bruges de ved næste Hent fra adresse. Eksportér tegner altid med dem.</value></data>
+  <data name="Layers_FixedNote" xml:space="preserve"><value>Altid med: grunden, rammen og teksterne, som også bærer signaturens ord og noterne.</value></data>
+  <data name="Layers_ViewNote" xml:space="preserve"><value>Vil du kun skjule et lag i én visning, så brug Revits Visibility/Graphics (Imported Categories).</value></data>
+  <data name="Layers_RoofMinArea" xml:space="preserve"><value>Kun bygninger over</value></data>
+  <data name="Layers_RoofMinAreaUnit" xml:space="preserve"><value>m²; 0 = alle</value></data>
+  <data name="Layers_RoofMinAreaNote" xml:space="preserve"><value>Skure, carporte og affaldsskure får ingen.</value></data>
+  <data name="Layers_RoofBoth" xml:space="preserve"><value>OK tag over tagfod, hvor der er plads</value></data>
+  <data name="Layers_RoofRidge" xml:space="preserve"><value>Kun OK tag</value></data>
+  <data name="Layers_RoofSkip" xml:space="preserve"><value>Udelad en tagkote uden plads (ellers står den midt på bygningen, oven i andre tekster)</value></data>
+  <data name="Layers_Later" xml:space="preserve"><value>Der er ingen situationsplan-import i modellen at tegne igen, så de valgte lag bruges ved næste Hent fra adresse og ved Eksportér.</value></data>
+  <data name="Layer_SKEL" xml:space="preserve"><value>Nabogrundenes skel</value></data>
+  <data name="Layer_BYGNINGER" xml:space="preserve"><value>Bygninger på grunden</value></data>
+  <data name="Layer_BYGNINGER_NABO" xml:space="preserve"><value>Nabobygninger</value></data>
+  <data name="Layer_VEJKANT" xml:space="preserve"><value>Vejkant</value></data>
+  <data name="Layer_STI" xml:space="preserve"><value>Stikant</value></data>
+  <data name="Layer_ADRESSEPUNKT" xml:space="preserve"><value>Krydset i adressepunktet</value></data>
+  <data name="Layer_NULPUNKT" xml:space="preserve"><value>Krydset i projektets nulpunkt (adressepunktet, hele meter)</value></data>
+  <data name="Layer_SKELMAAL" xml:space="preserve"><value>Skelmål</value></data>
+  <data name="Layer_AFSTAND_SKEL" xml:space="preserve"><value>Afstand til skel (stiplet)</value></data>
+  <data name="Layer_KOTER" xml:space="preserve"><value>Terrænkoter</value></data>
+  <data name="Layer_TAGKOTER" xml:space="preserve"><value>Tagkoter</value></data>
+  <data name="Layer_VAND" xml:space="preserve"><value>Sø, vandløb, grøft</value></data>
+  <data name="Layer_BROENDE" xml:space="preserve"><value>Brønddæksler med dækselkote (GeoDanmark; typen kendes ikke)</value></data>
+  <data name="Layer_RISTE" xml:space="preserve"><value>Nedløbsriste med kote (GeoDanmark)</value></data>
+  <data name="Layer_HUSNUMRE" xml:space="preserve"><value>Husnumre i bygningerne (Danmarks Adresseregister)</value></data>
+  <data name="Layer_VEJNAVNE" xml:space="preserve"><value>Vejnavne (Danmarks Adresseregister)</value></data>
+  <data name="Layer_TRAEER" xml:space="preserve"><value>Træer, trægrupper og skov (GeoDanmark; set fra luften, ingen art)</value></data>
+  <data name="Layer_HEGN" xml:space="preserve"><value>Hegn (GeoDanmark)</value></data>
+  <data name="Layer_GRUND" xml:space="preserve"><value>Grunden</value></data>
+  <data name="Layer_RAMME" xml:space="preserve"><value>Ramme, nordpil og målestok</value></data>
+  <data name="Layer_TEKST" xml:space="preserve"><value>Tekster: matrikelnumre, noter, signaturens ord</value></data>
+
+  <!-- Indstillinger > Dataadgang -->
+  <data name="Data_About" xml:space="preserve"><value>Gemmes kun på denne pc, aldrig i projektfilen.</value></data>
+  <data name="Data_Key" xml:space="preserve"><value>Datafordeler-API-nøgle</value></data>
+  <data name="Data_Test" xml:space="preserve"><value>Test</value></data>
+  <data name="Data_KeyHelp" xml:space="preserve"><value>Har du ingen? Den er gratis: datafordeler.dk > Log på Datafordeleren > Datafordeler Administration > IT-systemer > Opret > API-Keys > Opret.</value></data>
+  <data name="Data_KeyLink" xml:space="preserve"><value>Hent en nøgle på datafordeler.dk</value></data>
+  <data name="Data_Testing" xml:space="preserve"><value>Tester…</value></data>
+  <data name="Data_TestOk" xml:space="preserve"><value>✓ {0}: OK</value></data>
+  <!-- Adressesøgningen fandt adressen via reserven; {1}: hvorfor, "400, ukendt token" (Fetch_FallbackWhy*) -->
+  <data name="Data_TestOkVia" xml:space="preserve"><value>✓ {0}: OK via Datafordeleren ({1})</value></data>
+  <data name="Data_TestFailed" xml:space="preserve"><value>✗ {0}: {1}</value></data>
+  <data name="Data_TestError" xml:space="preserve"><value>Testen gik galt ({0}: {1}).</value></data>
+  <data name="Data_Token" xml:space="preserve"><value>Adressevælger-token</value></data>
+  <data name="Data_TokenNote" xml:space="preserve"><value>Lad feltet stå tomt for standardværdien ({0}), som virker for alle indtil videre.</value></data>
+
+  <!-- Nabobygninger: volumenerne (Comments) -->
+  <data name="Context_Comment" xml:space="preserve"><value>Jega nabobygning: {0} m høj, fra Danmarks Højdemodel (vejledende)</value></data>
+  <data name="Context_CommentOnLot" xml:space="preserve"><value>Jega nabobygning, på grunden: {0} m høj, fra Danmarks Højdemodel (vejledende)</value></data>
+  <data name="Context_LotIncluded" xml:space="preserve"><value>{0} af dem ligger på selve grunden (Comments: "Jega nabobygning, på grunden"); slet dem, du erstatter.</value></data>
+  <data name="Context_LotLeftOut" xml:space="preserve"><value>De {0} bygning(er) på selve grunden er udeladt. Sådan medtager du dem: Indstillinger > Situationsplan og terræn > Nabobygninger.</value></data>
+
+  <!-- Situationsplanen tegnet igen (SiteplanRedraw). Sproget er ændret: {0} er dets navn, som Indstillinger viser det -->
+  <data name="Redraw_AskLanguage" xml:space="preserve"><value>Tegne situationsplanen igen på {0}?</value></data>
+  <data name="Redraw_AskLanguageContent" xml:space="preserve"><value>Dens noter, signaturforklaring og tal er stadig på det tidligere sprog. Gentegningen henter intet: den tegnes ud fra det, modellen gemmer.</value></data>
+  <data name="Redraw_Yes" xml:space="preserve"><value>Tegn situationsplanen igen (anbefalet)</value></data>
+  <data name="Redraw_YesNoteLanguage" xml:space="preserve"><value>Dens tekster og tal skrives på {0}. Fortrydes i ét trin sammen med indstillingerne.</value></data>
+  <data name="Redraw_No" xml:space="preserve"><value>Behold situationsplanen, som den er</value></data>
+  <data name="Redraw_NoNoteLanguage" xml:space="preserve"><value>Alt passer stadig; kun teksterne bliver på det tidligere sprog indtil næste Hent fra adresse.</value></data>
+  <data name="Redraw_DoneLanguage" xml:space="preserve"><value>Situationsplanen er tegnet igen på {0}.</value></data>
+  <data name="Redraw_DoneLayers" xml:space="preserve"><value>Situationsplanen er tegnet igen med de valgte indstillinger.</value></data>
+  <data name="Redraw_NoView" xml:space="preserve"><value>Situationsplanen blev ikke tegnet igen: modellen har ingen plantegning at importere den i.</value></data>
+  <data name="Redraw_Failed" xml:space="preserve"><value>Situationsplanen kunne ikke tegnes igen ({0}). Brug Undo, eller kør Hent fra adresse igen.</value></data>
+  <data name="Redraw_Nothing" xml:space="preserve"><value>Situationsplanen blev ikke tegnet igen: der er ingen situationsplan fra Hent fra adresse i modellen.</value></data>
+
+  <!-- Hvad der havner hvor, efter Indstillinger > Georeference (Placement.Describe). Altid punktet og ankerpunktet, så
+       ankerpunktet siges fuldt ud; bruges efter et kolon eller i parentes, aldrig midt i en sætning. -->
+  <data name="Place_AddressOnSurvey" xml:space="preserve"><value>adressepunktet på Survey Point</value></data>
+  <data name="Place_AddressOnBase" xml:space="preserve"><value>adressepunktet på Project Base Point</value></data>
+  <data name="Place_AddressOnOrigin" xml:space="preserve"><value>adressepunktet på Internal Origin</value></data>
+  <data name="Place_Real" xml:space="preserve"><value>adressepunktet i sine virkelige koordinater</value></data>
+
+  <!-- Placering: hvor grunden er. {place}: et Place_* -->
+  <!-- Opdater: importens plads gemt (Remember) -->
+  <data name="Placement_SeveralMarked" xml:space="preserve"><value>{0} importer af situationsplanen (en kopi?): slet alle på nær én, og tryk på Opdater. Indtil da bliver terrænet, hvor det var.</value></data>
+  <data name="Placement_SeveralWithLot" xml:space="preserve"><value>{0} importer med en grund (lag {1}): behold kun situationsplanen, og tryk på Opdater. Indtil da bliver terrænet, hvor det var.</value></data>
+  <data name="Placement_Mirrored" xml:space="preserve"><value>Importen af situationsplanen er spejlet: terrænet kan ikke følge den. Spejl den tilbage, og tryk på Opdater. Indtil da bliver terrænet, hvor det var.</value></data>
+  <data name="Placement_Follows" xml:space="preserve"><value>Terrænet følger situationsplanen: flyttet {0:0.00} m, drejet {1:0.0}°.</value></data>
+  <!-- Virkelige koordinater givet til projektet (Georeference) -->
+  <data name="Placement_OtherSystem" xml:space="preserve"><value>Projektets delte koordinater er et andet system (System 34 eller en landinspektørs). Jega ændrer dem ikke. Slå Manuel georeference til, og tilpas grundens placering og rotation manuelt.</value></data>
+  <!-- En ny adresses nulpunkt. {0} E, {1} N (m) -->
+  <data name="Placement_OriginMoved" xml:space="preserve"><value>Projektets nulpunkt (Project Base Point) er flyttet til den nye adresse.</value></data>
+  <data name="Placement_ManualOn" xml:space="preserve"><value>Manuel georeference er slået til (Indstillinger > Georeference): projektets koordinater er ladt, som de er.</value></data>
+  <data name="Placement_FitsCoordinates" xml:space="preserve"><value>Placeret efter projektets egne koordinater; de er ikke ændret.</value></data>
+  <data name="Placement_BackOnCoordinates" xml:space="preserve"><value>Situationsplanen er lagt tilbage på sine koordinater.</value></data>
+  <data name="Placement_OriginNotOurs" xml:space="preserve"><value>Projektets koordinater er et andet system (det gamle nulpunkt findes ikke i dem), så de er ikke flyttet.</value></data>
+  <data name="Placement_Georeferenced" xml:space="preserve"><value>Projektet har nu virkelige koordinater (ETRS89/UTM32): adressepunktet er E {0:N2}, N {1:N2}. Intet er flyttet.</value></data>
+  <data name="Placement_GeoreferenceFailed" xml:space="preserve"><value>Projektet kunne ikke få virkelige koordinater (ETRS89/UTM32) (Revit placerede dem ikke som ventet): de er ladt urørt. Meld det gerne.</value></data>
+  <!-- Indstillinger > Placering, kun når situationsplanen er flyttet fra sin plads (Status) -->
+  <data name="Placement_MovedByHand" xml:space="preserve"><value>Flyttet manuelt, {0:0.0} m og {1:0.0}° fra {2}.</value></data>
+  <data name="Placement_MovedByHandShared" xml:space="preserve"><value>Flyttet manuelt: {0:0.0} m og {1:0.0}° fra sine koordinater. Opdater lægger den tilbage.</value></data>
+  <!-- Indstillinger OK: et ankerpunkt er ændret (MoveSiteTo) -->
+  <data name="Placement_NoImportToMove" xml:space="preserve"><value>Grundens placering er ændret: {0}. Der er ingen import af situationsplanen at flytte.</value></data>
+  <data name="Placement_Moved" xml:space="preserve"><value>Situationsplanen er flyttet: {0}.</value></data>
+  <data name="Placement_Stays" xml:space="preserve"><value>Situationsplanen var allerede på plads: {0}.</value></data>
+
+  <!-- Terrænet gemt i modellen (StoredTerrain): det, alle kommandoer siger, når der ikke er noget -->
+  <data name="StoredTerrain_Missing" xml:space="preserve"><value>Der er endnu intet terræn i modellen. Brug Hent fra adresse, eller Indlæs terræn fra CSV til et eget terræn.</value></data>
+  <data name="StoredTerrain_Unreadable" xml:space="preserve"><value>Terrænet, der er gemt i modellen, kan ikke læses. Indlæs det igen (Hent fra adresse eller Indlæs terræn fra CSV).</value></data>
+
+  <!-- Kotekrydset (CrossSymbol): hvorfor der ingen er, eller hvorfor det har en fast størrelse -->
+  <data name="Cross_NoTemplate" xml:space="preserve"><value>Ingen kotekryds: Revits skabelon "Metric Generic Annotation.rft" blev ikke fundet.</value></data>
+  <data name="Cross_NotMade" xml:space="preserve"><value>Ingen kotekryds: familien kunne ikke oprettes ({0}).</value></data>
+  <data name="Cross_Fixed" xml:space="preserve"><value>Kotekrydset har en fast størrelse ({0:0.##} mm; ret den i Indstillinger > Koter > Størrelse på kotekryds): Revit afviste {1} ({2}).</value></data>
+  <data name="Cross_NotLoaded" xml:space="preserve"><value>Kotekrydset kunne ikke indlæses ({0}); krydsene beholder det, de havde.</value></data>
+  <!-- Det trin, Revit afviste, i Cross_Fixed's "Revit afviste {1}" -->
+  <data name="Cross_StepType" xml:space="preserve"><value>en type til familien</value></data>
+  <data name="Cross_StepParameter" xml:space="preserve"><value>parameteren Size</value></data>
+  <data name="Cross_StepPlanes" xml:space="preserve"><value>referenceplanerne</value></data>
+  <data name="Cross_StepEqual" xml:space="preserve"><value>de lige store mål</value></data>
+  <data name="Cross_StepSize" xml:space="preserve"><value>Size-målene</value></data>
+  <data name="Cross_StepLines" xml:space="preserve"><value>linjerne</value></data>
+  <data name="Cross_StepLock" xml:space="preserve"><value>at låse X'ets ender til referenceplanerne</value></data>
+  <data name="Cross_StepTry" xml:space="preserve"><value>at prøve en anden Size</value></data>
+  <data name="Cross_DoesNotFollow" xml:space="preserve"><value>X'et fulgte ikke Size</value></data>
+
+  <!-- Hvad Revits 0 er (Dvr90.Describe), i meddelelsernes detaljer. {0}: m DVR90; Relative {1}: hvor den kom fra
+       (FromSurvey eller Entered); OnLevel {1}: et Dvr90_Point*, {2}: niveauets navn -->
+  <data name="Dvr90_Absolute" xml:space="preserve"><value>Absolutte koter: Revits 0 er 0,00 m DVR90, terrænet i sine virkelige højder.</value></data>
+  <data name="Dvr90_Relative" xml:space="preserve"><value>Relative koter: gulvet (±0,00) ligger i Revits 0, {0} m DVR90 ({1}).</value></data>
+  <data name="Dvr90_FromSurvey" xml:space="preserve"><value>koten på Project Base Point</value></data>
+  <data name="Dvr90_Entered" xml:space="preserve"><value>indtastet for dette projekt</value></data>
+  <data name="Dvr90_OnLevel" xml:space="preserve"><value>Terrænpunkt på et niveau: Revits 0 = {0} m DVR90, sat i Indstillinger ud fra {1} på "{2}" (følger ikke selv med et nyt terræn; Indstillinger siger til, når det ikke længere passer).</value></data>
+  <!-- Terrænpunktet inde i en sætning (Dvr90.TerrainPoint; også Indstillinger) -->
+  <data name="Dvr90_PointLowest" xml:space="preserve"><value>det laveste terræn</value></data>
+  <data name="Dvr90_PointHighest" xml:space="preserve"><value>det højeste terræn</value></data>
+  <data name="Dvr90_PointAverage" xml:space="preserve"><value>grundens gennemsnitlige terræn</value></data>
+  <data name="Dvr90_PointAddress" xml:space="preserve"><value>terrænet i adressepunktet</value></data>
+  <data name="Dvr90_PointHouse" xml:space="preserve"><value>det højeste terræn langs bygningen</value></data>
+
+  <!-- Nøglen, når en kommando henter (Keys) -->
+  <data name="Keys_FileUnreadable" xml:space="preserve"><value>{0}
+
+Ret eller slet filen, og indtast så din Datafordeler-nøgle i Indstillinger (Dataadgang).</value></data>
+  <data name="Keys_KeyUnreadable" xml:space="preserve"><value>Din Datafordeler-nøgle er gemt, men denne Windows-bruger kan ikke læse den (den er gemt af en anden bruger eller på en anden pc). Indtast den igen i Indstillinger (Dataadgang).</value></data>
+  <data name="Keys_Needed" xml:space="preserve"><value>Jega skal bruge din Datafordeler-nøgle</value></data>
+  <data name="Keys_OpenSettings" xml:space="preserve"><value>Åbn Indstillinger</value></data>
+  <data name="Keys_OpenSettingsNote" xml:space="preserve"><value>Indtast nøglen under Dataadgang, og tryk på OK. Så fortsætter Jega.</value></data>
+  <data name="Keys_GetKey" xml:space="preserve"><value>Hent en nøgle på datafordeler.dk</value></data>
+  <data name="Keys_GetKeyNote" xml:space="preserve"><value>Den er gratis. Åbner datafordeler.dk i din browser og Indstillinger her, så du kan sætte nøglen ind. Så fortsætter Jega.</value></data>
+  <data name="Keys_NoKey" xml:space="preserve"><value>Indtast først din Datafordeler-API-nøgle i Indstillinger (Dataadgang). Den er gratis: datafordeler.dk > Log på Datafordeleren > Datafordeler Administration > IT-systemer > Opret > API-Keys > Opret.</value></data>
+
+  <!-- En kommando stoppet af en fejl, den ikke forudså (JegaCommand, Ui.Failed). Title {0}: fejlens besked. Stien som
+       skrevet, ikke brugerens egen mappe: et skærmbillede af den viser intet Windows-brugernavn -->
+  <data name="Failed_Title" xml:space="preserve"><value>Jega stoppede uventet: {0}</value></data>
+  <data name="Failed_Content" xml:space="preserve"><value>Detaljerne er skrevet i %APPDATA%\Jega\jega.log. Meld gerne fejlen på GitHub med filen vedhæftet, men se den først igennem for klienters adresser og stier.</value></data>
+  <data name="Failed_OpenFolder" xml:space="preserve"><value>Åbn mappen</value></data>
+  <!-- Om Jega (AboutCommand): Content {0} er kildeangivelsen for data (SiteFetcher.Credit), {1} forfatteren (Author,
+       kun i Strings.resx). Bunden, buildet (BuildInfo): {0} versionen, {1} hvornår det blev bygget, {2} projektets mappe
+       (kun Debug-builds) -->
+  <data name="About_Title" xml:space="preserve"><value>Jega: fra adresse til Revit</value></data>
+  <data name="About_Content" xml:space="preserve"><value>Fri software fra {1} under GNU General Public License, version 3 (GPL-3.0): du må bruge, dele og ændre den på licensens vilkår. Der gives ingen garanti: koter og skel er vejledende (ca. ±0,1 m), ikke en opmåling.
+
+{0}</value></data>
+  <data name="About_Built" xml:space="preserve"><value>Jega {0}, bygget {1}.</value></data>
+  <data name="About_BuiltFrom" xml:space="preserve"><value>Jega {0}, bygget {1} fra {2}.</value></data>
+
+  <!-- Meddelelser: True / Project North (ViewNorthCommand) og Arbejdsretning -->
+  <data name="North_ViewLocked" xml:space="preserve"><value>Visningens orientering styres af dens view template, så den er ikke ændret.</value></data>
+  <!-- Arbejdsretning i en visning med True North: Revits Rotate Project North kører kun i Project North -->
+  <data name="WorkDirection_TrueNorth" xml:space="preserve"><value>Arbejdsretning virker kun i en visning med Project North. Skift med True / Project North, og prøv igen.</value></data>
+
+  <!-- Revits Undo-liste: navnet på hver ændring, Jega laver (Transaction). Hent fra adresse og Opdater er hver én post
+       (en TransactionGroup, assimileret): Site, ImportSitePlan og LoadTerrain er trin inde i den og ses sjældent -->
+  <data name="Undo_LoadFromAddress" xml:space="preserve"><value>Jega: Hent fra adresse</value></data>
+  <data name="Undo_Site" xml:space="preserve"><value>Jega: Grund</value></data>
+  <data name="Undo_ImportSitePlan" xml:space="preserve"><value>Jega: Importér situationsplan</value></data>
+  <data name="Undo_LoadTerrain" xml:space="preserve"><value>Jega: Indlæs terræn</value></data>
+  <data name="Undo_ContextOff" xml:space="preserve"><value>Jega: Skjul nabobygninger</value></data>
+  <data name="Undo_ContextOn" xml:space="preserve"><value>Jega: Vis nabobygninger</value></data>
+  <data name="Undo_LotBoundary" xml:space="preserve"><value>Jega: Tegn grund</value></data>
+  <data name="Undo_Offset" xml:space="preserve"><value>Jega: Offset</value></data>
+  <data name="Undo_GenerateTerrain" xml:space="preserve"><value>Jega: Opret terræn</value></data>
+  <data name="Undo_MoveTerrain" xml:space="preserve"><value>Jega: Flyt terræn</value></data>
+  <data name="Undo_Refresh" xml:space="preserve"><value>Jega: Opdater</value></data>
+  <data name="Undo_Settings" xml:space="preserve"><value>Jega: Indstillinger</value></data>
+  <data name="Undo_ViewNorth" xml:space="preserve"><value>Jega: True / Project North</value></data>
+  <data name="Undo_TerrainLine" xml:space="preserve"><value>Jega: Terrænlinje</value></data>
+  <data name="Undo_LoadTerrainFile" xml:space="preserve"><value>Jega: Indlæs terræn fra CSV</value></data>
+
+  <!-- Feltkontrol: {0} er feltets navn -->
+  <data name="Check_WholeNumber" xml:space="preserve"><value>{0}: et helt tal.</value></data>
+  <data name="Check_Number" xml:space="preserve"><value>{0}: et tal, f.eks. 2,5.</value></data>
+</root>

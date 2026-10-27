@@ -1,0 +1,15 @@
+<Project>
+
+  <!-- Jega's version, for every project here: the assemblies', About's, and what Jega writes into a model's stored JSON
+       (Core.Build.Version, "writtenBy"), so a later Jega can tell which models an earlier one wrote. -->
+  <PropertyGroup>
+    <Version>0.9.0-beta.1</Version>
+  </PropertyGroup>
+
+  <!-- Release builds name the source as /_/ instead of the builder's folder (user name, OneDrive), in the DLLs, the
+       PDBs and so in the stack traces jega.log writes. Debug keeps the real paths for the debugger. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <PathMap>$(MSBuildThisFileDirectory)=/_/</PathMap>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Jega.Core's texts in Danish (da). The same names as Strings.resx; an entry missing here is said in English. {0},
+  {1} … and their formats as in Strings.resx. The words follow docs\GLOSSARY.da.md.
+-->
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <!-- SiteFetcher: kildeangivelsen, som de åbne datas vilkår kræver (DATA.md), hvor Jega viser, hvad den hentede -->
+  <data name="Fetch_Credit" xml:space="preserve"><value>Indeholder data fra Klimadatastyrelsen (Danmarks Højdemodel, GeoDanmark, Danmarks Adresseregister) og Geodatastyrelsen (Matriklen) via Datafordeleren og Adressevælger.</value></data>
+
+  <!-- SiteFetcher: trinene, mens der hentes, til ventevinduerne; StepSurroundingsParts {0}: terrænets kald -->
+  <data name="Fetch_StepLot" xml:space="preserve"><value>Grund …</value></data>
+  <data name="Fetch_StepSurroundings" xml:space="preserve"><value>Naboer, bygninger, veje og terræn …</value></data>
+  <data name="Fetch_StepSurroundingsParts" xml:space="preserve"><value>Naboer, bygninger, veje og terræn ({0} dele) …</value></data>
+  <data name="Fetch_StepSiteplan" xml:space="preserve"><value>Situationsplan …</value></data>
+  <data name="Fetch_StepContext" xml:space="preserve"><value>Bygninger, terræn og tage …</value></data>
+
+  <!-- SiteFetcher: tjenesterne ved navn, {0} i fejlene nedenfor; MapData {0}: laget (grunde, bygninger …) -->
+  <data name="Fetch_AddressSearch" xml:space="preserve"><value>Adressesøgning</value></data>
+  <data name="Fetch_AddressLookup" xml:space="preserve"><value>Adresseopslag</value></data>
+  <data name="Fetch_MapData" xml:space="preserve"><value>Kortdata ({0})</value></data>
+  <data name="Fetch_Addresses" xml:space="preserve"><value>Adresser (vejnavne og husnumre)</value></data>
+  <data name="Fetch_Terrain" xml:space="preserve"><value>Terræn (Danmarks Højdemodel)</value></data>
+
+  <!-- SiteFetcher: hvorfor intet blev hentet. {0}: tjenesten (ovenfor); resten som teksten nævner dem -->
+  <data name="Fetch_NoKey" xml:space="preserve"><value>Ingen Datafordeler-API-nøgle: indtast din i Indstillinger (Dataadgang).</value></data>
+  <data name="Fetch_NoLot" xml:space="preserve"><value>Ingen grund (jordstykke i Matriklen) under adressepunktet.</value></data>
+  <data name="Fetch_LotTooLarge" xml:space="preserve"><value>Grunden er for stor til et terrænnet på {0:0.0} m ({1:N0} punkter; højst {2:N0}).</value></data>
+  <data name="Fetch_ContextTooLarge" xml:space="preserve"><value>Grunden er for stor til nabobygningerne (over ca. 2 km på tværs).</value></data>
+  <data name="Fetch_NotMapData" xml:space="preserve"><value>{0}: tjenesten svarede ikke med kortdata.</value></data>
+  <data name="Fetch_FeaturesCut" xml:space="preserve"><value>{0}: tjenesten gav {1:N0} af {2:N0} objekter. Gør området omkring grunden mindre.</value></data>
+  <data name="Fetch_PartSize" xml:space="preserve"><value>{0}: en del kom tilbage med {1} × {2} celler, ikke {3} × {4}.</value></data>
+  <data name="Fetch_NotGeoTiff" xml:space="preserve"><value>Terræn: tjenesten svarede ikke med en GeoTIFF.</value></data>
+  <data name="Fetch_GeoTiffLayout" xml:space="preserve"><value>Terræn: uventet opbygning af GeoTIFF'en.</value></data>
+  <data name="Fetch_GeoTiffShort" xml:space="preserve"><value>Terræn: GeoTIFF'en er kortere, end dens størrelse siger.</value></data>
+  <data name="Fetch_Hole" xml:space="preserve"><value>Terræn: et hul i højdedata på grunden.</value></data>
+  <!-- Status {1}: tjenestens egen status, eller NoStatus -->
+  <data name="Fetch_Status" xml:space="preserve"><value>{0}: tjenesten svarede {1}.</value></data>
+  <data name="Fetch_NoStatus" xml:space="preserve"><value>uden en status</value></data>
+  <!-- Unreadable, NoAnswer {1}: den underliggende fejls besked -->
+  <data name="Fetch_Unreadable" xml:space="preserve"><value>{0}: tjenesten gav et svar, som Jega ikke kan læse ({1}).</value></data>
+  <data name="Fetch_NoAnswer" xml:space="preserve"><value>{0}: intet svar ({1}). Kontrollér internetforbindelsen.</value></data>
+  <!-- KeyRefused, TokenRefused (Adressevælgers, ikke nøglen), Http {1}: HTTP-statuskoden -->
+  <data name="Fetch_KeyRefused" xml:space="preserve"><value>{0}: nøglen blev afvist (HTTP {1}). Er den lige oprettet, kan der gå op til 15 minutter, før den virker. Ellers kontrollér den i Indstillinger (Dataadgang).</value></data>
+  <data name="Fetch_TokenRefused" xml:space="preserve"><value>{0}: Adressevælger afviste tokenet (HTTP {1}). Din Datafordeler-nøgle er ikke problemet. Har du et eget token, så indtast det i Indstillinger (Dataadgang, Avanceret).</value></data>
+  <!-- SiteFetcher: adressefeltet er gået fra Adressevælger til Danmarks Adresseregister (AddressFallback); {0}:
+       hvorfor, "400, ukendt token" (HTTP-koden og Fetch_FallbackWhy*) eller "intet svar". Vises én gang under feltet, i
+       meddelelsen efter Hent fra adresse og i Test -->
+  <data name="Fetch_AddressFallback" xml:space="preserve"><value>Adressevælger kunne ikke bruges ({0}); søger nu via Datafordeleren.</value></data>
+  <!-- Hvorfor, efter Adressevælgers svar: 400, 401/403, 404, intet svar -->
+  <data name="Fetch_FallbackWhyUnknownToken" xml:space="preserve"><value>ukendt token</value></data>
+  <data name="Fetch_FallbackWhyRefused" xml:space="preserve"><value>tokenet blev afvist</value></data>
+  <data name="Fetch_FallbackWhyGone" xml:space="preserve"><value>tjenesten findes ikke</value></data>
+  <data name="Fetch_FallbackWhyNoAnswer" xml:space="preserve"><value>intet svar</value></data>
+  <data name="Fetch_ProxyRefused" xml:space="preserve"><value>{0}: jeres netværk (proxy) afviste forbindelsen (HTTP 407). Det er ikke nøglen. Spørg jeres IT-afdeling om adgang til datafordeler.dk og adressevaelger.dk.</value></data>
+  <data name="Fetch_Http" xml:space="preserve"><value>{0}: HTTP {1}.</value></data>
+
+  <!-- SiteFetcher.Test, knappen Test i Indstillinger: hver tjeneste prøvet, og hvorfor en ikke blev -->
+  <data name="Fetch_TestMapData" xml:space="preserve"><value>Datafordeler: kortdata</value></data>
+  <data name="Fetch_TestTerrain" xml:space="preserve"><value>Datafordeler: terræn</value></data>
+  <data name="Fetch_TestAddresses" xml:space="preserve"><value>Adressevælger: adresser</value></data>
+  <data name="Fetch_TestNoKey" xml:space="preserve"><value>ingen nøgle indtastet</value></data>
+
+  <!-- TerrainGrid: hvorfor en terræn-CSV ikke kan bruges. {0} linjens nummer, NotNumbers {1} selve linjen (forkortet);
+       BadElevation {1} dens kote (m); OffGrid, Duplicate {0}, {1} punktet (m); Holes {0} punkterne, {1} × {2} =
+       {3} nettets. CSV-filen bruger '.' som decimaltegn, også på dansk. -->
+  <data name="Grid_NotNumbers" xml:space="preserve"><value>Linje {0} er ikke tre tal X,Y,Z med '.' som decimaltegn: "{1}".</value></data>
+  <data name="Grid_BadElevation" xml:space="preserve"><value>Linje {0} har koten {1:0.000} m, som ikke kan passe.</value></data>
+  <data name="Grid_TooFew" xml:space="preserve"><value>Filen har for få punkter til et terrænnet.</value></data>
+  <data name="Grid_OnALine" xml:space="preserve"><value>Punkterne ligger på en linje, ikke i et net.</value></data>
+  <data name="Grid_NotRegular" xml:space="preserve"><value>Punkterne er ikke et regelmæssigt net med samme afstand i begge retninger.</value></data>
+  <data name="Grid_OffGrid" xml:space="preserve"><value>Punktet X = {0:0.000} m, Y = {1:0.000} m ligger ikke på nettet.</value></data>
+  <data name="Grid_Duplicate" xml:space="preserve"><value>Punktet X = {0:0.000} m, Y = {1:0.000} m står i filen mere end én gang.</value></data>
+  <data name="Grid_Holes" xml:space="preserve"><value>Nettet har huller: {0} punkter, men {1} × {2} = {3} forventet.</value></data>
+
+  <!-- EdgeLevels (skellets koter) og LineLevels (Terrænlinje): uden for terrænnettet. Partly {0} af {1}: punkterne
+       udenfor, og alle punkterne -->
+  <data name="Edge_Outside" xml:space="preserve"><value>Skellet ligger helt uden for terrænnettet.</value></data>
+  <data name="Edge_Partly" xml:space="preserve"><value>Skellet ligger delvis uden for terrænnettet ({0} af {1} punkter).</value></data>
+  <data name="Line_Outside" xml:space="preserve"><value>Linjen ligger helt uden for terrænnettet.</value></data>
+  <data name="Line_Partly" xml:space="preserve"><value>Linjen ligger delvis uden for terrænnettet ({0} af {1} punkter).</value></data>
+
+  <!-- Nabobygninger: hvorfor de bygninger, der er gemt i modellen, ikke kan læses -->
+  <data name="Context_NotJson" xml:space="preserve"><value>De gemte nabobygninger er ikke gyldig JSON.</value></data>
+  <data name="Context_NotContext" xml:space="preserve"><value>De gemte nabobygninger er ikke i Jegas format for nabobygninger (version 1).</value></data>
+  <data name="Context_NotMm" xml:space="preserve"><value>De gemte nabobygninger er ikke i mm.</value></data>
+
+  <!-- Surroundings: hvorfor situationsplanens gemte omgivelser ikke kan læses; Unreadable {0}: den underliggende fejls
+       besked -->
+  <data name="Surroundings_OtherVersion" xml:space="preserve"><value>De gemte omgivelser er fra en anden version af Jega.</value></data>
+  <data name="Surroundings_Unreadable" xml:space="preserve"><value>De gemte omgivelser kan ikke læses ({0}).</value></data>
+
+  <!-- ProjectOptions.Problems: et felt i Indstillinger uden for sit interval, vist under vinduet. Hver begynder med
+       feltets navn, som Jega.Revit's Strings.da.resx kalder det, så brugeren finder feltet: omdøb et, omdøb begge -->
+  <data name="Options_Thickness" xml:space="preserve"><value>Tykkelse: 10 til 5000 mm.</value></data>
+  <data name="Options_InteriorStep" xml:space="preserve"><value>Punktafstand inde på grunden: 400 til 10000 mm (terrænnettet er 400 mm).</value></data>
+  <data name="Options_EdgeStep" xml:space="preserve"><value>Punktafstand langs skel: 100 til 10000 mm.</value></data>
+  <data name="Options_CrossSize" xml:space="preserve"><value>Størrelse på kotekryds: 0,5 til 10 mm på papir.</value></data>
+  <data name="Options_LabelText" xml:space="preserve"><value>Tekststørrelse: 1 til 10 mm på papir.</value></data>
+  <data name="Options_ZeroTerrainAt" xml:space="preserve"><value>Terrænpunkt på et niveau: det laveste eller højeste punkt, gennemsnittet, adressepunktet eller det højeste langs bygningen.</value></data>
+  <data name="Options_Margin" xml:space="preserve"><value>Margen om grunden: 0 til 100 m.</value></data>
+  <data name="Options_Setback" xml:space="preserve"><value>Afstand til skel: 0 (ingen) til 20 m.</value></data>
+  <data name="Options_RoofMinArea" xml:space="preserve"><value>Tagkoter kun på bygninger over: 0 (alle) til 10000 m².</value></data>
+  <data name="Options_SiteAnchor" xml:space="preserve"><value>Placeres ved (i Revit): Survey Point, Project Base Point, Internal Origin eller virkelige koordinater (ETRS89 / UTM32).</value></data>
+  <data name="Options_TerrainLevelAt" xml:space="preserve"><value>Terrænpunkt for niveauet Terrain: det laveste eller højeste punkt, gennemsnittet, adressepunktet eller det højeste langs bygningen.</value></data>
+  <!-- {0}: de sprog, Config tilbyder, ved navn -->
+  <data name="Options_Language" xml:space="preserve"><value>Sprog: {0}.</value></data>
+
+  <!-- MachineOptions: denne pc's indstillingsfil kan ikke læses. {0}: dens sti, {1}: den underliggende fejls besked -->
+  <data name="Machine_Unreadable" xml:space="preserve"><value>Indstillingerne på denne pc ({0}) kan ikke læses: {1}</value></data>
+
+  <!-- The site plan DXF (SiteplanDxf) -->
+  <data name="Drawing_Title" xml:space="preserve"><value>Situationsplan: {0}</value></data>
+  <data name="Drawing_OriginAddress" xml:space="preserve"><value>Tegningens 0,0 = adressepunktet (adressens officielle punkt i adresseregistret): E {0:N3} / N {1:N3} m, ETRS89/UTM32 (EPSG:25832).</value></data>
+  <data name="Drawing_OriginProject" xml:space="preserve"><value>Tegningens 0,0 = projektets nulpunkt (adressepunktet, hele meter): E {0:N0} / N {1:N0} m, ETRS89/UTM32 (EPSG:25832). Adressepunktet (adressens officielle punkt i adresseregistret): E {2:N3} / N {3:N3} m.</value></data>
+  <data name="Drawing_Credit" xml:space="preserve"><value>Indeholder data fra Klimadatastyrelsen (Danmarks Højdemodel, GeoDanmark, Danmarks Adresseregister) og Geodatastyrelsen (Matriklen) via Datafordeleren og Adressevælger, hentet {0:dd.MM.yyyy}. Vejledende – ikke opmåling; koter ca. ±0,1 m.</value></data>
+  <data name="Drawing_Turned" xml:space="preserve"><value>Tegningen ligger i projektets arbejdsretning (Project North), drejet {0:N1}° fra geografisk nord; pilen peger mod nord.</value></data>
+  <data name="Drawing_TerrainLot" xml:space="preserve"><value>Terræn på grunden: laveste {0:N2}, højeste {1:N2} m DVR90 (højdeforskel {2:N2} m).</value></data>
+  <data name="Drawing_TerrainAddress" xml:space="preserve"><value>Terræn i adressepunktet: {0:N2} m DVR90.</value></data>
+  <data name="Drawing_TerrainAddressInBuilding" xml:space="preserve"><value>Terræn i adressepunktet: {0:N2} m DVR90 (punktet ligger i en bygning; koten er beregnet ud fra terrænet omkring den).</value></data>
+  <data name="Drawing_Buildings" xml:space="preserve"><value>Bygninger er GeoDanmarks tagflader, ikke facader.</value></data>
+  <data name="Drawing_RoofRidge" xml:space="preserve"><value>{0:N2}</value></data>
+  <data name="Drawing_RoofBoth" xml:space="preserve"><value>{0:N2} / {1:N2}</value></data>
+  <data name="Drawing_NoteRoof" xml:space="preserve"><value>Tag: OK tag og tagfod i DVR90 fra højdemodellens overflade. Kun vejledende.</value></data>
+  <data name="Drawing_NoteRoofRidge" xml:space="preserve"><value>Tag: OK tag i DVR90 fra højdemodellens overflade. Kun vejledende.</value></data>
+  <data name="Drawing_LotArea" xml:space="preserve"><value>Grundareal {0}: {1:N0} m² registreret i Matriklen, {2:N0} m² på kortet ({3:+0.0;-0.0;+0.0} %).</value></data>
+  <data name="Drawing_LotAreaInnerOne" xml:space="preserve"><value>Grundareal {0}: {1:N0} m² registreret i Matriklen, {2:N0} m² på kortet ({3:+0.0;-0.0;+0.0} %); {4} ligger inde i grunden og er ikke medregnet.</value></data>
+  <data name="Drawing_LotAreaInnerMany" xml:space="preserve"><value>Grundareal {0}: {1:N0} m² registreret i Matriklen, {2:N0} m² på kortet ({3:+0.0;-0.0;+0.0} %); {4} ligger inde i grunden og er ikke medregnet.</value></data>
+  <data name="Drawing_ParcelArea" xml:space="preserve"><value>{0} ({1:N0} m²)</value></data>
+  <data name="Drawing_ListAnd" xml:space="preserve"><value>{0} og {1}</value></data>
+  <data name="Drawing_Legend" xml:space="preserve"><value>SIGNATURFORKLARING</value></data>
+  <data name="Drawing_GroupBoundaries" xml:space="preserve"><value>SKEL</value></data>
+  <data name="Drawing_GroupBuildings" xml:space="preserve"><value>BYGNINGER</value></data>
+  <data name="Drawing_GroupRoads" xml:space="preserve"><value>VEJ</value></data>
+  <data name="Drawing_GroupWater" xml:space="preserve"><value>VAND</value></data>
+  <data name="Drawing_GroupPoints" xml:space="preserve"><value>PUNKTER</value></data>
+  <data name="Drawing_RowLot" xml:space="preserve"><value>Matrikelskel, grunden</value></data>
+  <data name="Drawing_RowNeighbourLots" xml:space="preserve"><value>Matrikelskel, nabogrunde</value></data>
+  <data name="Drawing_RowSetback" xml:space="preserve"><value>{0} m fra skel (tilnærmet)</value></data>
+  <data name="Drawing_RowLengths" xml:space="preserve"><value>Skelmål (m)</value></data>
+  <data name="Drawing_RowParcelNumber" xml:space="preserve"><value>Matrikelnummer</value></data>
+  <data name="Drawing_RowOwnBuildings" xml:space="preserve"><value>Tagflade, på grunden</value></data>
+  <data name="Drawing_RowNeighbourBuildings" xml:space="preserve"><value>Tagflade, naboer</value></data>
+  <data name="Drawing_RowRoadEdge" xml:space="preserve"><value>Vejkant</value></data>
+  <data name="Drawing_RowPath" xml:space="preserve"><value>Stikant</value></data>
+  <data name="Drawing_RowWater" xml:space="preserve"><value>Sø, vandløb, grøft</value></data>
+  <data name="Drawing_RowElevation" xml:space="preserve"><value>Terrænkote (m DVR90)</value></data>
+  <data name="Drawing_RowManhole" xml:space="preserve"><value>Brønddæksel, dækselkote (m DVR90)</value></data>
+  <data name="Drawing_RowGully" xml:space="preserve"><value>Nedløbsrist, kote (m DVR90)</value></data>
+  <data name="Drawing_NoteManholes" xml:space="preserve"><value>Brønddæksler og riste: GeoDanmark, set fra luften; koten er dækslets. Ledninger fremgår ikke; ledningsoplysninger indhentes i LER før gravearbejde (LER-loven § 7).</value></data>
+  <data name="Drawing_RowHouseNumber" xml:space="preserve"><value>Husnummer</value></data>
+  <data name="Drawing_RowStreetName" xml:space="preserve"><value>Vejnavn</value></data>
+  <data name="Drawing_NoteAddresses" xml:space="preserve"><value>Vejnavne og husnumre: Danmarks Adresseregister. Husnummeret står i den bygning, adressen hører til; uden en bygning ved adressepunktet.</value></data>
+  <data name="Drawing_GroupVegetation" xml:space="preserve"><value>BEPLANTNING</value></data>
+  <data name="Drawing_RowTrees" xml:space="preserve"><value>Træ; trægruppe og skov som omrids</value></data>
+  <data name="Drawing_RowHedges" xml:space="preserve"><value>Hegn</value></data>
+  <data name="Drawing_NoteVegetation" xml:space="preserve"><value>Træer og hegn: GeoDanmark, set fra luften; kun markante træer, uden art og størrelse.</value></data>
+  <data name="Drawing_RowRoof" xml:space="preserve"><value>Tagkoter: OK tag over tagfod (m DVR90, ca.)</value></data>
+  <data name="Drawing_RowRoofRidge" xml:space="preserve"><value>Tagkoter: OK tag (m DVR90, ca.)</value></data>
+  <data name="Drawing_RowOriginAddress" xml:space="preserve"><value>Tegningens 0,0 (adressepunktet)</value></data>
+  <data name="Drawing_RowOriginProject" xml:space="preserve"><value>Tegningens 0,0 (adressepunktet, hele meter)</value></data>
+  <data name="Drawing_RowAddressPoint" xml:space="preserve"><value>Adressepunktet</value></data>
+  <data name="Drawing_Scale" xml:space="preserve"><value>MÅLESTOK 1:{0} (A3)</value></data>
+</root>

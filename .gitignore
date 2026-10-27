@@ -1,0 +1,16 @@
+bin/
+obj/
+.vs/
+TestResults/
+*.user
+# Working notes: never in the public repo.
+/PLAN.md
+/TESTPLAN.md
+/NOTES.md
+/UX-REVIEW.md
+/WORKLOG-*.md
+/review-*/
+# The live test batch's real addresses (tools/LiveBatch.ps1).
+/tools/live-addresses.txt
+# Release packaging output (tools/Pack.ps1): the staged bundle, the zip and the installer.
+/dist/

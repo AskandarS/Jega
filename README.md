@@ -6,16 +6,26 @@
 
 Jega er et gratis Revit-plugin med åben kildekode til den danske byggebranche. Du skriver en adresse. Jega henter
 grunden, naboerne, bygningerne, vejkanterne og terrænet fra Danmarks åbne data (Matriklen, Danmarks Højdemodel,
-GeoDanmark og Danmarks Adresseregister) og lægger det ind i din model.
+GeoDanmark og Danmarks Adresseregister) og lægger det ind i din model: situationsplanen som DXF i planen, terrænet
+som en Toposolid på grunden, nabobygningerne som 3D-volumener med højder fra højdemodellen, og projektet
+georefereret i rigtige koordinater.
 
 Ingen server, ingen konto hos Jega, intet abonnement. Jega taler direkte med de offentlige tjenester med din egen
 gratis nøgle.
 
 > **Åben beta, version 0.9.0-beta.1.** Jega virker, men er nyt. Meld gerne fejl og idéer (se [Meld en fejl](#meld-en-fejl)).
 
-**Sådan starter du:** hent installeren under [Releases](https://github.com/AskandarS/Jega/releases), lav en gratis
-nøgle hos Datafordeleren (se [Det skal du bruge](#det-skal-du-bruge)), og tryk **Hent fra adresse**. Trin for trin
-under [Kom i gang](#kom-i-gang).
+**Sådan starter du:**
+
+1. **Hent Jega:** kør `Jega-0.9.0-beta.1-setup.exe` fra [Releases](https://github.com/AskandarS/Jega/releases)
+   med Revit lukket (se [Installation](#installation)).
+2. **Lav en gratis nøgle** på [datafordeler.dk](https://datafordeler.dk): Log på Datafordeleren > Datafordeler
+   Administration (første gang: Opret Bruger), så IT-systemer > Opret > API-Keys > Opret. Kopiér nøglen med det samme;
+   den kan være op til 15 minutter om at virke (se [Det skal du bruge](#det-skal-du-bruge)).
+3. **Kør i Revit:** fanen **Jega** > **Indstillinger** > sæt nøglen ind. Tryk **Hent fra adresse**, skriv adressen,
+   og vent.
+
+Trin for trin under [Kom i gang](#kom-i-gang).
 
 https://github.com/user-attachments/assets/60babc87-a76d-4ff2-a366-48443cdaff46
 

@@ -6,16 +6,26 @@
 
 Jega is a free, open source Revit add-in for the Danish building industry. You type an address. Jega fetches the lot,
 the neighbours, the buildings, the road edges and the terrain from Denmark's open data (Matriklen, Danmarks Højdemodel,
-GeoDanmark and Danmarks Adresseregister) and puts them into your model.
+GeoDanmark and Danmarks Adresseregister) and puts them into your model: the site plan as a DXF in the plan view, the
+terrain as a Toposolid on the lot, the neighbouring buildings as 3D volumes with heights from the elevation model, and
+the project georeferenced in real coordinates.
 
 No server, no Jega account, no subscription. Jega talks to the public services directly, with your own free key.
 
 > **Open beta, version 0.9.0-beta.1.** Jega works, but it is new. Bugs and ideas are welcome (see [Report a bug](#report-a-bug)).
 > Jega speaks Danish to start with: step 0 of [Quick start](#quick-start) switches a project to English.
 
-**To start:** download the installer under [Releases](https://github.com/AskandarS/Jega/releases), make a free key at
-Datafordeleren (see [Requirements](#requirements)), and press **Load from Address**. Step by step under
-[Quick start](#quick-start).
+**To start:**
+
+1. **Get Jega:** run `Jega-0.9.0-beta.1-setup.exe` from [Releases](https://github.com/AskandarS/Jega/releases) with
+   Revit closed (see [Install](#install)).
+2. **Make a free key** at [datafordeler.dk](https://datafordeler.dk): Log på Datafordeleren > Datafordeler
+   Administration (first time: Opret Bruger), then IT-systemer > Opret > API-Keys > Opret. Copy the key right away; it
+   can take up to 15 minutes to start working (see [Requirements](#requirements)).
+3. **Run it in Revit:** the **Jega** tab > **Settings** > paste the key. Press **Load from Address**, type the address,
+   and wait.
+
+Step by step under [Quick start](#quick-start).
 
 *The videos are in Danish.*
 
